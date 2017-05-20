@@ -1,0 +1,40 @@
+{
+  "name": "google-docs",
+  "version": "1.0.0",
+  "description": "Group Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Penguin-House-Designs/Google-Docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-session": "^1.14.0",
+    "babel-preset-es2015": "^6.24.0",
+    "body-parser": "^1.17.1",
+    "massive": "^2.6.0",
+    "cors": "^2.8.3",
+    "del": "^2.2.2",
+    "express": "^4.15.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cachebust": "0.0.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-print": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-scss": "^1.4.0",
+    "gulp-sourcemaps": "^2.5.1",
+    "gulp-uglify": "^2.1.2",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Penguin-House-Designs/Google-Docs/issues"
+  },
+  "homepage": "https://github.com/Penguin-House-Designs/Google-Docs#readme"
+}
