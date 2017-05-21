@@ -4197,6 +4197,10 @@ nav.nav-extended .nav-wrapper {
   min-height: 56px;
   height: auto;
 }
+nav.nav-extended .nav-wrapper-work {
+  min-height: 56px;
+  height: auto;
+}
 
 nav.nav-extended .nav-content {
   position: relative;
@@ -4217,6 +4221,10 @@ nav i.material-icons {
 }
 
 nav .nav-wrapper {
+  position: relative;
+  height: 100%;
+}
+nav .nav-wrapper-work {
   position: relative;
   height: 100%;
 }
@@ -4385,6 +4393,18 @@ nav .input-field label.active i {
     min-height: 64px;
   }
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 64px;
+    line-height: 64px;
+  }
+  .navbar-fixed {
+    height: 64px;
+  }
+}
+@media only screen and (min-width: 601px) {
+  nav.nav-extended .nav-wrapper-work {
+    min-height: 64px;
+  }
+  nav, nav .nav-wrapper-work i, nav a.button-collapse, nav a.button-collapse i {
     height: 64px;
     line-height: 64px;
   }

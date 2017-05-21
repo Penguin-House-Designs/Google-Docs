@@ -49,7 +49,7 @@ var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
     .state('sheetsWork', {
       url: '/sheetsWork',
       templateUrl: './sheetsView/sheetsWork.html',
-      controller: 'sheetsCtrl'
+      controller: 'sheetsCtrlWork'
     })
 
   //SLIDES VIEWS//
