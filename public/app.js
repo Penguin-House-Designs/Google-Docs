@@ -46,7 +46,7 @@ GoogleApps.config(function($stateProvider, $urlRouterProvider) {
     .state('sheetsWork', {
       url: '/sheetsWork',
       templateUrl: './sheetsView/sheetsWork.html',
-      controller: 'sheetsCtrl'
+      controller: 'sheetsCtrlWork'
     })
 
 //SLIDES VIEWS//
