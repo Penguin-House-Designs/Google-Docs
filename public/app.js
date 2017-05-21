@@ -1,4 +1,4 @@
-var app = angular.module('googleDocs', ['ui.router'])
+var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
 
   .config(function($stateProvider, $urlRouterProvider) {
 

@@ -2,4 +2,4 @@ app.controller('DocHomeController', ['$scope','GoogleService', function($scope,G
 	$scope.test = 'TEST'
 	$scope.docsStuff = GoogleService.docsTemplates;
 	console.log($scope.docsStuff);
-}])
+}]);
