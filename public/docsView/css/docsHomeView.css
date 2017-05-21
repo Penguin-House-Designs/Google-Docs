@@ -46,7 +46,7 @@
 	display: flex;
 	/*border: 2px solid red;*/
 
-	width: 17%;
+	width: 260px;
 }
 
 .docs-home-nav-icons {
@@ -57,7 +57,7 @@
 
 .docs-home-template {
 	background: #424249;
-	height: 38.3vh;
+	height: 284px;
 	width:100%;
 	color:white;
 	display: flex;
@@ -71,12 +71,25 @@
 	/*border: 2px solid blue;*/
 	width: 80%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 
-.home-start-template h6{
+.home-start-template {
+	text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 	font-weight:800;
 	color:#d9d9da;
 	padding-top:10px;
 	padding-bottom: 10px;
+}
+
+.docs-template {
+	margin: 0px 5px;
+}
+
+.docs-side-nav-title {
+	padding: 10px 25px;
+	font-size: 20px;
 }

@@ -2,7 +2,7 @@ var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
-  // $urlRouterProvider.when('', '/docslanding')
+  $urlRouterProvider.when('', '/docslanding')
 
   $stateProvider
 
@@ -41,26 +41,26 @@ var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
 
   //SHEETS VIEWS
     .state('sheetsHome', {
-      url:'sheetsHome',
+      url:'/sheetsHome',
       templateUrl: './sheetsView/sheetsHome.html',
       controller: 'sheetsCtrl'
     })
 
     .state('sheetsWork', {
-      url: 'sheetsWork',
+      url: '/sheetsWork',
       templateUrl: './sheetsView/sheetsWork.html',
       controller: 'sheetsCtrl'
     })
 
   //SLIDES VIEWS//
   .state('slidesHome', {
-    url:'slidesHome',
+    url:'/slidesHome',
     templateUrl: './slidesView/slidesHome.html',
     controller: 'slidesCtrl'
   })
 
   .state('slidesWork', {
-    url: 'slidesWork',
+    url: '/slidesWork',
     templateUrl: './slidesView/slidesWork.html',
     controller: 'slidesCtrl'
   })
