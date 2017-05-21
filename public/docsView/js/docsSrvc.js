@@ -5,6 +5,7 @@ app.service('GoogleService',['$http', function($http){
 		{name: 'Resume', img:'./docsView/pics/resume.png'},
 		{name:'Brochure', img:'./docsView/pics/brochure.png'},
 		{name:'Project Proposal', img:'./docsView/pics/reports.png'},
-		{name:'Meeting Notes', img:'./docsView/pics/resume.png'}
+		{name:'Meeting Notes', img:'./docsView/pics/resume.png'},
+		{name:'Brochure', img:'./docsView/pics/brochure.png'},
 	];
 }])

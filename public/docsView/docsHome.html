@@ -1,27 +1,29 @@
+<<<<<<< HEAD
 <div class="home-docs-all">
 			<div class="home-slider-nav">
+=======
+			<div class="home-docs-nav">
+>>>>>>> master
 				<!-- Slide OUT NAV -->
 				<div class="home-icon-title">
 				<div class="">
 					<div class="home-docs-slider-nav">
 						<ul id="slide-out" class="side-nav">
 					    <li>
-								<div class="userView">
-						      <div class="background">
-						        <img src="images/office.jpg">
-						      </div>
-						      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-						      <a href="#!name"><span class="white-text name">John Doe</span></a>
-						      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-					    	</div>
+						     <div class="docs-side-nav-title">
+						       Google Docs
+						     </div>
 							</li>
-					    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-					    <li><a href="#!">Second Link</a></li>
+					    <li><a ui-sref="docsHome"><i class="material-icons" style="color: #4285f4">insert_drive_file</i>Docs</a></li>
+					    <li><a ui-sref="sheetsHome"><i class="material-icons" style="color: #0f9d58">insert_drive_file</i>Sheets</a></li>
+					    <li><a ui-sref="slidesHome"><i class="material-icons" style="color: #f4b400">insert_drive_file</i>Slides</a></li>
 					    <li><div class="divider"></div></li>
-					    <li><a class="subheader">Subheader</a></li>
-					    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+              <li><a href=""><i class="material-icons">settings</i>Settings</a></li>
+              <li><a href=""><i class="material-icons">help</i>Help and Support</a></li>
+              <li><div class="divider"></div></li>
+					    <li><a href=""><i class="material-icons">save</i>Drive</a></li>
 					  </ul>
-						<a href="#" class="button-collapse home-docs-side-icon" data-activates="slide-out" data-sidenav="left" data-menuwidth="300" data-closeonclick="false"><i class="material-icons">menu</i></a>
+						<a href="#" class="button-collapse home-docs-side-icon" data-activates="slide-out" data-sidenav="left" data-menuwidth="300" data-closeonclick="true"><i class="material-icons">menu</i></a>
 					  <!-- <a ui-sref="docsHome" data-activates="slide-out" class="button-collapse home-docs-side-icon"><i class="material-icons">menu</i></a> -->
 					</div>
 				</div>
@@ -58,20 +60,21 @@
 
 		<div class="docs-home-template" style="border:2px solid #424249">
 			<div class="docs-home-template">
-				<div style="width: 80%;" class="home-start-template">
-					<h6 style="font-weight:800; color:#d9d9da">Start A New Document</h6>
-				</div>
 
+        <div class="home-start-template">
+          <h6 style="font-weight:800; color:#d9d9da">Start A New Document</h6>
+          <div style='width:770px'>
+
+          </div>
+        </div>
 				<div class="template-views-text">
-					<div ng-repeat = "docs in docsStuff">
-						<img width="146px" height:"185px" src="{{docs.img}}" alt="">
-						<p>{{docs.name}}</p>
+					<div ng-repeat = "template in templatePics" class="docs-template">
+						<img width="118px" height:"150px" src="{{template.img}}" alt="">
+						<p style="color:white; padding:0; margin:0; font-weight:800">{{template.name}}</p>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
 
 	<div class="container">
 		<div class="docs-list-view">
