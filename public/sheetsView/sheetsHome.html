@@ -22,7 +22,7 @@
     </div>
   </div>
   <a href="#" class="button-collapse home-docs-side-icon" data-activates="slide-out" data-sidenav="left" data-menuwidth="300" data-closeonclick="true"><i class="material-icons">menu</i></a>
-  <!-- Google Docs Logo -->
+  <!-- Google Logo -->
   <div class="home-docs-logo-nav">
     <h5 style="color:white"><span style="font-size:22px">Google Sheets</span></h5>
   </div>
@@ -31,11 +31,12 @@
 <!-- Search Form  -->
 <div class="home-docs-search" style="">
   <nav style="box-shadow: none">
-    <div class="nav-wrapper">
+    <div class="nav-wrapper sheets-wrapper">
       <form>
-        <div class="input-field" style="background:#0f9d58">
-          <input id="search" type="search" placeholder="Search" required style="height: 50px; position:absolute; top:8px; border-radius:5px; background-color: #36AD73;">
-          <label  class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <div class="input-field" id="sheets-green" style="background:#0f9d58">
+
+          <input id="search" type="search" placeholder="Search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
         </div>
       </form>
     </div>
@@ -57,7 +58,7 @@
 <div class="sheets-home-template">
   <div class="home-start-template">
     <h6 style="font-weight:800; color:#d9d9da">Start A New Document</h6>
-    <div style='width:650px'>
+    <div style='width:647px'>
 
     </div>
   </div>
@@ -69,4 +70,45 @@
   </div>
 </div>
 
-<h1>{{test}}</h1>
+<div class="container">
+	<div class="docs-list-view">
+		<div class='row'>
+		 <div class='col s6'>Documents By title</div>
+
+
+
+		 <div class="col s2">
+			 <div class="dropdown">
+				 <a class="button" style="cursor:pointer; color: black; padding-right:6px"> {{owned}}</a> <span class="icon ion-chevron-down"></span>
+				 <ul>
+					 <li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
+					 <li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
+					 <li><a ng-model="notMe" ng-click="dropDownMessage3()">Not owned by me</a></li>
+				 </ul>
+			 </div>
+
+		 </div>
+		 <div class="col s2">Last modified</div>
+		 <div class="col s2">
+			 <i class="material-icons right">perm_media</i>
+			 <i class="material-icons right">sort_by_alpha</i>
+			 <i class="material-icons right">view_module</i>
+		 </div>
+		</div>
+		<ul class="collection">
+			 <li class="collection-item home-view-table">
+				 <div class="title-docs-icons">
+					 <i class="material-icons left sheets-icons">subject</i>
+					 <h6 style="font-weight:600">Hemoemises</h6>
+				 </div>
+				 <div class="home-owned-date">
+					 <h6 class="home-name-list">Alvin</h6>
+					 <h6>3/12/02</h6>
+				 </div>
+			 </li>
+			 <li class="collection-item"><i class="material-icons left sheets-icons">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
+			 <li class="collection-item"><i class="material-icons left sheets-icons">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
+		 </ul>
+	 </div>
+</div>
+

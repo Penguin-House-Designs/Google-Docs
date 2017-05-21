@@ -1,11 +1,8 @@
-var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
+var GoogleApps = angular.module('GoogleApp', ['ui.router','ui.materialize']);
 
-  .config(function($stateProvider, $urlRouterProvider) {
-
-  $urlRouterProvider.when('', '/docslanding')
+GoogleApps.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-
   //LANDING VIEWS//
     .state('docs', {
       url:'/docslanding',
@@ -26,7 +23,7 @@ var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
     })
 
 
-  //DOCS VIEWS
+//DOCS VIEWS
     .state('docsHome', {
       url:'/docsHome',
       templateUrl: './docsView/docsHome.html',
@@ -39,7 +36,7 @@ var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
       controller: 'DocHomeController'
     })
 
-  //SHEETS VIEWS
+//SHEETS VIEWS
     .state('sheetsHome', {
       url:'/sheetsHome',
       templateUrl: './sheetsView/sheetsHome.html',
@@ -52,7 +49,7 @@ var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
       controller: 'sheetsCtrlWork'
     })
 
-  //SLIDES VIEWS//
+//SLIDES VIEWS//
   .state('slidesHome', {
     url:'/slidesHome',
     templateUrl: './slidesView/slidesHome.html',
@@ -65,9 +62,13 @@ var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
     controller: 'slidesCtrl'
   })
 
-})
+	$urlRouterProvider.when('', '/docslanding')
 
-app.directive('dropdown', function($document) {
+});
+
+
+
+GoogleApps.directive('dropdown', function($document) {
 	return {
 		restrict: "C",
 		link: function(scope, elem, attr) {

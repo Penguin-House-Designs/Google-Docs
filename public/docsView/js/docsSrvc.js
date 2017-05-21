@@ -1,4 +1,4 @@
-app.service('GoogleService',['$http', function($http){
+GoogleApps.service('GoogleService',['$http', function($http){
 
 	this.docsTemplates = [
 		{name:'Blank', img:'./docsView/pics/blank.png'},
@@ -8,4 +8,5 @@ app.service('GoogleService',['$http', function($http){
 		{name:'Meeting Notes', img:'./docsView/pics/resume.png'},
 		{name:'Brochure', img:'./docsView/pics/brochure.png'},
 	];
+	
 }])

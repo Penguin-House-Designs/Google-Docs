@@ -1,12 +1,22 @@
 .home-sheets-nav {
-
   width: 100%;
 	height: 64px;
 	display:flex;
 	align-items: center;
 	background: #0f9d58;
-
 }
+
+#search {
+  height: 50px;
+  position:absolute;
+  top:8px;
+  border-radius:5px;
+}
+
+.sheets-search input[type=search]{
+  background-color: #36AD73;
+}
+
 .sheets-home-template {
   background: #394242;
   height: 240px;
@@ -17,4 +27,48 @@
   flex-direction: column;
   align-items: flex-end;
   align-items: center;
+}
+
+.sheets-icons {
+	color:white;
+	background:#0f9d58;
+}
+
+
+/*Search Field */
+.sheets-wrapper .input-field input[type=search] {
+	background-color: #36ad73;
+  display: block;
+  line-height: inherit;
+  padding-left: 4rem;
+  width: calc(100% - 4rem);
+}
+
+
+.sheets-wrapper .input-field input[type=search]:focus {
+  background-color: #fff;
+  border: 0;
+  box-shadow: none;
+  color: #444;
+}
+
+.sheets-wrapper .input-field input[type=search]:focus + label i,
+.sheets-wrapper .input-field input[type=search]:focus ~ .mdi-navigation-close,
+.sheets-wrapper .input-field input[type=search]:focus ~ .material-icons {
+  color: #444;
+}
+
+.sheets-wrapper .input-field input[type=search] + label {
+  left: 1rem;
+}
+
+.sheets-wrapper .input-field input[type=search] ~ .mdi-navigation-close,
+.sheets-wrapper .input-field input[type=search] ~ .material-icons {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  color: transparent;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: .3s color;
 }

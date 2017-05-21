@@ -1,4 +1,4 @@
-app.service('slidesSrvc',['$http', function($http){
+GoogleApps.service('slidesSrvc',['$http', function($http){
 
 	this.slidesTemplates = [
 		{name:'Blank', img:'./slidesView/pics/slide1.png'},

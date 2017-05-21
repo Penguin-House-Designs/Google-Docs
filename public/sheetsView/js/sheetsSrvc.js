@@ -1,4 +1,4 @@
-app.service('sheetsSrvc',['$http', function($http){
+GoogleApps.service('sheetsSrvc',['$http', function($http){
 
 	this.sheetsTemplates = [
 		{name:'Blank', img:'./sheetsView/pics/sheet1.png'},
