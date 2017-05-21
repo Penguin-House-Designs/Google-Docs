@@ -6290,6 +6290,7 @@ textarea.materialize-textarea + label:after {
   width: calc(100% - 4rem);
 }
 
+
 .input-field input[type=search]:focus {
   background-color: #fff;
   border: 0;
@@ -6317,6 +6318,7 @@ textarea.materialize-textarea + label:after {
   font-size: 2rem;
   transition: .3s color;
 }
+
 
 /* Textarea */
 textarea {
