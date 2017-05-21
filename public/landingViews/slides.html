@@ -1,8 +1,98 @@
-<h1>slides landing view {{broken}}</h1>
+<!-- <h1>slides landing view {{broken}}</h1>
 
 <a ui-sref="docs">DOCS</a>
 <a ui-sref="sheets">SHEETS</a>
 <a ui-sref="slides">SLIDES</a>
 
 
-<a ui-sref="slidesHome">Go to Slides</a>
+<a ui-sref="slidesHome">Go to Slides</a> -->
+
+<div class="home-docs-nav">
+  <!-- Slide OUT NAV -->
+  <div class="home-icon-title">
+  <div class="">
+    <div class="home-docs-slider-nav">
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="userView">
+            <div class="background">
+              <img src="images/office.jpg">
+            </div>
+            <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+            <a href="#!name"><span class="white-text name">John Doe</span></a>
+            <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          </div>
+        </li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      </ul>
+      <a href="#" class="button-collapse home-docs-side-icon" data-activates="slide-out" data-sidenav="left" data-menuwidth="300" data-closeonclick="false"><i class="material-icons">menu</i></a>
+      <!-- <a ui-sref="docsHome" data-activates="slide-out" class="button-collapse home-docs-side-icon"><i class="material-icons">menu</i></a> -->
+    </div>
+  </div>
+  <!-- Google Docs Logo -->
+  <div class="home-docs-logo-nav">
+    <h5 style="color:white"><span style="font-size:22px">Google Docs</span></h5>
+  </div>
+
+</div>
+<!-- Search Form  -->
+<div class="home-docs-search" style="">
+  <nav style="box-shadow: none">
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field" style="background:#4285f4">
+          <input id="search" type="search" placeholder="Search" required style="height: 50px; position:absolute; top:8px; border-radius:5px;">
+          <label  class="label-icon" for="search"><i class="material-icons">search</i></label>
+        </div>
+      </form>
+    </div>
+  </nav>
+</div>
+
+<!-- Icons On Right Of Navbar -->
+<div class="docs-home-nav-icons">
+  <a href=""><i class="material-icons">view_module</i></a>
+  <a href=""><i class="material-icons">add_alert</i></a>
+  <a href=""><i class="material-icons">add</i></a>
+</div>
+</div>
+
+
+
+
+<div class="docs-home-template" style="border:2px solid #424249">
+<div class="docs-home-template">
+  <div style="width: 80%;" class="home-start-template">
+    <h6 style="font-weight:800; color:#d9d9da">Start A New Document</h6>
+  </div>
+
+  <div class="template-views-text">
+    <div ng-repeat = "docs in docsStuff">
+      <img width="146px" height:"185px" src="{{docs.img}}" alt="">
+      <p style="color:white; padding:0; margin:0; font-weight:800">{{docs.name}}</p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="container">
+
+<ul class="collection">
+ <li class="collection-item">
+   <div class='row'>
+    <div class='col s6'>TITLE OF DOC</div>
+    <div class="col s2">ME</div>
+    <div class="col s2">DATE CREATED</div>
+    <div class="col s2"><i class="material-icons right">more</i></div>
+   </div>
+ </li>
+ <li class="collection-item">Alvin</li>
+ <li class="collection-item">Alvin</li>
+ <li class="collection-item">Alvin</li>
+</ul>
+</div>
