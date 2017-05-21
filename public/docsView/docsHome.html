@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+<div class="home-docs-all">
+			<div class="home-slider-nav">
+=======
 			<div class="home-docs-nav">
+>>>>>>> master
 				<!-- Slide OUT NAV -->
 				<div class="home-icon-title">
 				<div class="">
@@ -70,3 +75,47 @@
 				</div>
 			</div>
 		</div>
+
+	<div class="container">
+		<div class="docs-list-view">
+			<div class='row'>
+			 <div class='col s6'>Documents By title</div>
+
+
+
+			 <div class="col s2">
+				 <div class="dropdown">
+					 <a class="button" style="cursor:pointer; color: black; padding-right:6px"> {{owned}}</a> <span class="icon ion-chevron-down"></span>
+					 <ul>
+						 <li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
+						 <li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
+						 <li><a ng-model="notMe" ng-click="dropDownMessage3()">Not owned by me</a></li>
+					 </ul>
+				 </div>
+
+			 </div>
+			 <div class="col s2">Last modified</div>
+			 <div class="col s2">
+				 <i class="material-icons right">perm_media</i>
+				 <i class="material-icons right">sort_by_alpha</i>
+				 <i class="material-icons right">view_module</i>
+			 </div>
+			</div>
+			<ul class="collection">
+				 <li class="collection-item home-view-table">
+					 <div class="title-docs-icons">
+						 <i style="color:white; background:#4285f4" class="material-icons left">subject</i>
+  					 <h6 style="font-weight:600">Hemoemises</h6>
+					 </div>
+					 <div class="home-owned-date">
+						 <h6 class="home-name-list">Alvin</h6>
+  					 <h6>3/12/02</h6>
+					 </div>
+
+				 </li>
+				 <li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
+				 <li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
+			 </ul>
+		 </div>
+	</div>
+</div>
