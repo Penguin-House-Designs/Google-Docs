@@ -6,7 +6,7 @@ body{
 	background: #eeeeee;
 }
 
-.home-slider-nav {
+.home-docs-nav {
 	width: 100%;
 	height: 64px;
 	display:flex;
@@ -58,11 +58,7 @@ body{
 
 .docs-home-template {
 	background: #424249;
-<<<<<<< HEAD
-	height: 285px;
-=======
 	height: 284px;
->>>>>>> master
 	width:100%;
 	color:white;
 	display: flex;
