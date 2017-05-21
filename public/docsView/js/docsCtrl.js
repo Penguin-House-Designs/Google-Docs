@@ -1,8 +1,9 @@
-app.controller('DocHomeController', ['$scope','GoogleService', function($scope,GoogleService){
+GoogleApps.controller('DocHomeController', ['$scope','GoogleService', function($scope,GoogleService){
 	$scope.test = 'TEST'
 	$scope.templatePics = GoogleService.docsTemplates;
-	console.log($scope.docsStuff);
 
+
+//Fxns for Sorting
 	$scope.owned = "Owned by me";
 
 	$scope.dropDownMessage = function(){
