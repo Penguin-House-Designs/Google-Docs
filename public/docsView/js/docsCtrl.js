@@ -1,4 +1,5 @@
-app.controller('docsCtrl', function ($scope, $state) {
-  $scope.broken = "Docs Home view"
-  $scope.alsoBroken = "You are now working in a new DOC"
-})
+app.controller('DocHomeController', ['$scope','GoogleService', function($scope,GoogleService){
+	$scope.test = 'TEST'
+	$scope.docsStuff = GoogleService.docsTemplates;
+	console.log($scope.docsStuff);
+}])

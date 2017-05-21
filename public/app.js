@@ -2,7 +2,7 @@ var app = angular.module('googleDocs', ['ui.router'])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.when('', '/docslanding')
+  // $urlRouterProvider.when('', '/docslanding')
 
   $stateProvider
 
@@ -30,13 +30,13 @@ var app = angular.module('googleDocs', ['ui.router'])
     .state('docsHome', {
       url:'/docsHome',
       templateUrl: './docsView/docsHome.html',
-      controller: 'docsCtrl'
+      controller: 'DocHomeController'
     })
 
     .state('docsWork', {
       url:'/docsWork',
       templateUrl: './docsView/docsWork.html',
-      controller: 'docsCtrl'
+      controller: 'DocHomeController'
     })
 
   //SHEETS VIEWS
