@@ -1,12 +1,22 @@
 .home-sheets-nav {
-
   width: 100%;
 	height: 64px;
 	display:flex;
 	align-items: center;
 	background: #0f9d58;
-
 }
+
+#search {
+  height: 50px;
+  position:absolute;
+  top:8px;
+  border-radius:5px;
+}
+
+.sheets-search input[type=search]{
+  background-color: #36AD73;
+}
+
 .sheets-home-template {
   background: #394242;
   height: 240px;

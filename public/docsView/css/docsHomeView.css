@@ -15,6 +15,10 @@ body{
 
 }
 
+.docs-search input[type=search]{
+  background-color: #6099f6;
+}
+
 .home-docs-slider-nav {
 	/*border: 2px solid green*/
 }
