@@ -1,22 +1,5 @@
-<!-- <h1>{{broken}}</h1>
-
-<a ui-sref="docs">HOME</a>
-<a ui-sref='docsHome'>DOCS</a>
-<a ui-sref='sheetsHome'>SHEETS</a>
-<a ui-sref='slidesHome'>SLIDES</a>
-<a ui-sref='docsWork'>Create a new DOC</a> -->
-
-<script>
-// Initialize collapse button
-$(document).ready(function(){
- $(".button-collapse").sideNav();
-})
-// Initialize collapsible (uncomment the line below if you use the dropdown variation)
-//$('.collapsible').collapsible();
-
-</script>
-
-			<div class="home-docs-nav">
+<div class="home-docs-all">
+			<div class="home-slider-nav">
 				<!-- Slide OUT NAV -->
 				<div class="home-icon-title">
 				<div class="">
@@ -82,26 +65,54 @@ $(document).ready(function(){
 				<div class="template-views-text">
 					<div ng-repeat = "docs in docsStuff">
 						<img width="146px" height:"185px" src="{{docs.img}}" alt="">
-						<p style="color:white; padding:0; margin:0; font-weight:800">{{docs.name}}</p>
+						<p>{{docs.name}}</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
 
-	<div class="container">
 
-		<ul class="collection">
-			 <li class="collection-item">
-				 <div class='row'>
-				 	<div class='col s6'>TITLE OF DOC</div>
-					<div class="col s2">ME</div>
-					<div class="col s2">DATE CREATED</div>
-					<div class="col s2"><i class="material-icons right">more</i></div>
+	<div class="container">
+		<div class="docs-list-view">
+			<div class='row'>
+			 <div class='col s6'>Documents By title</div>
+
+
+
+			 <div class="col s2">
+				 <div class="dropdown">
+					 <a class="button" style="cursor:pointer; color: black; padding-right:6px"> {{owned}}</a> <span class="icon ion-chevron-down"></span>
+					 <ul>
+						 <li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
+						 <li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
+						 <li><a ng-model="notMe" ng-click="dropDownMessage3()">Not owned by me</a></li>
+					 </ul>
 				 </div>
-			 </li>
-			 <li class="collection-item">Alvin</li>
-			 <li class="collection-item">Alvin</li>
-			 <li class="collection-item">Alvin</li>
-		 </ul>
+
+			 </div>
+			 <div class="col s2">Last modified</div>
+			 <div class="col s2">
+				 <i class="material-icons right">perm_media</i>
+				 <i class="material-icons right">sort_by_alpha</i>
+				 <i class="material-icons right">view_module</i>
+			 </div>
+			</div>
+			<ul class="collection">
+				 <li class="collection-item home-view-table">
+					 <div class="title-docs-icons">
+						 <i style="color:white; background:#4285f4" class="material-icons left">subject</i>
+  					 <h6 style="font-weight:600">Hemoemises</h6>
+					 </div>
+					 <div class="home-owned-date">
+						 <h6 class="home-name-list">Alvin</h6>
+  					 <h6>3/12/02</h6>
+					 </div>
+
+				 </li>
+				 <li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
+				 <li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
+			 </ul>
+		 </div>
 	</div>
+</div>
