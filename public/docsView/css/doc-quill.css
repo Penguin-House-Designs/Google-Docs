@@ -37,6 +37,7 @@
   outline: none;
   overflow-y: auto;
   padding: 12px 15px;
+	padding-top: 75px;
   tab-size: 4;
   -moz-tab-size: 4;
   text-align: left;
@@ -56,6 +57,7 @@
 .ql-editor h6 {
   margin: 0;
   padding: 0;
+	margin-left: 98px;
   counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
 }
 .ql-editor ol,
@@ -837,9 +839,21 @@
 .ql-toolbar.ql-snow .ql-color-picker .ql-picker-item:hover {
   border-color: #000;
 }
+
+
+/* THIS WAS CHANGE TO SET THE STYLE OF THE SHEET*/
 .ql-toolbar.ql-snow + .ql-container.ql-snow {
-  border-top: 0px;
+	width: 55%;
+	margin-left: 250px;
+	box-shadow: grey;
+	-moz-box-shadow: 3px 3px 5px 6px #ccc;
+	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	box-shadow: 1px 1px 5px 2px #d1d1d1;
 }
+/* THIS WAS CHANGE TO SET THE STYLE OF THE SHEET*/
+
+
+
 .ql-snow .ql-tooltip {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -907,5 +921,6 @@
   color: #06c;
 }
 .ql-container.ql-snow {
-  border: 1px solid #ccc;
+	margin-top: 61px;
+	padding-bottom: 800px;
 }
