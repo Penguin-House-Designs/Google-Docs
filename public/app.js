@@ -1,9 +1,7 @@
 
-=======
 var GoogleApps = angular.module('GoogleApp', ['ui.router','ui.materialize']);
 
 GoogleApps.config(function($stateProvider, $urlRouterProvider) {
->>>>>>> master
 
   $stateProvider
   //LANDING VIEWS//
