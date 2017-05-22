@@ -1,4 +1,4 @@
-app.directive('sheetsNav',function(){
+GoogleApps.directive('sheetsNav',function(){
   return{
     restrict: 'E',
     templateUrl: './sheetsView/sheetsNav.html',
