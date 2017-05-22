@@ -1,0 +1,101 @@
+.landing-logo {
+  vertical-align: middle;
+  height: 55%;
+  width: auto;
+  margin-left: 2%;
+}
+
+.nav-font-fix li a {
+  font-size: 16pt;
+  font-weight: 300;
+  color: #969696;
+  text-align: center;
+  opacity: .8;
+}
+
+.nav-icons {
+  vertical-align: middle;
+  height: 40px;
+  width: auto;
+}
+
+.nav-borders li {
+  border-left: 1px solid #F5F5F5;
+}
+
+.main-background img {
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.button-inside {
+  height: 60px;
+  width: 300px;
+  position: absolute;
+  top: 61%;
+  left: 50%;
+  margin-left: -150px;
+  display: flex;
+  justify-content: center;
+  background-color: #518FF5;
+  color: white;
+  font-weight: 300;
+  font-size: 14pt;
+  border-style: none;
+}
+
+.button-inside-slides {
+  height: 60px;
+  width: 300px;
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  margin-left: -150px;
+  display: flex;
+  justify-content: center;
+  background-color: #518FF5;
+  color: white;
+  font-weight: 300;
+  font-size: 14pt;
+  border-style: none;
+}
+
+.typing-class {
+  font-size: 35pt;
+  font-weight: 400;
+  width: 100%;
+  color: white;
+  position: absolute;
+  bottom: 48%;
+  text-align: center;
+}
+
+.typing-class-slides {
+  font-size: 35pt;
+  font-weight: 400;
+  width: 100%;
+  color: #555555;
+  position: absolute;
+  bottom: 56%;
+  text-align: center;
+}
+
+.subheading {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 16pt;
+  position: absolute;
+  bottom: 44%;
+}
+
+.subheading-slides {
+  width: 100%;
+  text-align: center;
+  color: #555555;
+  font-size: 16pt;
+  position: absolute;
+  bottom: 52%;
+}

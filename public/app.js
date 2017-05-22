@@ -1,8 +1,8 @@
-var app = angular.module('googleDocs', ['ui.router','ui.materialize'])
+var GoogleApps = angular.module('googleDocs', ['ui.router','ui.materialize'])
 
   .config(function($stateProvider, $urlRouterProvider) {
 
-  // $urlRouterProvider.when('', '/docslanding')
+  $urlRouterProvider.when('', '/docslanding')
 
   $stateProvider
 
