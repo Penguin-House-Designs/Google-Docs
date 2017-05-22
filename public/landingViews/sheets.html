@@ -1,9 +1,35 @@
-<h1>sheets landing view {{broken}}</h1>
+<div class="navbar-fixed">
+  <nav style="background-color: white">
+    <div class="nav-wrapper">
+      <a href="#"><img src="landingViews/landingPics/logo.png" class="landing-logo" alt=""></a>
+      <ul id="nav-mobile" class="brand-logo left hide-on-med-and-down nav-borders" style="margin-left: 2%;">
+        <div class="nav-font-fix">
+          <li>
+            <a ui-sref="docs"><img src="landingViews/landingPics/Docs-icon.png" class="nav-icons" alt="">Docs</a>
+          </li>
+          <li>
+            <a ui-sref="sheets"><img src="landingViews/landingPics/Sheets-icon.png" class="nav-icons" alt="">Sheets</a>
+          </li>
+          <li style="border-right: 1px solid #F5F5F5;">
+            <a ui-sref="slides"><img src="landingViews/landingPics/Slides-icon.png" class="nav-icons" alt="">Slides</a>
+          </li>
+        </div>
+      </ul>
+      <ul class="brand-logo right" style="margin-right: 1%;">
+        <div class="nav-font-fix">
+          <li><a href="#" style="font-size: 12pt;">For Work</a></li>
+          <li><a href="#" style="font-size: 12pt;">Help</a></li>
+        </div>
+      </ul>
+    </div>
+  </nav>
+</div>
 
-
-<a ui-sref="docs">DOCS</a>
-<a ui-sref="sheets">SHEETS</a>
-<a ui-sref="slides">SLIDES</a>
-
-
-<a ui-sref="sheetsHome">Go to Sheets</a>
+<div class="main-background">
+  <img src="/landingViews/landingPics/sheetsMain.jpg" alt="">
+  <button class="button-inside" type="button" name="button" ui-sref="sheetsHome">Go to Google Sheets</button>
+  <div class="subheading">
+    With Google Sheets, you can create, edit, and collaborate wherever you are. For free.
+  </div>
+  <div class="type-it-sheets typing-class"></div>
+</div>
