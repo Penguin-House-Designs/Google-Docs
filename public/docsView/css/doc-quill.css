@@ -923,6 +923,7 @@
   color: #06c;
 }
 .ql-container.ql-snow {
-	margin-top: 61px;
-	padding-bottom: 800px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	height: 800px
 }
