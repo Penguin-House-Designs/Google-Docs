@@ -1,0 +1,64 @@
+.home-slides-nav {
+
+  width: 100%;
+	height: 64px;
+	display:flex;
+	align-items: center;
+	background: #f4b400;
+}
+
+.slides-home-template {
+  background: #474240;
+  height: 200px;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  align-items: center;
+}
+
+.slide-icons {
+	color:white;
+	background:#f4b400;
+}
+
+
+/*Search Field */
+.slides-wrapper .input-field input[type=search] {
+	background-color: #f6c029;
+  display: block;
+  line-height: inherit;
+  padding-left: 4rem;
+  width: calc(100% - 4rem);
+}
+
+
+.slides-wrapper .input-field input[type=search]:focus {
+  background-color: #fff;
+  border: 0;
+  box-shadow: none;
+  color: #444;
+}
+
+.slides-wrapper .input-field input[type=search]:focus + label i,
+.slides-wrapper .input-field input[type=search]:focus ~ .mdi-navigation-close,
+.slides-wrapper .input-field input[type=search]:focus ~ .material-icons {
+  color: #444;
+}
+
+.slides-wrapper .input-field input[type=search] + label {
+  left: 1rem;
+}
+
+.slides-wrapper .input-field input[type=search] ~ .mdi-navigation-close,
+.slides-wrapper .input-field input[type=search] ~ .material-icons {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  color: transparent;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: .3s color;
+}

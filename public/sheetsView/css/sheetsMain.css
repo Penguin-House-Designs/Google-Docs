@@ -1,0 +1,71 @@
+.toolbar{
+  background: #e6e6e6;
+  display: inline-flex;
+  align-items: center;
+  width: 100vw;
+  height: 38px;
+  border-top: 1px solid #bfbfbf;
+  padding-left: 80px;
+  justify-content: space-between;
+}
+.toolbar a{
+  color: black;
+  font-size: 14px;
+  margin: 7px;
+}
+.toolbar span{
+  color: black;
+  font-size: 10px;
+}
+.right-border{
+  border-right: 1px solid #bfbfbf;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+}
+.textColor{
+  height: 3px;
+  width: 20px;
+  background: green;
+}
+.start{
+  display: inline-flex;
+}
+.endArrow{
+  display: inline-flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.formula-bar{
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  width: 100vw;
+  background: white;
+}
+.formula-bar-head{
+  padding: 0 15px 0 15px;
+  font-style: italic;
+  color: #bfbfbf;
+  font-size: 16px;
+}
+.right-border2{
+  padding-top: 10px;
+  width: 1px;
+  height: 20px;
+  background: grey;
+  margin-right: 10px;
+}
+input[type=text]{
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-bottom: none;
+  height: 20px;
+  width: 100%;
+  font-size: 12px;
+} input[type=text]:focus:not([readonly]){
+  border-bottom: none;
+  box-shadow: none;
+}
