@@ -818,6 +818,7 @@
   box-sizing: border-box;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   padding: 8px;
+	padding-left: 47px
 }
 .ql-toolbar.ql-snow .ql-formats {
   margin-right: 15px;
@@ -849,6 +850,7 @@
 	-moz-box-shadow: 3px 3px 5px 6px #ccc;
 	-webkit-box-shadow: 3px 3px 5px 6px #ccc;
 	box-shadow: 1px 1px 5px 2px #d1d1d1;
+	background: white;
 }
 /* THIS WAS CHANGE TO SET THE STYLE OF THE SHEET*/
 
