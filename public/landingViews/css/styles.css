@@ -28,10 +28,11 @@
   border-left: 1px solid #F5F5F5;
 }
 
-.main-background img {
+.main-background {
   background-size: cover;
+  background-attachment: fixed;
   width: 100%;
-  height: auto;
+  height: 92vh;
   position: relative;
 }
 
@@ -188,6 +189,7 @@
   background: white;
   position: relative;
   padding-top: 7%;
+  overflow: hidden;
 }
 
 .ipad-text {
@@ -229,6 +231,14 @@
   position: absolute;
   left: 53%;
   bottom: 0;
+}
+
+.ipad-slides-fix {
+  position: absolute;
+  left: 53%;
+  bottom: -40%;
+  width: 45%;
+  height: auto;
 }
 
 .do-together {
@@ -307,4 +317,26 @@
 
 .devices-img {
   margin-left: -15%;
+}
+
+.devices-img-fix {
+  width: 65%;
+  height: auto;
+  margin-left: -15%;
+}
+
+.app-button:hover {
+  background-color: #2263D6;
+}
+
+.get-button:hover {
+  background-color: #2263D6;
+}
+
+.button-inside:hover {
+  background-color: #2263D6;
+}
+
+.button-inside-slides:hover {
+  background-color: #2263D6;
 }
