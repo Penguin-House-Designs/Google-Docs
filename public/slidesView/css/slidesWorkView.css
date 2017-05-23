@@ -1,0 +1,158 @@
+
+.slides-icon {
+  width: 40px;
+  height: 100%;
+  background: #f4b400;
+  text-align: center;
+}
+
+.slides-title {
+  width: 93vw;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.slides-title-input {
+  display: flex;
+  width:
+}
+
+.slides-title input {
+  border: none;
+  font-size: 18px;
+  font-style: italic;
+  color:gray;
+}
+
+.slides-title input:not([type]):focus:not([readonly]) {
+  border: none;
+  box-shadow: none;
+  font-style: normal;
+  color: black;
+}
+.slides-user {
+  font-size: 10px;
+  margin-top: -15px;
+}
+
+.slides-menu-bar {
+  width: 93vw;
+  font-size: 13px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.slides-menu-bar a{
+  color: black;
+  margin-right: 10px;
+  background: white;
+}
+
+.slides-toolbar {
+  background: rgb(238, 238, 238);
+  display: inline-flex;
+  align-items: center;
+  width: 100vw;
+  height: 35px;
+  border: 1px solid #bfbfbf;
+  padding-left: 55px;
+}
+
+.slides-toolbar a {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  color: black;
+  font-size: 11px;
+}
+
+.slides-toolbar i {
+  font-size: 18px;
+}
+
+.slides-toolbar-section {
+  border-right: 1px;
+  border-left: 1px;
+  border: solid #bfbfbf;
+}
+
+.slides-dropdown {
+  border-left: 1px solid #bfbfbf;
+  width:15px;
+  height: 100%;
+  font-size: 15px;
+}
+
+.new-slide {
+  display: flex;
+  align-items: center;
+  border: 1px solid #bfbfbf;
+  border-radius: 2px;
+  margin: none;
+}
+
+.add-slide {
+  width: 30px;
+}
+
+.slides-right-border {
+  border-right: 1px solid #bfbfbf;
+  height: 100%;
+}
+
+.slides-hide-menu {
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+}
+
+.slides-workspace {
+  display: flex;
+}
+
+.slide-nav {
+  padding: 5px 0 0 50px;
+  display: flex;
+  height:82vh;
+  width: 226px;
+  border-right: #bfbfbf 1px solid;
+}
+
+.slide-nav-slides {
+  width: 130px;
+  height: 75px;
+  background-color: white;
+  border: 2px solid darkgray;
+}
+
+.slide-positioning {
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-slide {
+  height: 25vw;
+  width: 45vw;
+  min-width: 520px;
+  min-height: 300px;
+  background-color: white;
+  box-shadow: 0px 2px 2px 2px darkgray;
+}
+
+.comments {
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  border: 1px #bfbfbf solid;
+}
