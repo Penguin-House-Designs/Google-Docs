@@ -16,5 +16,9 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
 			$scope.owned = "Not owned by me"
 		};
 
-		
+    function htmlString (x){
+      return "<h1>" + x + "<h1/>"
+    }
+
+    $scope.test = "<h1>" + "hello" + "<h1/>"
 })

@@ -11,9 +11,12 @@
 	<link rel="stylesheet" href="./docsView/css/docsHomeView.css">
 	<link rel="stylesheet" href="./landingViews/css/styles.css">
 	<link rel="stylesheet" href="./slidesView/css/slidesHomeView.css">
+	<link rel="stylesheet" href="./slidesView/css/slidesWorkView.css">
 	<link rel="stylesheet" href="./sheetsView/css/sheetsHomeView.css">
 	<link rel="stylesheet" href="./sheetsView/css/sheetsMain.css">
 	<link rel="stylesheet" href="./sheetsView/css/sheetsNav.css">
+	<link rel="stylesheet" href="./docsView/css/doc-quill.css">
+	<link rel="stylesheet" href="./docsView/css/navdocs.css">
 
 
 	<title>Google Docs</title>
@@ -22,25 +25,29 @@
 
 <!-- NOTES -->
 <!-- Remember to delete Ionic LIB Duplicate -->
+<!-- Remove DocsWOrk View -->
 
 <body>
 
 	<ui-view><ui-view>
 
-</body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/4.4.0/typeit.min.js"></script>
 <script src="typeit.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
+<script src="https://cdn.quilljs.com/1.2.4/quill.js"></script>
 <script src="./docsView/js/jq.js" charset="utf-8"></script>
 <script src="./landingViews/js/jQuery.js"></script>
 <script src="./app.js" charset="utf-8"></script>
 <script src="./landingViews/js/landingCtrl.js" charset="utf-8"></script>
 <script src="./docsView/js/docsCtrl.js" charset="utf-8"></script>
 <script src="./docsView/js/docsSrvc.js" charset="utf-8"></script>
+<script src="./docsView/js/docsnav.js" charset="utf-8"></script>
 <script src="./sheetsView/js/jQuerySheets.js" charset="utf-8"></script>
 <script src="./sheetsView/js/sheetsCtrl.js" charset="utf-8"></script>
 <script src="./sheetsView/js/sheetsCtrlWork.js" charset="utf-8"></script>
@@ -49,6 +56,10 @@
 <script src="./sheetsView/js/toolbarDir.js" charset="utf-8"></script>
 <script src="./slidesView/js/slidesCtrl.js" charset="utf-8"></script>
 <script src="./slidesView/js/slidesSrvc.js" charset="utf-8"></script>
+<script src="./slidesView/js/slidesMenu.js" charset="utf-8"></script>
+<script src="./slidesView/js/slidesTools.js" charset="utf-8"></script>
 <script src="./materialize/js/materialize.js"></script>
+
+</body>
 
 </html>
