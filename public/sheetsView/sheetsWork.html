@@ -2,16 +2,44 @@
 <toolbar-dir></toolbar-dir>
 
 <section class='formula-bar'>
+  <span class='formula-bar-head'>&fnof;<sub>x</sub></span>
+  <div class='right-border2'></div>
+  <input type="text">
+</section>
+<section class='abc-bar'>
+  <div class='one-box'></div>
+  <div class='abc-box'>A</div>
+  <div class='abc-box'>B</div>
+  <div class='abc-box'>C</div>
+  <div class='abc-box'>D</div>
+  <div class='abc-box'>E</div>
+  <div class='abc-box'>F</div>
+  <div class='abc-box'>G</div>
+  <div class='abc-box'>H</div>
+  <div class='abc-box'>I</div>
+  <div class='abc-box'>J</div>
+  <div class='abc-box'>K</div>
+  <div class='abc-box'>L</div>
+  <div class='abc-box'>M</div>
+  <div class='abc-box'>N</div>
+  <div class='abc-box'>O</div>
+  <div class='abc-box'>P</div>
+</section>
+<section class='big-box'>
+  <!-- Populate NUM bar -->
+  <div class='num-bar'>
+      <div ng-repeat='x in cells' class='num-box'>
+        {{x}}
+      </div>
+  </div>
 
-<span class='formula-bar-head'>&fnof;<sub>x</sub></span>
-<div class='right-border2'></div>
-<input type="text">
-
+  <!-- Populate Cells bar -->
+  <div ng-repeat='x in cellsABC' >
+    <section class='input-boxs'>
+        <div ng-repeat='x in cells' class='sheets-inputs'>
+          <input type="text" >
+        </div>
+    </section>
+  </div>
 
 </section>
-
-
-
-
-
-<h1>{{test}}</h1>
