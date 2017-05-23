@@ -1,3 +1,7 @@
+.stop{
+  position: fixed;
+  z-index: 1;
+}
 .nav-wrapper-work{
   background: white;
   display: flex;
@@ -9,6 +13,11 @@
   height: 100%;
   background: #0f9d58;
   text-align: center;
+}
+
+.icon-work a{
+  font-size:30px;
+  padding-top:15px;
 }
 .nav-row-work {
   height: 100%;
