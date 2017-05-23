@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+  font-family: "Roboto";
+}
+
 .landing-logo {
   vertical-align: middle;
   height: 55%;
@@ -42,7 +47,7 @@
   background-color: #518FF5;
   color: white;
   font-weight: 300;
-  font-size: 14pt;
+  font-size: 13pt;
   border-style: none;
 }
 
@@ -58,13 +63,13 @@
   background-color: #518FF5;
   color: white;
   font-weight: 300;
-  font-size: 14pt;
+  font-size: 13pt;
   border-style: none;
 }
 
 .typing-class {
-  font-size: 35pt;
-  font-weight: 400;
+  font-size: 45pt;
+  font-weight: 200;
   width: 100%;
   color: white;
   position: absolute;
@@ -73,8 +78,8 @@
 }
 
 .typing-class-slides {
-  font-size: 35pt;
-  font-weight: 400;
+  font-size: 45pt;
+  font-weight: 300;
   width: 100%;
   color: #555555;
   position: absolute;
@@ -86,7 +91,8 @@
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 16pt;
+  font-size: 17pt;
+  font-weight: 200;
   position: absolute;
   bottom: 44%;
 }
@@ -95,7 +101,210 @@
   width: 100%;
   text-align: center;
   color: #555555;
-  font-size: 16pt;
+  font-size: 17pt;
+  font-weight: 200;
   position: absolute;
   bottom: 52%;
+}
+
+.info-box {
+  width: 100%;
+  height: 675px;
+  background-color: white;
+  position: relative;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  display: flex;
+}
+
+.laptop-fix {
+  position: absolute;
+  left: -10%;
+}
+
+.video-position {
+  width: 560px;
+  height: auto;
+  position: absolute;
+  bottom: 23%;
+  left: 5px;
+}
+
+.info-text {
+  position: absolute;
+  left: 53%;
+  font-size: 17pt;
+  font-weight: 200;
+  color: #6A6A6A;
+  width: 500px;
+  height: 220px;
+  margin-top: 5%;
+}
+
+.info-title {
+  font-size: 36pt;
+  font-weight: 200;
+  color: #4C4C4C;
+  padding-bottom: 4%;
+}
+
+.docs-temp {
+  width: 100%;
+  height: 850px;
+  background-color: #F6F6F6;
+  position: relative;
+}
+
+.temp-text {
+  margin-top: 6%;
+  position: absolute;
+  left: 50%;
+  width: 700px;
+  height: 400px;
+  margin-left: -350px;
+  font-size: 14pt;
+  font-weight: 200;
+  text-align: center;
+  color: #999999;
+}
+
+.temp-title {
+  font-size: 36pt;
+  font-weight: 200;
+  color: #4C4C4C;
+  margin-bottom: 3%;
+}
+
+.temp-img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin-top: 20%;
+}
+
+.docs-ipad {
+  width: 100%;
+  height: 475px;
+  background: white;
+  position: relative;
+  padding-top: 7%;
+}
+
+.ipad-text {
+  position: absolute;
+  left: 14%;
+  font-size: 17pt;
+  font-weight: 200;
+  color: #6A6A6A;
+  width: 500px;
+  height: 300px;
+}
+
+.ipad-title {
+  font-size: 36pt;
+  font-weight: 200;
+  color: #4C4C4C;
+  padding-bottom: 4%;
+}
+
+.app-button {
+  height: 60px;
+  width: 300px;
+  position: absolute;
+  top: 70%;
+  left: 30%;
+  margin-left: -150px;
+  display: flex;
+  justify-content: center;
+  background-color: #518FF5;
+  color: white;
+  font-weight: 300;
+  font-size: 13pt;
+  border-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.ipad-fix {
+  position: absolute;
+  left: 53%;
+  bottom: 0;
+}
+
+.do-together {
+  width: 100%;
+  height: 600px;
+  background-color: #F6F5F7;
+  position: relative;
+}
+
+.do-together-vid {
+  width: 300;
+  height: auto;
+  position: absolute;
+  left: 5%;
+  margin-top: 15%;
+}
+
+.never-again {
+  width: 100%;
+  height: 400px;
+  background-color: white;
+}
+
+.save-vid {
+  width: 300px;
+  height: auto;
+  position: absolute;
+  left: 57%;
+  margin-top: 4%;
+}
+
+.works-word {
+  width: 100%;
+  height: 400px;
+  background-color: #F6F6F6;
+}
+
+.word-title {
+  font-size: 36pt;
+  font-weight: 200;
+  color: #4C4C4C;
+  padding-top: 5%;
+}
+
+.word-logos {
+  width: 100%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.get-started {
+  width: 100%;
+  height: 700px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.get-button {
+  height: 60px;
+  width: 300px;
+  position: absolute;
+  top: 70%;
+  left: 30%;
+  margin-left: -150px;
+  display: flex;
+  justify-content: center;
+  background-color: #518FF5;
+  color: white;
+  font-weight: 300;
+  font-size: 13pt;
+  border-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.devices-img {
+  margin-left: -15%;
 }
