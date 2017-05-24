@@ -20,7 +20,6 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
 	}
 	$scope.inputcells();
 
-
-
+console.log($scope.mainInput);
 
 })

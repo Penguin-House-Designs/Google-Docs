@@ -107,6 +107,10 @@
   border-radius: 3px;
   border: 1px solid #e6e6e6;
 }
+
+.dropdown-button:hover{
+  background-color: #EEEEEE;
+}
 /*.dropdown-content{
   margin-top: 20px;
 }*/
