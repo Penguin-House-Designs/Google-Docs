@@ -28,11 +28,12 @@
       </div>
   </div>
 
+<!-- ng-mouseup='fun("off")' -->
   <!-- Populate Cells bar -->
   <div ng-repeat='x in cellsHOR'>
     <section class='input-boxs'>
-      <form ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs' action="">
-          <input ng-model='cellvalue' type="text">
+      <form onmousedown='fun("on")'  ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs' action="">
+          <input id='cell' ng-model='cellvalue' type="text" >
           <div ng-show='cellvalue=="="' class='cell-methods'>
               <a ng-click='cellvalue="Average()"' class='select-method'>Average ( )</a>
               <a ng-click='cellvalue="Median()"' class='select-method'>Median ( )</a>
@@ -46,3 +47,19 @@
 
 
 </section>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+  var fun = function(para){
+    if(para==='on'){
+        this.select();
+      }
+    else{
+       this.unselect();
+    }
+  }
+
+})
+
+</script>

@@ -32,6 +32,16 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
   }
 
 
+  $scope.fun = function(para){
+    if(para==='on'){
+        this.select();
+      }
+    else{
+       this.unselect();
+    }
+  }
+
+
 
 
 
