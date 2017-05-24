@@ -2763,8 +2763,8 @@ video.responsive-video {
   position: absolute;
   left: 50%;
   bottom: 0;
-  width: 100%;
-  height: auto;
+  min-width: 100%;
+  min-height: 100%;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-transform: translateX(-50%);
