@@ -5942,7 +5942,7 @@ label {
   color: #d1d1d1;
 }
 
-/* Text inputs */
+ /*Text inputs */
 input:not([type]),
 input[type=text],
 input[type=password],
@@ -5958,13 +5958,13 @@ input[type=search],
 textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  /*border-bottom: 1px solid #9e9e9e;*/
   border-radius: 0;
   outline: none;
   height: 3rem;
   width: 100%;
-  font-size: 1rem;
-  margin: 0 0 20px 0;
+  /*font-size: 1rem;*/
+  /*margin: 0 0 20px 0;*/
   padding: 0;
   box-shadow: none;
   box-sizing: content-box;
@@ -6042,8 +6042,8 @@ input[type=tel]:focus:not([readonly]),
 input[type=number]:focus:not([readonly]),
 input[type=search]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #26a69a;
-  box-shadow: 0 1px 0 0 #26a69a;
+  /*border-bottom: 1px solid #26a69a;*/
+  /*box-shadow: 0 1px 0 0 #26a69a;*/
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -6059,7 +6059,7 @@ input[type=tel]:focus:not([readonly]) + label,
 input[type=number]:focus:not([readonly]) + label,
 input[type=search]:focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #26a69a;
+  /*color: #26a69a;*/
 }
 
 input:not([type]).valid, input:not([type]):focus.valid,
@@ -6087,8 +6087,8 @@ input[type=search].valid,
 input[type=search]:focus.valid,
 textarea.materialize-textarea.valid,
 textarea.materialize-textarea:focus.valid {
-  border-bottom: 1px solid #4CAF50;
-  box-shadow: 0 1px 0 0 #4CAF50;
+  /*border-bottom: 1px solid #4CAF50;
+  box-shadow: 0 1px 0 0 #4CAF50;*/
 }
 
 input:not([type]).valid + label:after,
@@ -6118,7 +6118,7 @@ input[type=search]:focus.valid + label:after,
 textarea.materialize-textarea.valid + label:after,
 textarea.materialize-textarea:focus.valid + label:after {
   content: attr(data-success);
-  color: #4CAF50;
+  /*color: #4CAF50;*/
   opacity: 1;
 }
 
@@ -6147,8 +6147,8 @@ input[type=search].invalid,
 input[type=search]:focus.invalid,
 textarea.materialize-textarea.invalid,
 textarea.materialize-textarea:focus.invalid {
-  border-bottom: 1px solid #F44336;
-  box-shadow: 0 1px 0 0 #F44336;
+  /*border-bottom: 1px solid #F44336;
+  box-shadow: 0 1px 0 0 #F44336;*/
 }
 
 input:not([type]).invalid + label:after,
@@ -6178,7 +6178,7 @@ input[type=search]:focus.invalid + label:after,
 textarea.materialize-textarea.invalid + label:after,
 textarea.materialize-textarea:focus.invalid + label:after {
   content: attr(data-error);
-  color: #F44336;
+  /*color: #F44336;*/
   opacity: 1;
 }
 
