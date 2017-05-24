@@ -63,7 +63,7 @@
   background: grey;
   margin-right: 10px;
 }
-input[type=text]{
+/*input[type=text]{
   margin: 0;
   padding: 0;
   border: none;
@@ -75,7 +75,8 @@ input[type=text]{
 input[type=text]:focus:not([readonly]){
   border-bottom: none;
   box-shadow: none;
-}
+}*/
+
 .abc-bar{
   position: fixed;
   z-index: 1;
