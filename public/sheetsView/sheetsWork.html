@@ -2,44 +2,64 @@
 <toolbar-dir></toolbar-dir>
 
 <section class='formula-bar'>
-  <span class='formula-bar-head'>&fnof;<sub>x</sub></span>
+  <span class='formula-bar-head'>
+    &fnof;<sub>x</sub>
+  </span>
   <div class='right-border2'></div>
-  <input type="text">
+  <div class='formula-input'>
+  <input >
+  </div>
 </section>
-<section class='abc-bar'>
-  <div class='one-box'></div>
-  <div class='abc-box'>A</div>
-  <div class='abc-box'>B</div>
-  <div class='abc-box'>C</div>
-  <div class='abc-box'>D</div>
-  <div class='abc-box'>E</div>
-  <div class='abc-box'>F</div>
-  <div class='abc-box'>G</div>
-  <div class='abc-box'>H</div>
-  <div class='abc-box'>I</div>
-  <div class='abc-box'>J</div>
-  <div class='abc-box'>K</div>
-  <div class='abc-box'>L</div>
-  <div class='abc-box'>M</div>
-  <div class='abc-box'>N</div>
-  <div class='abc-box'>O</div>
-  <div class='abc-box'>P</div>
-</section>
+
+
 <section class='big-box'>
+
+  <!-- Populate ABC bar -->
+  <section class='abc-bar'>
+    <div class='one-box'></div>
+      <div ng-repeat='x in abc' class='abc-box'>
+        {{x}}
+      </div>
+  </section>
   <!-- Populate NUM bar -->
   <div class='num-bar'>
-      <div ng-repeat='x in cells' class='num-box'>
+    <div ng-repeat='x in cells' class='num-box'>
         {{x}}
       </div>
   </div>
 
+<!-- ng-mouseup='fun("off")' -->
   <!-- Populate Cells bar -->
-  <div ng-repeat='x in cellsABC' >
+  <div ng-repeat='x in cellsHOR'>
     <section class='input-boxs'>
-        <div ng-repeat='x in cells' class='sheets-inputs'>
-          <input type="text">
-        </div>
+      <form onmousedown='fun("on")'  ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs' action="">
+          <input id='cell' ng-model='cellvalue' type="text" >
+          <div ng-show='cellvalue=="="' class='cell-methods'>
+              <a ng-click='cellvalue="Average()"' class='select-method'>Average ( )</a>
+              <a ng-click='cellvalue="Median()"' class='select-method'>Median ( )</a>
+              <a ng-click='cellvalue=3.14159265358979323846' class='select-method'>&pi; </a>
+              <a ng-click='cellvalue="Sum()"' class='select-method'>Sum ( )</a>
+              <a ng-click='cellvalue="Product()"' class='select-method'>Product ( )</a>
+          </div>
+      </form>
     </section>
   </div>
 
+
 </section>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+  var fun = function(para){
+    if(para==='on'){
+        this.select();
+      }
+    else{
+       this.unselect();
+    }
+  }
+
+})
+
+</script>
