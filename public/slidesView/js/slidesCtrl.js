@@ -22,28 +22,20 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
 // SLIDES WORK STUFF//////
 
     $scope.textBoxes= [];
-
+// console.log($scope.test);;
     $scope.createTextBox = function() {
       console.log("clicked");
-      $scope.textBoxes.push(`<div id="drags${String($scope.textBoxes.length + 1)}" class="ui-widget-content new-text-box"><input type="text" class="new-input" placeholder="Click to type"><div/>`)
+      $scope.textBoxes
+        .push(`<div id="drags${String($scope.textBoxes.length + 1)}"
+        class="ui-widget-content new-text-box">
+        <input type="text" class="new-input" placeholder="Click to type" ng-model="test"><div/>`)
       console.log($scope.textBoxes);
     }
 
-    $( function() {
-      $( "#drags" ).draggable().resizable();
-      $( "#drags0" ).draggable().resizable();
-      // $( "#drags1" ).draggable().resizable();
-      // $('#drags2').draggable().resizable();
-      // $('#drags3').draggable().resizable();
-      // $('#drags4').draggable().resizable();
-      // $('#drags5').draggable().resizable();
-      // $('#drags6').draggable().resizable();
-      // $('#drags7').draggable().resizable();
-      // $('#drags8').draggable().resizable();
-      // $('#drags9').draggable().resizable();
-      // $('#drags10').draggable().resizable();
-      // $('#drags11').draggable().resizable();
-    } );
+    $("#drags").draggable().resizable();
+    $("#drags0").draggable().resizable();
+    $scope.log = ()=> console.log($scope.styles);
+
 
 }).directive('makeTextBox', function() {
   return {
@@ -51,12 +43,23 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
     link: function(scope, element, attr){
       element.on('click', function() {
         console.log("directive clicked");
-        for (var i=0; i<scope.textBoxes.length; i++) {
-          console.log(i+1);
-          $("#div" + String(i)).html(scope.textBoxes[i])
-          $("#drags" + String(i+1) ).draggable().resizable();
-          }
+          $("#div" + String(scope.textBoxes.length)).html(scope.textBoxes[scope.textBoxes.length -1])
+          $("#drags" + String(scope.textBoxes.length)).draggable().resizable();
         })
       }
     }
-  });
+  })
+.directive('grabCss', function() {
+    return {
+      controller: 'slidesCtrl',
+      link: function (s,e,a){
+        e.on('mouseup', function() {
+            s.styles = $(this).css(["height", 'width', 'top', "left"])
+
+          console.log('css clicked');
+        })
+        // console.log($('div').click(function() {;
+        // }));
+      }
+    }
+  })

@@ -88,7 +88,7 @@
   <div class='slides-right-border'></div>
 
 
-  <a href="" class='material-icons slide-hide-menu'>expand_less</a>
+  <a href="" ng-click="log()" class='material-icons slide-hide-menu'>expand_less</a>
 
 </div>
 <div class="slides-workspace">
@@ -96,8 +96,8 @@
 
   <div class="slide-nav">
     1
-    <div class="slide-nav-slides">
-
+    <div grab-css class="slide-nav-slides" >
+      {{test}}
     </div>
   </div>
   <div style="width: 77%">
@@ -105,7 +105,7 @@
 
 <!-- SLIDE CONTENTS -->
       <div class="current-slide">
-        <div id="drags" class='ui-widget-content slide-title'>
+        <div id="drags" grab-css class='ui-widget-content slide-title'>
           <input type="text" class='slide-title-input' value="Click to add title">
         </div>
         <div id="drags0" class="ui-widget-content slide-author">
