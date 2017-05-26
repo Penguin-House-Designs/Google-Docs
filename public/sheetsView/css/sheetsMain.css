@@ -140,14 +140,15 @@
   position: relative;
   top: 152px;
   display: flex;
+  width: 110vw;
 }
 .input-boxs{
   /*position: absolute;
   left: 40px;*/
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  flex-wrap: wrap;
   height: 100vh;
-  width: 100px;
+  width: inherit;
 }
 .sheets-inputs{
   margin: 0;

@@ -6,20 +6,23 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
   // $scope.cellvalue ='1';
 
   $scope.inputcells = function(){
-		var array = new Array(30);
+		var array = new Array(300);
 		var array2 = new Array(13);
+		var array4 = new Array(51);
 		var array3 = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'];
 		$scope.cells = [];
-		$scope.cellsHOR = [];
 		$scope.abc = [];
+    $scope.numbar = [];
 		for (var i = 1; i < array.length; i++) {
-			$scope.cells.push(i)
+			$scope.cells.push([i,''])
+		}
+		for (var i = 1; i < array4.length; i++) {
+			$scope.numbar.push(i)
 		}
 		for (var i = 0; i < array2.length; i++) {
-			$scope.cellsHOR.push(i)
       $scope.abc.push(array3[i])
 		}
-    return $scope.cells, $scope.cellsHOR, $scope.abc
+    return $scope.cells, $scope.numbar, $scope.abc
 	}
 
 	$scope.inputcells();

@@ -11,19 +11,18 @@
   </div>
 </section>
 
+<!-- Populate ABC bar -->
+<section class='abc-bar'>
+  <div class='one-box'></div>
+    <div ng-repeat='x in abc' class='abc-box'>
+      {{x}}
+    </div>
+</section>
 
-<section class='big-box'>
-
-  <!-- Populate ABC bar -->
-  <section class='abc-bar'>
-    <div class='one-box'></div>
-      <div ng-repeat='x in abc' class='abc-box'>
-        {{x}}
-      </div>
-  </section>
+<section id='big-box' class='big-box'>
   <!-- Populate NUM bar -->
   <div class='num-bar'>
-    <div ng-repeat='x in cells' class='num-box'>
+    <div ng-repeat='x in numbar' class='num-box'>
         {{x}}
       </div>
   </div>
@@ -31,10 +30,9 @@
 <!-- ng-mouseup='fun("off")' -->
   <!-- Populate Cells bar -->
 
-  <div ng-repeat='y in cellsHOR'>
     <section class='input-boxs'>
-      <form celldir ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs' action="">
-          <input id='1' placeholder={{x}} ng-model='cellvalue' type="text" >
+      <form id={{x[0]}} celldir ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs' action="">
+          <input  placeholder={{x[0]}} ng-model='cellvalue' type="text" >
           <div ng-show='cellvalue=="="' class='cell-methods'>
               <a ng-click='cellvalue="Average()"' class='select-method'>Average ( )</a>
               <a ng-click='cellvalue="Median()"' class='select-method'>Median ( )</a>
@@ -44,7 +42,6 @@
           </div>
       </form>
     </section>
-  </div>
 
 
 </section>

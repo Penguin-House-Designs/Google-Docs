@@ -4,38 +4,27 @@ GoogleApps.directive('celldir',function(){
     controller: 'sheetsCtrlWork',
     link: function( scope, e, attribute){
         scope.array = [];
-          // console.log('wokring');
-          var vals = []
+
         e.on('mousedown', function(){
-        vals.push($('input', this).val())
-        console.log(this, $('input', this).val());
-        })
-        e.on('mouseover', function() {
-          vals.push($('input', this).val())
-        })
-        e.on('mouseup', function() {
-          vals.push($('input', this).val())
-          console.log(vals);
-          vals= []
-        })
-            // $(window).mouseover(
-            //   function(){
-            //   console.log('mouseover');
-            //   scope.array.push(document.getElementById(this.id))
-            //   console.log(scope.array);
-            //   return scope.array
-            //       }).mouseup(
-            //   function(){
-            //       scope.array = []
-            //       console.log('mouseup');
-            //       return scope.array
-            //     }
-            //   )
-            //       return;
-            //       console.log('after');
-            // })
+        scope.array.push([$( this ).get(0).id,$('input', this).val()])
+        console.log([$( this ).get(0).id,$('input', this).val()]);
 
+        $('.sheets-inputs').mouseover(function(){
+                console.log('mouseover');
+                scope.array.push([$( this ).get(0).id,$('input', this).val()])
+                console.log(scope.array);
+                return scope.array
+              }).mouseup(
+                function(){
+                    scope.array = []
+                    console.log('mouseup');
+                    return scope.array
+                  }
+                )
+                console.log('killing');
+                    return;
+              })
 
-          }
+      }
   }
 })
