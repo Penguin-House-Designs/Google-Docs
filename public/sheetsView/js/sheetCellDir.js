@@ -4,24 +4,28 @@ GoogleApps.directive('celldir',function(){
     controller: 'sheetsCtrlWork',
     link: function( scope, e, attribute){
         scope.array = [];
+        var isDown
 
         e.on('mousedown', function(){
+          $('.sheets-inputs').css({background:"white"});
         scope.array.push([$( this ).get(0).id,$('input', this).val()])
-        console.log([$( this ).get(0).id,$('input', this).val()]);
-
+        isDown = true;
         $('.sheets-inputs').mouseover(function(){
-                console.log('mouseover');
-                scope.array.push([$( this ).get(0).id,$('input', this).val()])
+                if(isDown===true){
+                  $(this).css({background:"#b3b3ff"});
+                scope.array.push([$(this).get(0).id,$('input', this).val()])
                 console.log(scope.array);
+                
                 return scope.array
+                }
               }).mouseup(
                 function(){
+                    isDown = false;
                     scope.array = []
                     console.log('mouseup');
                     return scope.array
                   }
                 )
-                console.log('killing');
                     return;
               })
 

@@ -6,7 +6,7 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
   // $scope.cellvalue ='1';
 
   $scope.inputcells = function(){
-		var array = new Array(300);
+		var array = new Array(651);
 		var array2 = new Array(13);
 		var array4 = new Array(51);
 		var array3 = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P'];
