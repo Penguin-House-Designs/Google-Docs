@@ -32,7 +32,7 @@
           <a href='#' style='color:grey;' class='edited'>Last Edit Yesterday</a>
         </div>
         <div class='right-share'>
-          <button class='comment-btn ion-social-youtube'>&nbsp; Present</button>
+          <button ng-click="fullView()" class='comment-btn ion-social-youtube'>&nbsp; Present</button>
           <button class='comment-btn'>Comments</button>
           <button class='share-btn'><span class="ion-locked"> Share</span></button>
         </div>
@@ -113,7 +113,7 @@
     <div class="slide-positioning">
 
 <!-- SLIDE CONTENTS -->
-      <div class="current-slide">
+      <div class="current-slide" id="oneSlide">
           <div id="div1" grab-css></div>
           <div id="div2" grab-css></div>
           <div id="div3" grab-css></div>
