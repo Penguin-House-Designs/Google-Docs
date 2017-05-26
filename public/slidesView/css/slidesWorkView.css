@@ -72,9 +72,16 @@
   color: black;
   font-size: 11px;
 }
+.slides-toolbar a:hover {
+  border: 1px solid #bfbfbf;
+  background-color: #f4f4f4;
+  border-radius: 2px;
+  margin: 4px;
+}
 
 .slides-toolbar i {
   font-size: 18px;
+  margin: 0 2px;
 }
 
 .slides-toolbar-section {
@@ -92,11 +99,8 @@
 }
 
 .new-slide {
-  display: flex;
-  align-items: center;
   border: 1px solid #bfbfbf;
   border-radius: 2px;
-  margin: none;
 }
 
 .add-slide {
@@ -189,7 +193,7 @@
   width: 90%;
   top: 15%;
   left:5%;
-  /*transform: translateX(-50%);*/
+  cursor: move;
   border: 1px solid #bfbfbf;
 }
 
@@ -199,7 +203,7 @@
   width: 90%;
   top: 60%;
   left:5%;
-  /*transform: translateX(-50%);*/
+  cursor: move;
   border: 1px solid #bfbfbf;
 }
 
@@ -218,6 +222,7 @@
   width: 90%;
   height: 15%;
   border: 1px solid #bfbfbf;
+  cursor: move;
 }
 
 .new-input {
