@@ -88,6 +88,25 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
     $("#drag2").draggable().resizable();
 
 
+		//Presentation Slides
+		var element = document.getElementById("oneSlide");
+
+$scope.fullView = function(){
+    if(element.requestFullScreen){
+        element.requestFullScreen()
+    }
+    else if(element.webkitRequestFullScreen){
+        element.webkitRequestFullScreen()
+    }
+    else if(element.mozRequestFullScreen){
+        element.mozRequestFullScreen()
+    }
+    else if(element.msRequestFullScreen){
+        element.msRequestFullScreen()
+    }
+};
+
+
 }).directive('makeTextBox', function() {
   return {
     controller: 'slidesCtrl',

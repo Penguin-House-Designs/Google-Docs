@@ -58,3 +58,7 @@
   font-size: 2rem;
   transition: .3s color;
 }
+
+.cursor-mode {
+	cursor: pointer;
+}
