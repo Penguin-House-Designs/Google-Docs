@@ -55,7 +55,12 @@
 <!-- SLIDES TOOLBAR -->
 <!-- <slides-tools><slides-tools/> -->
 <div class='slides-toolbar'>
-  <a href="" class='new-slide' ng-click="createSlide()"><i class="material-icons add-slide">add</i><i class='material-icons slides-dropdown'>arrow_drop_down</i> </a>
+  <a href="" class='new-slide' ng-click="createSlide()">
+    <i class="material-icons add-slide">add</i>
+    <div class="slides-dropdown">
+      <i class='material-icons' style="font-size: 15px;">arrow_drop_down</i>
+    </div>
+  </a>
   <a href=""><i class='material-icons'>print</i></a>
   <a href=""><i class='material-icons'>undo</i></a>
   <a href=""><i class='material-icons'>redo</i></a>
