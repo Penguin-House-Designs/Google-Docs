@@ -69,6 +69,7 @@ GoogleApps.config(function($stateProvider, $urlRouterProvider) {
 
 
 
+// What Some Views Share
 GoogleApps.directive('dropdown', function($document) {
 	return {
 		restrict: "C",
