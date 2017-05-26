@@ -55,7 +55,7 @@
 <!-- SLIDES TOOLBAR -->
 <!-- <slides-tools><slides-tools/> -->
 <div class='slides-toolbar'>
-  <a href="" class='new-slide'><i class="material-icons add-slide">add</i><i class='material-icons slides-dropdown'>arrow_drop_down</i> </a>
+  <a href="" class='new-slide' ng-click="createSlide()"><i class="material-icons add-slide">add</i><i class='material-icons slides-dropdown'>arrow_drop_down</i> </a>
   <a href=""><i class='material-icons'>print</i></a>
   <a href=""><i class='material-icons'>undo</i></a>
   <a href=""><i class='material-icons'>redo</i></a>
@@ -95,9 +95,13 @@
 
 
   <div class="slide-nav">
-    1
-    <div class="slide-nav-slides">
+    <div class="slide-nav-panel"ng-repeat="slide in slides">
+      <div  style="margin-top: 5px;">
+        {{slides.indexOf(slide) + 1}}
+      </div>
+      <div class="slide-nav-slide" ng-click="changeSlides(slides.indexOf(slide) + 1)">
 
+      </div>
     </div>
   </div>
   <div style="width: 77%">
@@ -105,27 +109,36 @@
 
 <!-- SLIDE CONTENTS -->
       <div class="current-slide">
-        <div id="drags" class='ui-widget-content slide-title'>
-          <input type="text" class='slide-title-input' value="Click to add title">
-        </div>
-        <div id="drags0" class="ui-widget-content slide-author">
-          <input type="text" class='slide-author-input' placeholder="Click to add author">
-        </div>
-
-        <!-- NEW TEXT BOXES -->
-        <div id="div0"></div>
-        <div id="div1"></div>
-        <div id="div2"></div>
-        <div id="div3"></div>
-        <div id="div4"></div>
-        <div id="div5"></div>
-        <div id="div6"></div>
-        <div id="div7"></div>
-        <div id="div8"></div>
-        <div id="div9"></div>
-        <div id="div10"></div>
-        <div id="div11"></div>
-        <div id="div12"></div>
+          <div id="div1" grab-css></div>
+          <div id="div2" grab-css></div>
+          <div id="div3" grab-css></div>
+          <div id="div4" grab-css></div>
+          <div id="div5" grab-css></div>
+          <div id="div6" grab-css></div>
+          <div id="div7" grab-css></div>
+          <div id="div8" grab-css></div>
+          <div id="div9" grab-css></div>
+          <div id="div10" grab-css></div>
+          <div id="div11" grab-css></div>
+          <div id="div12" grab-css></div>
+          <div id="div13" grab-css></div>
+          <div id="div14" grab-css></div>
+          <div id="div15" grab-css></div>
+          <div id="div16" grab-css></div>
+          <div id="div17" grab-css></div>
+          <div id="div18" grab-css></div>
+          <div id="div19" grab-css></div>
+          <div id="div20" grab-css></div>
+          <div id="div21" grab-css></div>
+          <div id="div22" grab-css></div>
+          <div id="div23" grab-css></div>
+          <div id="div24" grab-css></div>
+          <div id="div25" grab-css></div>
+          <div id="div26" grab-css></div>
+          <div id="div27" grab-css></div>
+          <div id="div28" grab-css></div>
+          <div id="div29" grab-css></div>
+          <div id="div30" grab-css></div>
       </div>
 
 
@@ -133,7 +146,9 @@
 
     </div>
     <div class="comments">
-
+      <input type="text" placeholder="Click to add speaker notes">
+      <button type="button" ng-click='click()' name="button">Do the shits</button>
+      <button type="button" ng-click='log()' name="button">Log the shits</button>
     </div>
   </div>
 </div>
