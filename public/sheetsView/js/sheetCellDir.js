@@ -14,12 +14,11 @@ GoogleApps.directive('celldir',function(){
                 if(isDown===true){
                   $(this).css({background:"#b3b3ff"});
                 scope.array.push([$(this).get(0).id,$('input', this).val()])
-                console.log(scope.array);
-                
                 return scope.array
                 }
               }).mouseup(
                 function(){
+                    scope.storge(scope.array)
                     isDown = false;
                     scope.array = []
                     console.log('mouseup');

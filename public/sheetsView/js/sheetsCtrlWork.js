@@ -27,6 +27,10 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
 
 	$scope.inputcells();
 
+  $scope.storge = function(array){
+    console.log(array);
+  }
+
   $scope.calc = function(para){
     if(para === 'pi'){
 
