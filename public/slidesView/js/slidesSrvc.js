@@ -7,4 +7,6 @@ GoogleApps.service('slidesSrvc',['$http', function($http){
 		{name:'Wedding', img:'./slidesView/pics/slide4.png'},
 		{name:'Portfolio', img:'./slidesView/pics/slide5.png'}
 	];
+
+
 }])

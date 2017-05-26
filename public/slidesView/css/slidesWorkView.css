@@ -118,18 +118,24 @@
 }
 
 .slide-nav {
-  padding: 5px 0 0 50px;
-  display: flex;
+  padding: 5px 10px 0 0;
   height:82vh;
   width: 226px;
   border-right: #bfbfbf 1px solid;
+  overflow: scroll;
 }
 
-.slide-nav-slides {
+.slide-nav-panel {
+  float: right;
+  display: flex;
+}
+
+.slide-nav-slide {
   width: 130px;
   height: 75px;
   background-color: white;
   border: 2px solid darkgray;
+  margin:5px
 }
 
 .slide-positioning {
@@ -153,6 +159,7 @@
 .comments {
   width: 100%;
   height: 75px;
+  padding: 10px;
   position: fixed;
   bottom: 0;
   background-color: white;
@@ -167,20 +174,22 @@
 }
 
 .slide-title {
+  position: absolute;
   height: 40%;
   width: 90%;
   top: 15%;
-  left:50%;
-  transform: translateX(-50%);
+  left:5%;
+  /*transform: translateX(-50%);*/
   border: 1px solid #bfbfbf;
 }
 
 .slide-author {
+  position: absolute;
   height:15%;
   width: 90%;
-  top: 16%;
-  left:50%;
-  transform: translateX(-50%);
+  top: 60%;
+  left:5%;
+  /*transform: translateX(-50%);*/
   border: 1px solid #bfbfbf;
 }
 
