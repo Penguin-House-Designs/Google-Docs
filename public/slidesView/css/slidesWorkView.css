@@ -213,3 +213,10 @@
   font-size: 14px;
   width: 90% !important;
 }
+
+
+/*Make Slide Full Screen*/
+:-webkit-full-screen {
+    width:100%;
+    height: 100%;
+}
