@@ -4,7 +4,7 @@ var GoogleApps = angular.module('GoogleApp', ['ui.router','ui.materialize']);
 GoogleApps.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-  //LANDING VIEWS//
+	//LANDING VIEWS//
     .state('docs', {
       url:'/docslanding',
       templateUrl: './landingViews/docs.html',
@@ -63,7 +63,7 @@ GoogleApps.config(function($stateProvider, $urlRouterProvider) {
     controller: 'slidesCtrl'
   })
 
-	$urlRouterProvider.when('', '/docslanding')
+	$urlRouterProvider.otherwise('/docslanding')
 
 });
 
