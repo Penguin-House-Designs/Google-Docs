@@ -3,6 +3,7 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
   $scope.alsoBroken = "You are now working in a new SHEET"
   $scope.templatePics = sheetsSrvc.sheetsTemplates;
   $scope.test = 'test';
+  // $scope.cellvalue ='1';
 
   $scope.inputcells = function(){
 		var array = new Array(30);
@@ -20,6 +21,7 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
 		}
     return $scope.cells, $scope.cellsHOR, $scope.abc
 	}
+
 	$scope.inputcells();
 
   $scope.calc = function(para){
@@ -32,12 +34,13 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
   }
 
 
-  $scope.fun = function(para){
+  $scope.fun = function(para,para2){
+    // console.log(para,para2);
     if(para==='on'){
-        this.select();
+        document.getElementById("cell").select()
       }
     else{
-       this.unselect();
+      //  this.unselect();
     }
   }
 
