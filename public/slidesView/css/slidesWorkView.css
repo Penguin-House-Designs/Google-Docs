@@ -118,16 +118,17 @@
 }
 
 .slide-nav {
-  padding: 5px 10px 0 0;
-  height:82vh;
+  padding: 5px 0 0 0;
+  height:84vh;
   width: 226px;
   border-right: #bfbfbf 1px solid;
   overflow: scroll;
 }
-
 .slide-nav-panel {
-  float: right;
+  width: 100%;
   display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
 }
 
 .slide-nav-slide {
@@ -136,6 +137,14 @@
   background-color: white;
   border: 2px solid darkgray;
   margin:5px
+}
+
+.slide-nav-panel-active {
+  background: #D4d4d4;
+}
+
+.slide-nav-slide-active {
+  border-color: #0096fd
 }
 
 .slide-positioning {
