@@ -9,9 +9,9 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
 		$scope.dropDownMessage2 = () => $scope.owned = "Owned by me";
 		$scope.dropDownMessage3 = () =>$scope.owned = "Not owned by me";
 
-		// $scope.selectedPanel = () => {
-		//
-		// }
+		$scope.selectedPanel = () => {
+
+		}
 
 
 // SLIDES WORK STUFF//////
@@ -136,13 +136,25 @@ $scope.fullView = () => {
       }
     }
   })
-	.directive('activePanel', function(){
-		return{
+
+	.directive('activeSlidePanel', function(){
+		return {
+			link:function(sco, ele, attri){
+				ele.on('click', function(){
+					$('.slide-nav-panel').removeClass('slide-nav-panel-active')
+					$(this).addClass('slide-nav-panel-active')
+				})
+			}
+		}
+	})
+
+	.directive('activeSlide', function(){
+		return {
 			link: function(sco, ele, attr){
 				ele.on('click', function(){
-					$('.slide-nav-slide', this).removeClass('.slide-nav-panel-active');
-					$('.slide-nav-slide')
+					$('.slide-nav-slide').removeClass('slide-nav-slide-active');
+					$(this).addClass('slide-nav-slide-active')
 				});
-	// 		}
-	// 	}
-	// })
+			}
+		}
+	})

@@ -4,7 +4,7 @@
 <!-- SLIDES MENU -->
 <nav>
   <div class="nav-wrapper-work">
-    <div ui-sref='slidesHome' class='slides-icon'>
+    <div ui-sref='slidesHome' style="cursor:pointer" class='slides-icon'>
       <a class='material-icons' style="transform: rotate(90deg); margin-top:20px">content_copy</a>
     </div>
     <div class='nav-row-work'>
@@ -95,14 +95,12 @@
 <div class="slides-workspace">
 
 
-  <div class="slide-nav active-slide">
-    <div class="slide-nav-panel"ng-repeat="slide in slides">
+  <div class="slide-nav">
+    <div class="slide-nav-panel slide-nav-panel-active" active-slide-panel ng-repeat="slide in slides">
       <div  style="margin-top: 5px;">
         {{slides.indexOf(slide) + 1}}
       </div>
-      <div class="slide-nav-slide" ng-click="changeSlides(slides.indexOf(slide) + 1)">
-
-      </div>
+      <div class="slide-nav-slide" active-slide ng-click="changeSlides(slides.indexOf(slide) + 1)"></div>
     </div>
   </div>
   <div style="width: 77%">
