@@ -5,23 +5,16 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
 // SLIDES HOME STUFF//////
 	//Fxns for Sorting
 		$scope.owned = "Owned by me";
+		$scope.dropDownMessage = () => $scope.owned = "Owned by anyone";
+		$scope.dropDownMessage2 = () => $scope.owned = "Owned by me";
+		$scope.dropDownMessage3 = () =>$scope.owned = "Not owned by me";
 
-		$scope.dropDownMessage = function(){
-			$scope.owned = "Owned by anyone"
-		};
+		$scope.selectedPanel = () => {
 
-		$scope.dropDownMessage2 = function(){
-			$scope.owned = "Owned by me"
-		};
-
-		$scope.dropDownMessage3 = function(){
-			$scope.owned = "Not owned by me"
-		};
+		}
 
 
 // SLIDES WORK STUFF//////
-
-
     $scope.click = ()=> console.log($scope.currentSlide);
       // slidesSrvc.srvcTest = "I'm still on the service"
     $scope.log = (x)=> console.log('enter', x);
@@ -30,7 +23,7 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
     $scope.createSlide = ()=> $scope.slides.push($scope.slides.length)
 
     $scope.currentSlide = 1;
-    $scope.changeSlides = (x)=> {
+    $scope.changeSlides = (x) => {
       for (var i = 0; i < $scope.slideContent.length; i++) {
         if ($scope.slideContent[i].slideId !== x) {
           $($scope.slideContent[i].divId).css('display', 'none')
@@ -91,7 +84,7 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
 		//Presentation Slides
 		var element = document.getElementById("oneSlide");
 
-$scope.fullView = function(){
+$scope.fullView = () => {
     if(element.requestFullScreen){
         element.requestFullScreen()
     }
@@ -104,10 +97,11 @@ $scope.fullView = function(){
     else if(element.msRequestFullScreen){
         element.msRequestFullScreen()
     }
-};
+	};
+})
 
 
-}).directive('makeTextBox', function() {
+.directive('makeTextBox', function() {
   return {
     controller: 'slidesCtrl',
     link: function(scope, element, attr){
@@ -120,6 +114,7 @@ $scope.fullView = function(){
       }
     }
   })
+
 .directive('grabCss', function() {
     return {
       controller: 'slidesCtrl',
@@ -141,3 +136,25 @@ $scope.fullView = function(){
       }
     }
   })
+
+	.directive('activeSlidePanel', function(){
+		return {
+			link:function(sco, ele, attri){
+				ele.on('click', function(){
+					$('.slide-nav-panel').removeClass('slide-nav-panel-active')
+					$(this).addClass('slide-nav-panel-active')
+				})
+			}
+		}
+	})
+
+	.directive('activeSlide', function(){
+		return {
+			link: function(sco, ele, attr){
+				ele.on('click', function(){
+					$('.slide-nav-slide').removeClass('slide-nav-slide-active');
+					$(this).addClass('slide-nav-slide-active')
+				});
+			}
+		}
+	})

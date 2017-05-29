@@ -130,15 +130,11 @@
   border-right: #bfbfbf 1px solid;
   overflow: scroll;
 }
-
 .slide-nav-panel {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   padding-right: 10px;
-}
-.slide-nav-panel:active {
-  background: #D4d4d4;
 }
 
 .slide-nav-slide {
@@ -149,6 +145,14 @@
   margin:5px
 }
 .slide-nav-slide:active {
+  border-color: #0096fd
+}
+
+.slide-nav-panel-active {
+  background: #D4d4d4;
+}
+
+.slide-nav-slide-active {
   border-color: #0096fd
 }
 

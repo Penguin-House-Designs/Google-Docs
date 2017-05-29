@@ -210,5 +210,9 @@ body{
 .docs-side-nav-title {
 	padding: 10px 25px;
 	font-size: 20px;
+}
 
+.docs-cursor:hover {
+	border: 2px solid #4285f4;
+	cursor: pointer;
 }
