@@ -27,12 +27,30 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
 
 	$scope.inputcells();
 
-  $scope.calc = function(para){
-    if(para === 'pi'){
+  $scope.storge = function(array){
+    if(array.length > 2){
+      for (var i = 0; i < array.length-1; i++) {
+          for (var j = i+1; j < array.length; j++) {
+            if(array[i].id == array[j].id){
+              array.splice(j,1);
+              j--;
+          }
+        }
+      }
+    }
+    if(array.length > 2){
+    $scope.ready = array;
+    console.log('new Array');
+    }
+    return $scope.ready
+  }
 
+  $scope.calc = function( para ){
+    if(para =='Average()'){
+      console.log('---->>>', $scope.ready);
+      $scope.cellvalue = 'ready';
     }
 
-    console.log($scope.cellvalue);
     return $scope.cellvalue
   }
 
