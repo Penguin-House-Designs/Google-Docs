@@ -14,18 +14,17 @@ GoogleApps.directive('celldir',function(){
                 if(isDown===true){
                   $(this).css({background:"#b3b3ff"});
                 scope.array.push([$(this).get(0).id,$('input', this).val()])
-                console.log(scope.array);
-                
                 return scope.array
                 }
-              }).mouseup(
-                function(){
+              }).mouseup(function() {
                     isDown = false;
-                    scope.array = []
-                    console.log('mouseup');
+                    if (isDown === false) {
+                        scope.storge(scope.array)
+                        scope.array = []
+                        console.log('mouseup');
+                    }
                     return scope.array
-                  }
-                )
+                })
                     return;
               })
 
