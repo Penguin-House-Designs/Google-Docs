@@ -28,17 +28,28 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
 	$scope.inputcells();
 
   $scope.storge = function(array){
-    for (var i = 0; i < array.length; i++) {
-      if(array[i]== array[i+1]){
-        array.splice([i+1],1)
+
+    if(array.length > 2){
+      for (var i = 0; i < array.length-1; i++) {
+          for (var j = i+1; j < array.length; j++) {
+            if(array[i].id == array[j].id){
+              array.splice(j,1);
+              j--;
+          }
+        }
       }
     }
-    console.log(array);
+    if(array.length > 2){
+    $scope.ready = array;
+    console.log('new Array');
+    }
+    return $scope.ready
   }
 
-  $scope.calc = function(para){
-    if(para === 'pi'){
-
+  $scope.calc = function( para ){
+    if(para =='Average()'){
+      console.log('---->>>', $scope.ready);
+      $scope.cellvalue = 'ready';
     }
     return $scope.cells,
     $scope.cellsHOR,
@@ -49,7 +60,6 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
   $scope.calc = function(para) {
     if (para === 'pi') {}
 
-    console.log($scope.cellvalue);
     return $scope.cellvalue
   }
 

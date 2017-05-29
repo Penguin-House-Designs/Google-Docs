@@ -2,50 +2,49 @@
 <toolbar-dir></toolbar-dir>
 
 <section class='formula-bar'>
-  <span class='formula-bar-head'>
+    <span class='formula-bar-head'>
     &fnof;<sub>x</sub>
   </span>
-  <div class='right-border2'></div>
-  <div class='formula-input'>
-  <input >
-  </div>
+    <div class='right-border2'></div>
+    <div class='formula-input'>
+        <input>
+    </div>
 </section>
 
 <!-- Populate ABC bar -->
 <section class='abc-bar'>
-  <div class='one-box'></div>
+    <div class='one-box'></div>
     <div ng-repeat='x in abc' class='abc-box'>
-      {{x}}
+        {{x}}
     </div>
 </section>
 
 <section id='big-box' class='big-box'>
-  <!-- Populate NUM bar -->
-  <div class='num-bar'>
-    <div ng-repeat='x in numbar' class='num-box'>
-        {{x}}
-      </div>
-  </div>
+    <!-- Populate NUM bar -->
+    <div class='num-bar'>
+        <div ng-repeat='x in numbar' class='num-box'>
+            {{x}}
+        </div>
+    </div>
 
-<!-- ng-mouseup='fun("off")' -->
-  <!-- Populate Cells bar -->
+    <!-- ng-mouseup='fun("off")' -->
+    <!-- Populate Cells bar -->
 
-   <section class='input-boxs'>
-      <form id={{x[0]}} celldir ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs' action="">
-          <input  placeholder={{x[0]}} ng-model='cellvalue' type="text" >
-          <div ng-show='cellvalue=="="' class='cell-methods'>
-              <a ng-click='cellvalue="Average()"' class='select-method'>Average ( )</a>
-              <a ng-click='cellvalue="Median()"' class='select-method'>Median ( )</a>
-              <a ng-click='cellvalue=3.14159265358979323846' class='select-method'>&pi; </a>
-              <a ng-click='cellvalue="Sum()"' class='select-method'>Sum ( )</a>
-              <a ng-click='cellvalue="Product()"' class='select-method'>Product ( )</a>
-          </div>
-      </form>
+    <section class='input-boxs'>
+        <form id={{x[0]}} celldir ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs' action="">
+            <input ng-model='cellvalue' type="text">
+            <div ng-show='cellvalue=="="' class='cell-methods'>
+                <a ng-click='cellvalue="Average()"' class='select-method'>Average ( )</a>
+                <a ng-click='cellvalue="Median()"' class='select-method'>Median ( )</a>
+                <a ng-click='cellvalue=3.14159265358979323846' class='select-method'>&pi; </a>
+                <a ng-click='cellvalue="Sum()"' class='select-method'>Sum ( )</a>
+                <a ng-click='cellvalue="Product()"' class='select-method'>Product ( )</a>
+            </div>
+        </form>
     </section>
 
 
 </section>
 
 <script type="text/javascript">
-
 </script>
