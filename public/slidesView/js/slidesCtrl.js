@@ -24,7 +24,7 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
 
     $scope.click = ()=> console.log($scope.currentSlide);
       // slidesSrvc.srvcTest = "I'm still on the service"
-    $scope.log = ()=> console.log($scope.slideContent);
+    $scope.log = (x)=> console.log('enter', x);
 
     $scope.slides = [0];
     $scope.createSlide = ()=> $scope.slides.push($scope.slides.length)
