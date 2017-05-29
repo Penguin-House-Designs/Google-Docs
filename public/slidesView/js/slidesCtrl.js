@@ -97,10 +97,10 @@ $scope.fullView = () => {
     else if(element.msRequestFullScreen){
         element.msRequestFullScreen()
     }
-};
-
-
+	};
 })
+
+
 .directive('makeTextBox', function() {
   return {
     controller: 'slidesCtrl',
