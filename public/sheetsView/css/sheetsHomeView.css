@@ -69,3 +69,8 @@
   font-size: 2rem;
   transition: .3s color;
 }
+
+.sheets-cursor:hover {
+	border: 2px solid #0f9d58;
+	cursor: pointer;
+}

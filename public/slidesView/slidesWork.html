@@ -1,9 +1,10 @@
 <!-- <slides-menu><slides-menu/> -->
 
+
 <!-- SLIDES MENU -->
 <nav>
   <div class="nav-wrapper-work">
-    <div ui-sref='slidesHome' class='slides-icon'>
+    <div ui-sref='slidesHome' style="cursor:pointer" class='slides-icon'>
       <a class='material-icons' style="transform: rotate(90deg); margin-top:20px">content_copy</a>
     </div>
     <div class='nav-row-work'>
@@ -95,13 +96,11 @@
 
 
   <div class="slide-nav">
-    <div class="slide-nav-panel"ng-repeat="slide in slides">
+    <div class="slide-nav-panel" active-slide-panel ng-repeat="slide in slides">
       <div  style="margin-top: 5px;">
         {{slides.indexOf(slide) + 1}}
       </div>
-      <div class="slide-nav-slide" ng-click="changeSlides(slides.indexOf(slide) + 1)">
-
-      </div>
+      <div class="slide-nav-slide" active-slide ng-click="changeSlides(slides.indexOf(slide) + 1)"></div>
     </div>
   </div>
   <div style="width: 77%">
@@ -152,3 +151,11 @@
     </div>
   </div>
 </div>
+
+
+
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40"
+  stroke="green" stroke-width="4" fill="yellow" />
+Sorry, your browser does not support inline SVG.
+</svg>
