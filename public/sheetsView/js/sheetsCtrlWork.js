@@ -59,6 +59,14 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
       }
       $scope.cellvalue = ans;
     }
+    return $scope.cells,
+    $scope.cellsHOR,
+    $scope.abc
+  }
+  $scope.inputcells();
+
+  $scope.calc = function(para) {
+    if (para === 'pi') {}
 
     else if( para == 'Product()' ){
       ready = sheetsSrvc.storage;
