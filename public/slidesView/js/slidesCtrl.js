@@ -74,6 +74,9 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
           <input type="text" class="new-input" placeholder="Click to type" id="input${String($scope.slideContent.length + 1)}"><div/>`,
           innerId: 'input' + String($scope.slideContent.length +1)
         })
+      $("#div" + String($scope.slideContent.length))
+        .html($scope.slideContent[$scope.slideContent.length -1].divHtml)
+      $("#drag" + String($scope.slideContent.length)).draggable().resizable();
     };
 
     $scope.createImg = (x)=> {
@@ -96,16 +99,33 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
     };
 
 
-    $scope.createShape = ()=> {
+    $scope.createShape = (shape)=> {
+      switch(shape) {
+          case "cir":
+              shapeHtml =
+              ` <div id="drag${String($scope.slideContent.length + 1)}" class="ui-widget-content new-image-div" grab-css>
+              <img src="./slidesView/pics/cir.png" id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
+              break;
+          case "rect":
+              shapeHtml =
+              `<div id="drag${String($scope.slideContent.length + 1)}" class="ui-widget-content new-image-div" grab-css>
+                <img src="./slidesView/pics/rect.png" id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
+              break;
+          case "star":
+              shapeHtml =
+              `<div id="drag${String($scope.slideContent.length + 1)}" class="ui-widget-content new-image-div" grab-css>
+                <img src="./slidesView/pics/star.png" id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
+              break;
+      }
       $scope.slideContent
         .push({
           slideId: $scope.currentSlide,
           divId: 'drag' + String($scope.slideContent.length +1),
-          divHtml:   `<div id="drag${String($scope.slideContent.length + 1)}"
-          class="ui-widget-content new-text-box" grab-css>
-          <input type="text" class="new-input" placeholder="Click to type" id="input${String($scope.slideContent.length + 1)}"><div/>`,
+          divHtml: shapeHtml,
           innerId: 'shape' + String($scope.slideContent.length +1)
-        })
+        });
+      $("#div" + String($scope.slideContent.length)).html($scope.slideContent[$scope.slideContent.length -1].divHtml);
+      $("#drag" + String($scope.slideContent.length)).draggable().resizable();
     }
 
     $("#div1").html($scope.slideContent[0].divHtml);
@@ -132,19 +152,6 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
         }
     	};
 })
-.directive('makeTextBox', function() {
-  return {
-    controller: 'slidesCtrl',
-    link: function(scope, element, attr){
-      element.on('click', function() {
-        console.log("directive clicked");
-          $("#div" + String(scope.slideContent.length))
-            .html(scope.slideContent[scope.slideContent.length -1].divHtml)
-          $("#drag" + String(scope.slideContent.length)).draggable().resizable();
-        })
-      }
-    }
-  })
 
 .directive('grabCss', function() {
     return {

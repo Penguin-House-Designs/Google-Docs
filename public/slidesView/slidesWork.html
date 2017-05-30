@@ -77,7 +77,16 @@
 
   <label for="file-input" class="ion-image" style="font-size:18px"></label>
 
-  <a href=""><img src="./slidesView/pics/shapes.png" width="25px"></a>
+    <div class="dropdown">
+      <a href="">
+        <img src="./slidesView/pics/shapes.png" width="25px">
+      </a>
+      <ul style="top: 47px;">
+        <li><a style="display:flex" ng-click="createShape('cir')"><i class="material-icons left">panorama_fish_eye</i>Ellipse</a></li>
+        <li><a style="display:flex" ng-click="createShape('rect')"><i class="material-icons left">check_box_outline_blank</i>Rectangle</a></li>
+        <li><a style="display:flex" ng-click="createShape('star')"><i class="material-icons left">star_border</i>Star</a></li>
+      </ul>
+    </div>
   <div class='slides-right-border'></div>
 
   <a href=""><i class="material-icons">comment</i></a>
