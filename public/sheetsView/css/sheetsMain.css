@@ -1,6 +1,6 @@
-.toolbar{
+.toolbar {
   position: fixed;
-  z-index: 1;
+  z-index: 0;
   top: 64px;
   background: #e6e6e6;
   display: inline-flex;
@@ -11,38 +11,46 @@
   padding-left: 80px;
   justify-content: space-between;
 }
-.toolbar a{
+
+.toolbar a {
   color: black;
   font-size: 14px;
   margin: 7px;
 }
-.toolbar span{
+
+.toolbar span {
   color: black;
   font-size: 10px;
 }
-.right-border{
+
+.right-border {
   border-right: 1px solid #bfbfbf;
 }
-.column{
+
+.column {
   display: flex;
   flex-direction: column;
 }
-.textColor{
+
+.textColor {
   height: 3px;
   width: 20px;
   background: green;
 }
-.start{
+
+.start {
   display: inline-flex;
 }
-.endArrow{
+
+.endArrow {
   display: inline-flex;
   justify-content: flex-end;
   margin-right: 20px;
 }
-.formula-bar{
+
+.formula-bar {
   position: fixed;
-  z-index: 1;
+  z-index: 0;
   top: 100px;
   display: inline-flex;
   align-items: center;
@@ -50,20 +58,23 @@
   width: 100vw;
   background: white;
 }
-.formula-bar-head{
+
+.formula-bar-head {
   padding: 0 15px 0 15px;
   font-style: italic;
   color: #bfbfbf;
   font-size: 16px;
 }
-.right-border2{
+
+.right-border2 {
   padding-top: 10px;
   width: 1px;
   height: 20px;
   background: grey;
   margin-right: 10px;
 }
-.sheet-name input[type=text]{
+
+.sheet-name input[type=text] {
   margin: 0;
   padding: 0;
   border: none;
@@ -71,11 +82,13 @@
   width: 100%;
   font-size: 12px;
 }
-.sheet-name input[type=text]:focus:not([readonly]){
+
+.sheet-name input[type=text]:focus:not([readonly]) {
   border-bottom: none;
   box-shadow: none;
 }
-.formula-input input:not([type]){
+
+.formula-input input:not([type]) {
   border: none;
   border-bottom: none;
   height: 20px;
@@ -84,14 +97,15 @@
   margin: 0;
   padding: 0;
 }
-.formula-input input:not([type]):focus:not([readonly]){
+
+.formula-input input:not([type]):focus:not([readonly]) {
   border-bottom: none;
   box-shadow: none;
 }
 
-.abc-bar{
+.abc-bar {
   position: fixed;
-  z-index: 1;
+  z-index: 0;
   top: 130px;
   display: flex;
   align-items: center;
@@ -99,13 +113,15 @@
   width: 200%;
   background: #e6e6e6;
 }
-.one-box{
+
+.one-box {
   height: 22px;
   width: 40px;
   border-right: 5px solid #bfbfbf;
   border-bottom: 5px solid #bfbfbf;
 }
-.abc-box{
+
+.abc-box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,16 +132,18 @@
   border-bottom: 1px solid #bfbfbf;
   border-top: 1px solid #bfbfbf;
 }
-.num-bar{
+
+.num-bar {
   position: relative;
-  z-index: -4;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 40px;
   background: #e6e6e6;
 }
-.num-box{
+
+.num-box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,13 +153,21 @@
   border-right: 1px solid #bfbfbf;
   border-bottom: 1px solid #bfbfbf;
 }
-.big-box{
+.scroll{
   position: relative;
   top: 152px;
+  overflow: scroll;
+  height: 75vh;
+}
+
+.big-box {
+  position: relative;
   display: flex;
   width: 110vw;
+  z-index: 0;
 }
-.input-boxs{
+
+.input-boxs {
   /*position: absolute;
   left: 40px;*/
   display: inline-flex;
@@ -149,7 +175,8 @@
   height: 100vh;
   width: inherit;
 }
-.sheets-inputs{
+
+.sheets-inputs {
   margin: 0;
   height: 25px;
   width: 100px;
@@ -157,7 +184,8 @@
   border-bottom: 1px solid #bfbfbf;
   background: white;
 }
-.sheets-inputs input[type=text]{
+
+.sheets-inputs input[type=text] {
   box-sizing: border-box;
   margin: 0;
   padding-bottom: -5px;
@@ -167,11 +195,13 @@
   width: 100px;
   font-size: 12px;
 }
-.sheets-inputs input[type=text]:focus:not([readonly]){
+
+.sheets-inputs input[type=text]:focus:not([readonly]) {
   border: 2px solid #6666ff;
   box-shadow: none;
 }
-.cell-methods{
+
+.cell-methods {
   position: absolute;
   z-index: 5;
   background: white;
@@ -181,11 +211,72 @@
   height: auto;
   width: 100px;
 }
-.select-method{
+
+.select-method {
   border-bottom: 1px solid grey;
   padding: 5px;
   color: black;
 }
-.select-method:hover{
+
+.select-method:hover {
   background: #e6e6ff;
+}
+#chart1{
+  position:absolute;
+  z-index: 0;
+  background: white;
+  top: 100px;
+  left: 200px;
+  height: 300px;
+  width: 500px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.show{
+  display: block;
+}
+.notshow{
+  display: none;
+}
+.addChart{
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  z-index: 0;
+  background: white;
+  top: 100px;
+  left: 300px;
+  height: 300px;
+  width: 500px;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+#chart-input{
+  border: 2px solid grey;
+  margin-left: 10px;
+  height: 20px;
+  width: 250px;
+  font-size: 12px;
+}
+.chart-title{
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-size: 16px;
+  color: black;
+}
+.graph-btn{
+  margin-left: 10px;
+  line-height: normal;
+  height: 30px;
+  width: 100px;
+  background: #0f9d58;
+  color: white;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
 }

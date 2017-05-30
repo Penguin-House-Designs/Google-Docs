@@ -1,5 +1,47 @@
 GoogleApps.service('sheetsSrvc',['$http', function($http){
 
+
+	this.setStorage = function(arr){
+		this.storage = [];
+		this.storage = arr;
+		return this.storage
+	};
+
+	this.chart = function( arrX , arrY ){
+		var lineChartData = {
+		    labels: arrX,
+		    datasets: [{
+		        fillColor: "rgba(220,220,220,0)",
+		        strokeColor: "rgba(220,180,0,1)",
+		        pointColor: "rgba(220,180,0,1)",
+		        data: arrY
+		    }]
+		}
+
+		Chart.defaults.global.animationSteps = 50;
+		Chart.defaults.global.tooltipYPadding = 16;
+		Chart.defaults.global.tooltipCornerRadius = 0;
+		Chart.defaults.global.tooltipTitleFontStyle = "normal";
+		Chart.defaults.global.tooltipFillColor = "rgba(0,160,0,0.8)";
+		Chart.defaults.global.animationEasing = "easeOutBounce";
+		Chart.defaults.global.responsive = true;
+		Chart.defaults.global.scaleLineColor = "black";
+		Chart.defaults.global.scaleFontSize = 16;
+
+		var ctx = document.getElementById("canvas").getContext("2d");
+		var LineChartDemo = new Chart(ctx).Line(lineChartData, {
+		    pointDotRadius: 10,
+		    bezierCurve: false,
+		    scaleShowVerticalLines: false,
+		    scaleGridLineColor: "black"
+		});
+
+	};
+
+
+
+
+
 	this.sheetsTemplates = [
 		{name:'Blank', img:'./sheetsView/pics/sheet1.png'},
 		{name:'Annual budget', img:'./sheetsView/pics/sheet2.png'},
