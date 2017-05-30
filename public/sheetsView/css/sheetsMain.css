@@ -189,3 +189,34 @@
 .select-method:hover{
   background: #e6e6ff;
 }
+#chart1{
+  position:absolute;
+  z-index: 0;
+  background: white;
+  top: 100px;
+  left: 200px;
+  height: 300px;
+  width: 500px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+#chart-input{
+  margin: 10px;
+  border: 2px solid grey;
+  height: 20px;
+  width: 250px;
+  font-size: 12px;
+}
+.chart-title{
+  font-size: 16px;
+  color: #0f9d58;
+}
+.show{
+  display: block;
+}
+.notshow{
+  display: none;
+}

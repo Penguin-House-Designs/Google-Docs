@@ -13,7 +13,6 @@ GoogleApps.directive('celldir',function(){
         $('.sheets-inputs').mouseover(function(){
                 if(isDown===true){
                 $(this).css({background:"#b3b3ff"});
-                console.log('mouseover');
                 scope.array.push({id:$( this ).get(0).id, val:$('input', this).val()})
                 return scope.array
                 }
@@ -21,7 +20,7 @@ GoogleApps.directive('celldir',function(){
                 function(){
                     isDown = false;
                     if(isDown === false){
-                      scope.storge(scope.array)
+                      scope.storage(scope.array)
                       scope.array = []
                     }
                     return scope.array
