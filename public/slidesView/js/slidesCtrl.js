@@ -2,6 +2,11 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
   $scope.templatePics = slidesSrvc.slidesTemplates;
 
 
+	console.log('hi');
+
+		$scope.slideDocus = slidesSrvc.slidesDocuments;
+		console.log($scope.slideDocus);
+
 // SLIDES HOME STUFF//////
 	//Fxns for Sorting
 		$scope.owned = "Owned by me";

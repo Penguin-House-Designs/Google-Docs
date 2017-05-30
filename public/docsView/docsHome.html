@@ -23,19 +23,20 @@
 						<a href="#" class="button-collapse home-docs-side-icon" data-activates="slide-out" data-sidenav="left" data-menuwidth="300" data-closeonclick="true"><i class="material-icons">menu</i></a>
 					</div>
 				</div>
+
 <!-- Google Docs Logo -->
 				<div class="home-docs-logo-nav">
 					<h5 style="color:white"><span style="font-size:22px">Google Docs</span></h5>
 				</div>
-
 			</div>
+
 	<!-- Search Form  -->
 			<div class="home-docs-search" style="">
 				<nav style="box-shadow: none">
 					<div class="nav-wrapper">
 						<form>
 							<div class="input-field" style="background:#4285f4">
-								<input id="search" type="search" placeholder="Search" required class="docs-search">
+								<input id="search" type="search" placeholder="Search" required class="docs-search" ng-model="search">
 								<label  class="label-icon" for="search"><i class="material-icons">search</i></label>
 							</div>
 						</form>
@@ -82,8 +83,9 @@
 
 
 			 <div class="col s2">
+
 				 <div class="dropdown">
-					 <a class="button" style="cursor:pointer; color: black; padding-right:6px"> {{owned}}</a> <span class="icon ion-chevron-down"></span>
+					 <a class="button" style="cursor:pointer; color: black; padding-right:7px;">{{owned}}</a><span class="icon ion-chevron-down"></span>
 					 <ul>
 						 <li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
 						 <li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
@@ -95,26 +97,32 @@
 			 <div class="col s2">Last modified</div>
 			 <div class="col s2">
 				 <i class="material-icons right">perm_media</i>
-				 <i class="material-icons right">sort_by_alpha</i>
+				 <div class="dropdown">
+				 	<i style="cursor:pointer" class="material-icons right">sort_by_alpha</i>
+					<ul>
+						<li><a ng-click="order='+title'">A-Z</a></li>
+	 					<li><a ng-click="order='-title'">Z-A</a></li>
+					</ul>
+				 </div>
 				 <i class="material-icons right">view_module</i>
 			 </div>
 			</div>
+
+
+
+			<!-- The Collection of Penguin Documents -->
 			<ul class="collection">
-				 <li class="collection-item home-view-table">
+				 <li class="collection-item home-view-table" ng-repeat="docs in theDocus|filter:search|orderBy:order">
 					 <div class="title-docs-icons">
 						 <i style="color:white; background:#4285f4" class="material-icons left">subject</i>
-  					 <h6 style="font-weight:600">Hemoemises</h6>
+  					 <h6 style="font-weight:600">{{docs.title}}</h6>
 					 </div>
 					 <div class="home-owned-date">
-						 <h6 class="home-name-list">Alvin</h6>
-  					 <h6>3/12/02</h6>
+						 <h6 class="home-name-list">{{docs.name}}</h6>
+  					 <h6>{{docs.date}}</h6>
 					 </div>
 				 </li>
-				 <li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
-				 <li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
 			 </ul>
 		 </div>
 	</div>
-
-
 </div>

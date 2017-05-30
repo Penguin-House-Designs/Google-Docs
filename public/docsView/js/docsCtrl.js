@@ -18,6 +18,8 @@ GoogleApps.controller('DocHomeController', ['$scope','GoogleService', function($
 		$scope.owned = "Not owned by me"
 	}
 
+	$scope.theDocus = GoogleService.docsDocuments;
+
 
 
 
