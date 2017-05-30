@@ -1,138 +1,130 @@
 <div class="home-slides-nav">
-  <!-- Slide OUT NAV -->
-  <div class="home-icon-title">
-    <div class="">
-      <div class="home-docs-slider-nav">
-        <ul id="slide-out" class="side-nav">
-          <li>
-            <a ui-sref="slides">
-              <div class="slideout-logo-cont">
-                <img class="slideout-logo" src="/docsView/pics/slideoutLogo.svg" alt="">
-                <div class="docs-side-nav-title">
-                  Slides
-                </div>
-              </div>
-            </a>
-          </li>
-          <li><a ui-sref="docsHome"><i class="material-icons" style="color: #4285f4">insert_drive_file</i>Docs</a></li>
-          <li><a ui-sref="sheetsHome"><i class="material-icons" style="color: #0f9d58">insert_drive_file</i>Sheets</a></li>
-          <li><a ui-sref="slidesHome"><i class="material-icons" style="color: #f4b400">insert_drive_file</i>Slides</a></li>
-          <li>
-            <div class="divider"></div>
-          </li>
-          <li><a href=""><i class="material-icons">settings</i>Settings</a></li>
-          <li><a href=""><i class="material-icons">help</i>Help and Support</a></li>
-          <li>
-            <div class="divider"></div>
-          </li>
-          <li><a href=""><i class="material-icons">save</i>Drive</a></li>
-        </ul>
-        <!-- <a ui-sref="docsHome" data-activates="slide-out" class="button-collapse home-docs-side-icon"><i class="material-icons">menu</i></a> -->
-      </div>
-    </div>
-    <a href="#" class="button-collapse home-docs-side-icon" data-activates="slide-out" data-sidenav="left" data-menuwidth="300" data-closeonclick="true"><i class="material-icons">menu</i></a>
-    <!-- Google Logo -->
-    <div class="home-docs-logo-nav">
-      <h5 style="color:white"><span style="font-size:22px">Google Slides</span></h5>
-    </div>
+	<!-- Slide OUT NAV -->
+	<div class="home-icon-title">
+		<div class="">
+			<div class="home-docs-slider-nav">
+				<ul id="slide-out" class="side-nav">
+					<li>
+						<a ui-sref="slides">
+							<div class="slideout-logo-cont">
+								<img class="slideout-logo" src="/docsView/pics/slideoutLogo.svg" alt="">
+								<div class="docs-side-nav-title">
+									Slides
+								</div>
+							</div>
+						</a>
+					</li>
+					<li><a ui-sref="docsHome"><i class="material-icons" style="color: #4285f4">insert_drive_file</i>Docs</a></li>
+					<li><a ui-sref="sheetsHome"><i class="material-icons" style="color: #0f9d58">insert_drive_file</i>Sheets</a></li>
+					<li><a ui-sref="slidesHome"><i class="material-icons" style="color: #f4b400">insert_drive_file</i>Slides</a></li>
+					<li>
+						<div class="divider"></div>
+					</li>
+					<li><a href=""><i class="material-icons">settings</i>Settings</a></li>
+					<li><a href=""><i class="material-icons">help</i>Help and Support</a></li>
+					<li>
+						<div class="divider"></div>
+					</li>
+					<li><a href=""><i class="material-icons">save</i>Drive</a></li>
+				</ul>
+				<!-- <a ui-sref="docsHome" data-activates="slide-out" class="button-collapse home-docs-side-icon"><i class="material-icons">menu</i></a> -->
+			</div>
+		</div>
+		<a href="#" class="button-collapse home-docs-side-icon" data-activates="slide-out" data-sidenav="left" data-menuwidth="300" data-closeonclick="true"><i class="material-icons">menu</i></a>
+		<!-- Google Logo -->
+		<div class="home-docs-logo-nav">
+			<h5 style="color:white"><span style="font-size:22px">Google Slides</span></h5>
+		</div>
 
-  </div>
-  <!-- Search Form  -->
-  <div class="home-docs-search" style="">
-    <nav style="box-shadow: none">
-      <div class="nav-wrapper slides-wrapper">
-        <form>
-          <div class="input-field" style="background:#f4b400">
-            <input id="search" type="search" placeholder="Search" required style="height: 50px; position:absolute; top:8px; border-radius:5px;">
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          </div>
-        </form>
-      </div>
-    </nav>
-  </div>
+	</div>
+	<!-- Search Form  -->
+	<div class="home-docs-search" style="">
+		<nav style="box-shadow: none">
+			<div class="nav-wrapper slides-wrapper">
+				<form>
+					<div class="input-field" style="background:#f4b400">
+						<input id="search" type="search" placeholder="Search" required style="height: 50px; position:absolute; top:8px; border-radius:5px;" ng-model="search">
+						<label class="label-icon" for="search"><i style="margin-top:30px" class="material-icons">search</i></label>
+					</div>
+				</form>
+			</div>
+		</nav>
+	</div>
 
+
+
+	<div class="docs-home-nav-icons">
+		<a href=""><i class="material-icons">view_module</i></a>
+		<a href=""><i class="material-icons">add_alert</i></a>
+		<a href=""><i class="material-icons">add</i></a>
+	</div>
 </div>
 <!-- Search Form  -->
-<div class="home-docs-search" style="">
-  <nav style="box-shadow: none">
-    <div class="nav-wrapper slides-wrapper">
-      <form>
-        <div class="input-field" style="background:#f4b400">
-          <input id="search" type="search" placeholder="Search" required style="height: 50px; position:absolute; top:8px; border-radius:5px;" ng-model="search">
-          <label  class="label-icon" for="search"><i class="material-icons">search</i></label>
-        </div>
-      </form>
-    </div>
-  </nav>
-</div>
+
 
 <!-- Icons On Right Of Navbar -->
-<div class="docs-home-nav-icons">
-  <a href=""><i class="material-icons">view_module</i></a>
-  <a href=""><i class="material-icons">add_alert</i></a>
-  <a href=""><i class="material-icons">add</i></a>
-</div>
-</div>
+
+
 
 
 
 <div class="slides-home-template">
-  <div class="home-start-template">
-    <h6 style="font-weight:800; color:#d9d9da">Start A New Document</h6>
-    <div style='width:650px'>
+	<div class="home-start-template">
+		<h6 style="font-weight:800; color:#d9d9da">Start A New Document</h6>
+		<div style='width:650px'>
 
-    </div>
-  </div>
-  <div class="template-views-text">
-    <div ng-repeat = "template in templatePics" class="docs-template">
-      <img class="cursor-mode slides-template-img" ui-sref="slidesWork" width="152px" height:"86px" src="{{template.img}}" alt="">
-      <p style="color:white; padding:0; margin:0; font-weight:800">{{template.name}}</p>
-    </div>
-  </div>
+		</div>
+	</div>
+	<div class="template-views-text">
+		<div ng-repeat="template in templatePics" class="docs-template">
+			<img class="cursor-mode" ui-sref="slidesWork" width="152px" height: "86px" src="{{template.img}}" alt="">
+			<p style="color:white; padding:0; margin:0; font-weight:800">{{template.name}}</p>
+		</div>
+	</div>
 </div>
 
 <div class="container">
-  <div class="docs-list-view">
-    <div class='row'>
-      <div class='col s6'>Documents By title</div>
+	<div class="docs-list-view">
+		<div class='row'>
+			<div class='col s6'>Documents By title</div>
 
 
 
-      <div class="col s2">
-        <div class="dropdown">
-          <a class="button" style="cursor:pointer; color: black; padding-right:6px"> {{owned}}</a> <span class="icon ion-chevron-down"></span>
-          <ul>
-            <li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
-            <li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
-            <li><a ng-model="notMe" ng-click="dropDownMessage3()">Not owned by me</a></li>
-          </ul>
-        </div>
+			<div class="col s2">
+				<div class="dropdown">
+					<a class="button" style="cursor:pointer; color: black; padding-right:6px">{{owned}}</a><span class="icon ion-chevron-down"></span>
+					<ul>
+						<li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
+						<li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
+						<li><a ng-model="notMe" ng-click="dropDownMessage3()">Not owned by me</a></li>
+					</ul>
+				</div>
 
-		 </div>
-		 <div class="col s2">Last modified</div>
-		 <div class="col s2">
-			 <i class="material-icons right">perm_media</i>
-			 <div class="dropdown">
-				<i style="cursor:pointer" class="material-icons right">sort_by_alpha</i>
-				<ul>
-					<li><a ng-click="order='+title'">A-Z</a></li>
-					<li><a ng-click="order='-title'">Z-A</a></li>
-				</ul>
-			 </div>
-			 <i class="material-icons right">view_module</i>
-		 </div>
+			</div>
+			<div class="col s2">Last modified</div>
+			<div class="col s2">
+				<i class="material-icons right">perm_media</i>
+				<div class="dropdown">
+					<i style="cursor:pointer" class="material-icons right">sort_by_alpha</i>
+					<ul>
+						<li><a ng-click="order='+title'">A-Z</a></li>
+						<li><a ng-click="order='-title'">Z-A</a></li>
+					</ul>
+				</div>
+				<i class="material-icons right">view_module</i>
+			</div>
 		</div>
 		<ul class="collection">
-			 <li class="collection-item home-view-table" ng-repeat="slides in slideDocus|filter:search|orderBy:order">
-				 <div class="title-docs-icons">
-					 <i class="material-icons left slide-icons">subject</i>
-					 <h6 style="font-weight:600">{{slides.title}}</h6>
-				 </div>
-				 <div class="home-owned-date">
-					 <h6 class="home-name-list">{{slides.name}}</h6>
-					 <h6>{{slides.date}}</h6>
-				 </div>
-			 </li>
-		 </ul>
-	 </div>
+			<li class="collection-item home-view-table" ng-repeat="slides in slideDocus|filter:search|orderBy:order">
+				<div class="title-docs-icons">
+					<i class="material-icons left slide-icons">subject</i>
+					<h6 style="font-weight:600">{{slides.title}}</h6>
+				</div>
+				<div class="home-owned-date">
+					<h6 class="home-name-list">{{slides.name}}</h6>
+					<h6>{{slides.date}}</h6>
+				</div>
+			</li>
+		</ul>
+	</div>
 </div>
