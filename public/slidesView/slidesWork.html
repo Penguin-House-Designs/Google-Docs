@@ -1,6 +1,6 @@
 <!-- <slides-menu><slides-menu/> -->
 
-
+  <input type="file" onchange="angular.element(this).scope().createImg(this.files[0])" name="file-input"  id="file-input" style="display:none">
 <!-- SLIDES MENU -->
 <nav>
   <div class="nav-wrapper-work">
@@ -73,9 +73,11 @@
   <div class="slides-right-border"></div>
 
   <a href="" style="transform: rotate(270deg)"><i class="material-icons">near_me</i></a>
-  <a href="" make-text-box ng-click="createTextBox()"><i class="material-icons">format_shapes</i></a>
-  <a href="" class="ion-image" style="font-size:18px"></a>
-  <a href=""><i class="material-icons" style="transform: rotate(45deg); font-size:30px">remove</i></a>
+  <a href="" make-text-box  ng-click="createTextBox()"><i class="material-icons">format_shapes</i></a>
+
+  <label for="file-input" class="ion-image" style="font-size:18px"></label>
+
+  <a href=""><img src="./slidesView/pics/shapes.png" width="25px"></a>
   <div class='slides-right-border'></div>
 
   <a href=""><i class="material-icons">comment</i></a>
@@ -112,6 +114,7 @@
     <div class="slide-positioning">
 
 <!-- SLIDE CONTENTS -->
+
       <div class="current-slide" id="oneSlide">
           <div id="div1" grab-css></div>
           <div id="div2" grab-css></div>
@@ -151,17 +154,10 @@
     </div>
     <div class="comments">
       <input type="text" placeholder="Click to add speaker notes">
-      <input type="file" onchange="console.log(this.files)" >
+      <input type="file" onchange="angular.element(this).scope().createImg(this.files[0])">
+      <button create-shape  type="submit" name="button">Click to add new stuff</button>
       <button type="button" ng-click='click()' name="button">Do the shits</button>
       <button type="button" ng-click='log()' name="button">Log the shits</button>
     </div>
   </div>
 </div>
-
-
-
-<svg width="100" height="100">
-  <circle cx="50" cy="50" r="40"
-  stroke="green" stroke-width="4" fill="yellow" />
-Sorry, your browser does not support inline SVG.
-</svg>
