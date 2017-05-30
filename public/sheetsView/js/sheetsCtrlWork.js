@@ -27,8 +27,8 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
 
 	$scope.inputcells();
 
-  $scope.storge = function(array){
-
+  $scope.storage = function(array){
+    // store highlighted values to an array in Service
     if(array.length > 2){
       for (var i = 0; i < array.length-1; i++) {
           for (var j = i+1; j < array.length; j++) {
@@ -40,16 +40,24 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
       }
     }
     if(array.length > 2){
-    $scope.ready = array;
+    sheetsSrvc.setStorage(array);
     console.log('new Array');
     }
     return $scope.ready
   }
 
   $scope.calc = function( para ){
-    if(para =='Average()'){
-      console.log('---->>>', $scope.ready);
-      $scope.cellvalue = 'ready';
+    // declare initial values
+    var ready = [];
+    var ans = 0;
+
+    // declare method and calculate
+    if( para == 'Sum()' ){
+      ready = sheetsSrvc.storage;
+      for (var i = 0; i < ready.length; i++) {
+        ans = ans + Number(ready[i].val)
+      }
+      $scope.cellvalue = ans;
     }
     return $scope.cells,
     $scope.cellsHOR,
@@ -60,22 +68,112 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
   $scope.calc = function(para) {
     if (para === 'pi') {}
 
+    else if( para == 'Product()' ){
+      ready = sheetsSrvc.storage;
+      ans = Number(ready[0].val)
+      for (var i = 1; i < ready.length; i++) {
+        ans = ans * Number(ready[i].val)
+      }
+      $scope.cellvalue = ans;
+    }
+
+    else if( para == 'Average()' ){
+      ready = sheetsSrvc.storage;
+      for (var i = 0; i < ready.length; i++) {
+        ans = ans + Number(ready[i].val)
+      }
+      $scope.cellvalue = ans / Number(ready.length);
+    }
+
+    else if( para == 'Max()' ){
+      ready = sheetsSrvc.storage;
+      var max = [];
+      for (var i = 0; i < ready.length; i++) {
+        max.push(Number(ready[i].val))
+      }
+      console.log(max);
+      $scope.cellvalue = Math.max.apply(null, max);
+    }
+
+    else if( para == 'Min()' ){
+      ready = sheetsSrvc.storage;
+      var min = [];
+      for (var i = 0; i < ready.length; i++) {
+        min.push(Number(ready[i].val))
+      }
+      $scope.cellvalue = Math.min.apply(null, min);
+    }
+
     return $scope.cellvalue
   }
 
-  $scope.fun = function(para,para2){
-    // console.log(para,para2);
-    if(para==='on'){
-        document.getElementById("cell").select()
-      }
-    else{
-      //  this.unselect();
 
-    }
+  $scope.chart = function() {
+    $scope.addChart = false
+    var arrX = sheetsSrvc.storage;
+    var arrY = sheetsSrvc.storage;
+    sheetsSrvc.chart(arrX,arrY);
   }
 
-  $(function() {
-    $("#selectable").selectable();
-  });
+  $scope.addChart = false;
+
+  $scope.addedChart = function(){
+    if($scope.addChart===false){return $scope.addChart = true;}
+    else{return $scope.addChart = false;}
+    console.log($scope.addChart);
+  }
+
 
 })
+.directive('makeBox', function() {
+  return {
+    controller: 'sheetsCtrl',
+    link: function(scope, element, attr){
+      scope.graph == true;
+      var togChart = function() {
+        if(scope.graph == true){
+          $(".notshow").css('display:content;')
+          $(".show").css('display:none;')
+          return scope.graph == false;
+        }
+        else{
+          $(".show").css('display:content;')
+          $(".notshow").css('display:none;')
+          return scope.graph == true;
+        }
+        console.log(scope.graph);
+      }
+
+      element.on('click', function() {
+          $("#test1").html(`<div id="chart1">
+            <div class='notshow'>
+                <p class='chart-title' >Chart</p>
+                  <div>
+                    <canvas id="canvas"></canvas>
+                  </div>
+                  <button make-box onclick='togChart()' class='share-btn'>Edit</button>
+            </div>
+        </div>`)
+          $("#chart1").draggable().resizable();
+        })
+      }
+    }
+  })
+
+  var graph = true;
+
+  var togChart = function() {
+    console.log('shit');
+    console.log(graph);
+    if(graph === true){
+      $(".show").css('display','none')
+      $(".notshow").css('display','block')
+      return graph = false;
+    }
+    else{
+      $(".notshow").css('display','none')
+      $(".show").css('display','block')
+      return graph = true;
+    }
+    console.log(graph);
+  }

@@ -19,7 +19,7 @@
         {{x}}
     </div>
 </section>
-
+<div class='scroll'>
 <section id='big-box' class='big-box'>
     <!-- Populate NUM bar -->
     <div class='num-bar'>
@@ -36,16 +36,19 @@
             <input ng-model='cellvalue' type="text">
             <div ng-show='cellvalue=="="' class='cell-methods'>
                 <a ng-click='cellvalue="Average()"' class='select-method'>Average ( )</a>
-                <a ng-click='cellvalue="Median()"' class='select-method'>Median ( )</a>
-                <a ng-click='cellvalue=3.14159265358979323846' class='select-method'>&pi; </a>
                 <a ng-click='cellvalue="Sum()"' class='select-method'>Sum ( )</a>
                 <a ng-click='cellvalue="Product()"' class='select-method'>Product ( )</a>
+                <a ng-click='cellvalue="Max()"' class='select-method'>Max ( )</a>
+                <a ng-click='cellvalue="Min()"' class='select-method'>Min ( )</a>
+                <a ng-click='cellvalue=3.14159265358979323846' class='select-method'>&pi; </a>
             </div>
         </form>
     </section>
 
+  <div id='test1' ></div>
 
 </section>
+</div>
 
 <script type="text/javascript">
 </script>
