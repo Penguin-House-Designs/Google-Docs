@@ -109,11 +109,18 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
 
 
   $scope.chart = function() {
-
+    $scope.addChart = false
     var arrX = sheetsSrvc.storage;
     var arrY = sheetsSrvc.storage;
-
     sheetsSrvc.chart(arrX,arrY);
+  }
+
+  $scope.addChart = false;
+
+  $scope.addedChart = function(){
+    if($scope.addChart===false){return $scope.addChart = true;}
+    else{return $scope.addChart = false;}
+    console.log($scope.addChart);
   }
 
 
@@ -139,17 +146,6 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
 
       element.on('click', function() {
           $("#test1").html(`<div id="chart1">
-        <section class='show'>
-          <p class='chart-title'>Title :<p>
-            <input id="chart-input">
-          <p class='chart-title'>X-axis :<p>
-            <input id="chart-input">
-          <p class='chart-title'>Y-axis :<p>
-            <input id="chart-input">
-              <div>
-                <button make-box onclick='togChart()' class='share-btn'>Graph</button>
-              </div>
-        </section>
             <div class='notshow'>
                 <p class='chart-title' >Chart</p>
                   <div>
