@@ -153,13 +153,18 @@
   border-right: 1px solid #bfbfbf;
   border-bottom: 1px solid #bfbfbf;
 }
+.scroll{
+  position: relative;
+  top: 152px;
+  overflow: scroll;
+  height: 75vh;
+}
 
 .big-box {
   position: relative;
-  top: 152px;
   display: flex;
   width: 110vw;
-  z-index: -9;
+  z-index: 0;
 }
 
 .input-boxs {
@@ -216,23 +221,62 @@
 .select-method:hover {
   background: #e6e6ff;
 }
-
-#feedback {
-  font-size: 1.4em;
+#chart1{
+  position:absolute;
+  z-index: 0;
+  background: white;
+  top: 100px;
+  left: 200px;
+  height: 300px;
+  width: 500px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
-
-#selectable .ui-selecting {
-  background: #e6e6ff;
+.show{
+  display: block;
 }
-
-#selectable .ui-selected {
-  background: #e6e6ff;
+.notshow{
+  display: none;
+}
+.addChart{
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  z-index: 0;
+  background: white;
+  top: 100px;
+  left: 300px;
+  height: 300px;
+  width: 500px;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+#chart-input{
+  border: 2px solid grey;
+  margin-left: 10px;
+  height: 20px;
+  width: 250px;
+  font-size: 12px;
+}
+.chart-title{
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-size: 16px;
+  color: black;
+}
+.graph-btn{
+  margin-left: 10px;
+  line-height: normal;
+  height: 30px;
+  width: 100px;
+  background: #0f9d58;
   color: white;
-}
-
-#selectable {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  /*width: 60%;*/
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
 }

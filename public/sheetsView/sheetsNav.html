@@ -68,13 +68,26 @@
               <li><a id="icon-fix"><i class="material-icons left">comment</i>Comment</a></li>
               <li><a>Note</a></li>
               <li><a id="icon-fix"><i class="material-icons left">functions</i>Function</a></li>
-              <li><a id="icon-fix"><i class="material-icons left">insert_chart</i>Chart...</a></li>
+              <li><a ng-click='addedChart()' id="icon-fix"><i class="material-icons left">insert_chart</i>Chart...</a></li>
               <li><a id="icon-fix"><i class="material-icons left">image</i>Image...</a></li>
               <li><a id="icon-fix"><i class="material-icons left">link</i>Link...</a></li>
               <li><a id="icon-fix"><i class="material-icons left">format_list_bulleted</i>Form...</a></li>
               <li><a id="icon-fix"><i class="material-icons left">picture_in_picture</i>Drawing...</a></li>
             </ul>
           </div>
+
+          <section ng-show='addChart' class='addChart'>
+            <span  class='chart-title'>Title :</span>
+              <input ng-model='chart-name' id="chart-input">
+            <span class='chart-title'>X-axis :</span>
+              <input ng-model='chart-xval' id="chart-input">
+            <span class='chart-title'>Y-axis :</span>
+              <input ng-model='chart-yval' id="chart-input">
+                <div>
+                  <button make-box ng-click='chart()' class='graph-btn'>Graph</button>
+                </div>
+          </section>
+
           <div class="dropdown">
             <a class="button" style="cursor:pointer; color: black; padding-right:6px">Format</a>
             <ul style="top: 47px;">
