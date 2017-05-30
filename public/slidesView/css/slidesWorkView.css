@@ -64,7 +64,7 @@
   padding-left: 55px;
 }
 
-.slides-toolbar a {
+.slides-toolbar a, label {
   height: 25px;
   display: flex;
   align-items: center;
@@ -72,9 +72,16 @@
   color: black;
   font-size: 11px;
 }
+.slides-toolbar :not(li a) a:hover, label:hover  {
+  border: 1px solid #bfbfbf;
+  background-color: #f4f4f4;
+  border-radius: 2px;
+  margin: 4px;
+}
 
 .slides-toolbar i {
   font-size: 18px;
+  margin: 0 2px;
 }
 
 .slides-toolbar-section {
@@ -85,17 +92,15 @@
 
 .slides-dropdown {
   border-left: 1px solid #bfbfbf;
-  width:15px;
+  width: 15px;
   height: 100%;
   font-size: 15px;
+  padding-top: 5px;
 }
 
 .new-slide {
-  display: flex;
-  align-items: center;
   border: 1px solid #bfbfbf;
   border-radius: 2px;
-  margin: none;
 }
 
 .add-slide {
@@ -115,6 +120,7 @@
 
 .slides-workspace {
   display: flex;
+  overflow: hidden;
 }
 
 .slide-nav {
@@ -148,7 +154,7 @@
 }
 
 .slide-positioning {
-  height: 75%;
+  height: 86%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,15 +162,18 @@
 
 .current-slide {
   position: relative;
-  height: 25vw;
-  width: 45vw;
-  min-width: 520px;
+  height: 30vw;
+  width: 48vw;
+  min-width: 480px;
+  max-width: 640px;
   min-height: 300px;
+  max-height: 400px;
   background-color: white;
   box-shadow: 0px 2px 2px 2px darkgray;
-
 }
-
+.canvas {
+  border:2px solid blue;
+}
 .comments {
   width: 100%;
   height: 75px;
@@ -188,7 +197,7 @@
   width: 90%;
   top: 15%;
   left:5%;
-  /*transform: translateX(-50%);*/
+  cursor: move;
   border: 1px solid #bfbfbf;
 }
 
@@ -198,7 +207,7 @@
   width: 90%;
   top: 60%;
   left:5%;
-  /*transform: translateX(-50%);*/
+  cursor: move;
   border: 1px solid #bfbfbf;
 }
 
@@ -213,9 +222,11 @@
 }
 
 .new-text-box {
+  position: absolute;
   width: 90%;
-  height: 20%;
+  height: 15%;
   border: 1px solid #bfbfbf;
+  cursor: move;
 }
 
 .new-input {
@@ -223,6 +234,17 @@
   width: 90% !important;
 }
 
+.new-image-div {
+  position: absolute;
+  height:200px;
+  width: 200px;
+  background-color: transparent;
+}
+
+.new-image {
+  height: 100%;
+  width: 100%
+}
 
 /*Make Slide Full Screen*/
 :-webkit-full-screen {
