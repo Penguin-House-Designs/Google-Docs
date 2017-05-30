@@ -28,6 +28,7 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
 	$scope.inputcells();
 
   $scope.storge = function(array){
+
     if(array.length > 2){
       for (var i = 0; i < array.length-1; i++) {
           for (var j = i+1; j < array.length; j++) {
@@ -50,10 +51,17 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
       console.log('---->>>', $scope.ready);
       $scope.cellvalue = 'ready';
     }
+    return $scope.cells,
+    $scope.cellsHOR,
+    $scope.abc
+  }
+  $scope.inputcells();
+
+  $scope.calc = function(para) {
+    if (para === 'pi') {}
 
     return $scope.cellvalue
   }
-
 
   $scope.fun = function(para,para2){
     // console.log(para,para2);
@@ -62,15 +70,12 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
       }
     else{
       //  this.unselect();
+
     }
   }
 
-
-
-
-
-
-
-
+  $(function() {
+    $("#selectable").selectable();
+  });
 
 })

@@ -1,65 +1,74 @@
 <div class="home-docs-all">
 
-			<div class="home-docs-nav">
-<!-- Slide OUT NAV -->
-				<div class="home-icon-title">
-				<div class="">
-					<div class="home-docs-slider-nav">
-						<ul id="slide-out" class="side-nav">
-					    <li>
-						     <div class="docs-side-nav-title">
-						       Google Docs
-						     </div>
-							</li>
-					    <li><a ui-sref="docsHome"><i class="material-icons" style="color: #4285f4">insert_drive_file</i>Docs</a></li>
-					    <li><a ui-sref="sheetsHome"><i class="material-icons" style="color: #0f9d58">insert_drive_file</i>Sheets</a></li>
-					    <li><a ui-sref="slidesHome"><i class="material-icons" style="color: #f4b400">insert_drive_file</i>Slides</a></li>
-					    <li><div class="divider"></div></li>
-              <li><a href=""><i class="material-icons">settings</i>Settings</a></li>
-              <li><a ui-sref='docs'><i class="material-icons">help</i>Help and Support</a></li>
-              <li><div class="divider"></div></li>
-					    <li><a href=""><i class="material-icons">save</i>Drive</a></li>
-					  </ul>
-						<a href="#" class="button-collapse home-docs-side-icon" data-activates="slide-out" data-sidenav="left" data-menuwidth="300" data-closeonclick="true"><i class="material-icons">menu</i></a>
-					</div>
+	<div class="home-docs-nav">
+		<!-- Slide OUT NAV -->
+		<div class="home-icon-title">
+			<div class="">
+				<div class="home-docs-slider-nav">
+					<ul id="slide-out" class="side-nav">
+						<li>
+							<a ui-sref="docs">
+								<div class="slideout-logo-cont">
+									<img class="slideout-logo" src="/docsView/pics/slideoutLogo.svg" alt="">
+									<div class="docs-side-nav-title">
+										Docs
+									</div>
+								</div>
+							</a>
+						</li>
+						<li><a ui-sref="docsHome"><i class="material-icons" style="color: #4285f4">insert_drive_file</i>Docs</a></li>
+						<li><a ui-sref="sheetsHome"><i class="material-icons" style="color: #0f9d58">insert_drive_file</i>Sheets</a></li>
+						<li><a ui-sref="slidesHome"><i class="material-icons" style="color: #f4b400">insert_drive_file</i>Slides</a></li>
+						<li>
+							<div class="divider"></div>
+						</li>
+						<li><a href=""><i class="material-icons">settings</i>Settings</a></li>
+						<li><a href=""><i class="material-icons">help</i>Help and Support</a></li>
+						<li>
+							<div class="divider"></div>
+						</li>
+						<li><a href=""><i class="material-icons">save</i>Drive</a></li>
+					</ul>
+					<a href="#" class="button-collapse home-docs-side-icon" data-activates="slide-out" data-sidenav="left" data-menuwidth="300" data-closeonclick="true"><i class="material-icons">menu</i></a>
 				</div>
-<!-- Google Docs Logo -->
-				<div class="home-docs-logo-nav">
-					<h5 style="color:white"><span style="font-size:22px">Google Docs</span></h5>
-				</div>
-
 			</div>
-	<!-- Search Form  -->
-			<div class="home-docs-search" style="">
-				<nav style="box-shadow: none">
-					<div class="nav-wrapper">
-						<form>
-							<div class="input-field" style="background:#4285f4">
-								<input id="search" type="search" placeholder="Search" required class="docs-search">
-								<label  class="label-icon" for="search"><i class="material-icons">search</i></label>
-							</div>
-						</form>
-					</div>
-				</nav>
+			<!-- Google Docs Logo -->
+			<div class="home-docs-logo-nav">
+				<h5 style="color:white"><span style="font-size:22px">Google Docs</span></h5>
 			</div>
 
-<!-- Icons On Right Of Navbar -->
-			<div class="docs-home-nav-icons">
-				<a href=""><i class="material-icons">view_module</i></a>
-				<a href=""><i class="material-icons">add_alert</i></a>
-				<a href=""><i class="material-icons">add</i></a>
-			</div>
+		</div>
+		<!-- Search Form  -->
+		<div class="home-docs-search" style="">
+			<nav style="box-shadow: none">
+				<div class="nav-wrapper">
+					<form>
+						<div class="input-field" style="background:#4285f4">
+							<input id="search" type="search" placeholder="Search" required class="docs-search">
+							<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+						</div>
+					</form>
+				</div>
+			</nav>
 		</div>
 
+		<!-- Icons On Right Of Navbar -->
+		<div class="docs-home-nav-icons">
+			<a href=""><i class="material-icons">view_module</i></a>
+			<a href=""><i class="material-icons">add_alert</i></a>
+			<a href=""><i class="material-icons">add</i></a>
+		</div>
+	</div>
 
-<!-- Templates -->
 
-		<div class="docs-home-template" style="border:2px solid #424249">
-			<div class="docs-home-template">
+	<!-- Templates -->
 
-        <div class="home-start-template">
-          <h6 style="font-weight:800; color:#d9d9da">Start A New Document</h6>
-          <div style='width:607px'>
+	<div class="docs-home-template" style="border:2px solid #424249">
+		<div class="docs-home-template">
+
+			<div class="home-start-template">
+				<h6 style="font-weight:800; color:#d9d9da">Start A New Document</h6>
+				<div style='width:607px'>
 
           </div>
         </div>
@@ -68,52 +77,56 @@
 						<img class="docs-cursor" ui-sref="docsWork" width="118px" height:"150px" src="{{template.img}}" alt="">
 						<p style="color:white; padding:0; margin:0; font-weight:800">{{template.name}}</p>
 					</div>
+
 				</div>
 			</div>
 		</div>
+	</div>
 
 
-<!-- List Items -->
+	<!-- List Items -->
 	<div class="container">
 		<div class="docs-list-view">
 			<div class='row'>
-			 <div class='col s6'>Documents By title</div>
+				<div class='col s6'>Documents By title</div>
 
 
 
-			 <div class="col s2">
-				 <div class="dropdown">
-					 <a class="button" style="cursor:pointer; color: black; padding-right:6px"> {{owned}}</a> <span class="icon ion-chevron-down"></span>
-					 <ul>
-						 <li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
-						 <li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
-						 <li><a ng-model="notMe" ng-click="dropDownMessage3()">Not owned by me</a></li>
-					 </ul>
-				 </div>
+				<div class="col s2">
+					<div class="dropdown">
+						<a class="button" style="cursor:pointer; color: black; padding-right:6px"> {{owned}}</a> <span class="icon ion-chevron-down"></span>
+						<ul>
+							<li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
+							<li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
+							<li><a ng-model="notMe" ng-click="dropDownMessage3()">Not owned by me</a></li>
+						</ul>
+					</div>
 
-			 </div>
-			 <div class="col s2">Last modified</div>
-			 <div class="col s2">
-				 <i class="material-icons right">perm_media</i>
-				 <i class="material-icons right">sort_by_alpha</i>
-				 <i class="material-icons right">view_module</i>
-			 </div>
+				</div>
+				<div class="col s2">Last modified</div>
+				<div class="col s2">
+					<i class="material-icons right">perm_media</i>
+					<i class="material-icons right">sort_by_alpha</i>
+					<i class="material-icons right">view_module</i>
+				</div>
 			</div>
 			<ul class="collection">
-				 <li class="collection-item home-view-table">
-					 <div class="title-docs-icons">
-						 <i style="color:white; background:#4285f4" class="material-icons left">subject</i>
-  					 <h6 style="font-weight:600">Hemoemises</h6>
-					 </div>
-					 <div class="home-owned-date">
-						 <h6 class="home-name-list">Alvin</h6>
-  					 <h6>3/12/02</h6>
-					 </div>
-				 </li>
-				 <li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
-				 <li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i> <h6 style="font-weight:600">Alvin</h6></li>
-			 </ul>
-		 </div>
+				<li class="collection-item home-view-table">
+					<div class="title-docs-icons">
+						<i style="color:white; background:#4285f4" class="material-icons left">subject</i>
+						<h6 style="font-weight:600">Hemoemises</h6>
+					</div>
+					<div class="home-owned-date">
+						<h6 class="home-name-list">Alvin</h6>
+						<h6>3/12/02</h6>
+					</div>
+				</li>
+				<li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i>
+					<h6 style="font-weight:600">Alvin</h6></li>
+				<li class="collection-item"><i style="color:white; background:#4285f4" class="material-icons left">subject</i>
+					<h6 style="font-weight:600">Alvin</h6></li>
+			</ul>
+		</div>
 	</div>
 
 
