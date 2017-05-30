@@ -1,10 +1,10 @@
 <!-- <slides-menu><slides-menu/> -->
 
-
+  <input type="file" onchange="angular.element(this).scope().createImg(this.files[0])" name="file-input"  id="file-input" style="display:none">
 <!-- SLIDES MENU -->
 <nav>
   <div class="nav-wrapper-work">
-    <div ui-sref='slidesHome' style="cursor:pointer" class='slides-icon'>
+    <div ui-sref='slidesHome' class='slides-icon cursor-mode'>
       <a class='material-icons' style="transform: rotate(90deg); margin-top:20px">content_copy</a>
     </div>
     <div class='nav-row-work'>
@@ -56,7 +56,12 @@
 <!-- SLIDES TOOLBAR -->
 <!-- <slides-tools><slides-tools/> -->
 <div class='slides-toolbar'>
-  <a href="" class='new-slide' ng-click="createSlide()"><i class="material-icons add-slide">add</i><i class='material-icons slides-dropdown'>arrow_drop_down</i> </a>
+  <a href="" class='new-slide' ng-click="createSlide()">
+    <i class="material-icons add-slide">add</i>
+    <div class="slides-dropdown">
+      <i class='material-icons' style="font-size: 15px;">arrow_drop_down</i>
+    </div>
+  </a>
   <a href=""><i class='material-icons'>print</i></a>
   <a href=""><i class='material-icons'>undo</i></a>
   <a href=""><i class='material-icons'>redo</i></a>
@@ -68,9 +73,20 @@
   <div class="slides-right-border"></div>
 
   <a href="" style="transform: rotate(270deg)"><i class="material-icons">near_me</i></a>
-  <a href="" make-text-box ng-click="createTextBox()"><i class="material-icons">format_shapes</i></a>
-  <a href="" class="ion-image"></a>
-  <a href=""><i class="material-icons" style="transform: rotate(45deg)">remove</i><i class='material-icons'>arrow_drop_down</i></a>
+  <a href="" make-text-box  ng-click="createTextBox()"><i class="material-icons">format_shapes</i></a>
+
+  <label for="file-input" class="ion-image" style="font-size:18px"></label>
+
+    <div class="dropdown">
+      <a href="">
+        <img src="./slidesView/pics/shapes.png" width="25px">
+      </a>
+      <ul style="top: 47px;">
+        <li><a style="display:flex" ng-click="createShape('cir')"><i class="material-icons left">panorama_fish_eye</i>Ellipse</a></li>
+        <li><a style="display:flex" ng-click="createShape('rect')"><i class="material-icons left">check_box_outline_blank</i>Rectangle</a></li>
+        <li><a style="display:flex" ng-click="createShape('star')"><i class="material-icons left">star_border</i>Star</a></li>
+      </ul>
+    </div>
   <div class='slides-right-border'></div>
 
   <a href=""><i class="material-icons">comment</i></a>
@@ -107,6 +123,7 @@
     <div class="slide-positioning">
 
 <!-- SLIDE CONTENTS -->
+
       <div class="current-slide" id="oneSlide">
           <div id="div1" grab-css></div>
           <div id="div2" grab-css></div>
@@ -160,6 +177,8 @@
     </div>
     <div class="comments">
       <input type="text" placeholder="Click to add speaker notes">
+      <input type="file" onchange="angular.element(this).scope().createImg(this.files[0])">
+      <button create-shape  type="submit" name="button">Click to add new stuff</button>
       <button type="button" ng-click='click()' name="button">Do the shits</button>
       <button type="button" ng-click='log()' name="button">Log the shits</button>
     </div>
