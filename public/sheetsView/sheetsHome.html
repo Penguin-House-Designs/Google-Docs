@@ -44,13 +44,13 @@
         <form>
           <div class="input-field" id="sheets-green" style="background:#0f9d58">
 
-            <input id="search" type="search" placeholder="Search" required>
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          </div>
-        </form>
-      </div>
-    </nav>
-  </div>
+          <input id="search" type="search" placeholder="Search" required ng-model="search">
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        </div>
+      </form>
+    </div>
+  </nav>
+</div>
 
   <!-- Icons On Right Of Navbar -->
   <div class="docs-home-nav-icons">
@@ -86,39 +86,57 @@
 
 
 
-      <div class="col s2">
-        <div class="dropdown">
-          <a class="button" style="cursor:pointer; color: black; padding-right:6px"> {{owned}}</a> <span class="icon ion-chevron-down"></span>
-          <ul>
-            <li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
-            <li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
-            <li><a ng-model="notMe" ng-click="dropDownMessage3()">Not owned by me</a></li>
-          </ul>
-        </div>
+		 <div class="col s2">
+			 <div class="dropdown">
+				 <a class="button" style="cursor:pointer; color: black; padding-right:6px">{{owned}}</a><span class="icon ion-chevron-down"></span>
+				 <ul>
+					 <li><a ng-model="anyone" ng-click="dropDownMessage()">Owned by anyone</a></li>
+					 <li><a ng-model="me" ng-click="dropDownMessage2()">Owned by me</a></li>
+					 <li><a ng-model="notMe" ng-click="dropDownMessage3()">Not owned by me</a></li>
+				 </ul>
+			 </div>
 
-      </div>
-      <div class="col s2">Last modified</div>
-      <div class="col s2">
-        <i class="material-icons right">perm_media</i>
-        <i class="material-icons right">sort_by_alpha</i>
-        <i class="material-icons right">view_module</i>
-      </div>
-    </div>
-    <ul class="collection">
-      <li class="collection-item home-view-table">
-        <div class="title-docs-icons">
-          <i class="material-icons left sheets-icons">subject</i>
-          <h6 style="font-weight:600">Hemoemises</h6>
-        </div>
-        <div class="home-owned-date">
-          <h6 class="home-name-list">Alvin</h6>
-          <h6>3/12/02</h6>
-        </div>
-      </li>
-      <li class="collection-item"><i class="material-icons left sheets-icons">subject</i>
-        <h6 style="font-weight:600">Alvin</h6></li>
-      <li class="collection-item"><i class="material-icons left sheets-icons">subject</i>
-        <h6 style="font-weight:600">Alvin</h6></li>
-    </ul>
-  </div>
+		 </div>
+		 <div class="col s2">Last modified</div>
+		 <div class="col s2">
+			 <i class="material-icons right">perm_media</i>
+			 <div class="dropdown">
+				<i style="cursor:pointer" class="material-icons right">sort_by_alpha</i>
+				<ul>
+					<li><a ng-click="order='+title'">A-Z</a></li>
+					<li><a ng-click="order='-title'">Z-A</a></li>
+				</ul>
+			 </div>
+			 <i class="material-icons right">view_module</i>
+		 </div>
+		</div>
+		<ul class="collection">
+			 <li class="collection-item home-view-table" ng-repeat="sheets in sheetsDocus|filter:search|orderBy:order">
+				 <div class="title-docs-icons">
+					 <i class="material-icons left sheets-icons">subject</i>
+					 <h6 style="font-weight:600">{{sheets.title}}</h6>
+				 </div>
+				 <div class="home-owned-date">
+					 <h6 class="home-name-list">{{sheets.name}}</h6>
+					 <h6>{{sheets.date}}</h6>
+				 </div>
+			 </li>
+		 </ul>
+	 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- sheets-icons -->
+<!-- <i class="material-icons left sheets-icons">subject</i> -->
