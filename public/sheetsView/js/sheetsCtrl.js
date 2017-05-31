@@ -15,6 +15,8 @@ GoogleApps.controller('sheetsCtrl', function ($scope, $state, sheetsSrvc) {
 
 		$scope.dropDownMessage3 = function(){
 			$scope.owned = "Not owned by me"
-		}
+		};
+
+		$scope.sheetsDocus = sheetsSrvc.sheetsDocuments;
 
 })

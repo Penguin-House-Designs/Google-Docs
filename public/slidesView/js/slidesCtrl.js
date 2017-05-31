@@ -2,6 +2,11 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
   $scope.templatePics = slidesSrvc.slidesTemplates;
 
 
+	console.log('hi');
+
+		$scope.slideDocus = slidesSrvc.slidesDocuments;
+		console.log($scope.slideDocus);
+
 // SLIDES HOME STUFF//////
 	//Fxns for Sorting
 		$scope.owned = "Owned by me";
@@ -31,9 +36,9 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
     $scope.changeSlides = (x) => {
       for (var i = 0; i < $scope.slideContent.length; i++) {
         if ($scope.slideContent[i].slideId !== x) {
-          $($scope.slideContent[i].divId).css('display', 'none')
+          $(`#${$scope.slideContent[i].divId}`).css('display', 'none')
         } else {
-          $($scope.slideContent[i].divId).css('display', 'block')
+          $(`#${$scope.slideContent[i].divId}`).css('display', 'block')
         }
       }
       $scope.currentSlide = x ;
