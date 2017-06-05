@@ -21,6 +21,7 @@
 </section>
 <div class='scroll'>
 <section id='big-box' class='big-box'>
+
     <!-- Populate NUM bar -->
     <div class='num-bar'>
         <div ng-repeat='x in numbar' class='num-box'>
@@ -28,27 +29,43 @@
         </div>
     </div>
 
-    <!-- ng-mouseup='fun("off")' -->
     <!-- Populate Cells bar -->
-
     <section class='input-boxs'>
-        <form id={{x[0]}} celldir ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs' action="">
+        <form id={{x[0]}} celldir ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs'>
             <input ng-model='cellvalue' type="text">
             <div ng-show='cellvalue=="="' class='cell-methods'>
-                <a ng-click='cellvalue="Average()"' class='select-method'>Average ( )</a>
-                <a ng-click='cellvalue="Sum()"' class='select-method'>Sum ( )</a>
-                <a ng-click='cellvalue="Product()"' class='select-method'>Product ( )</a>
-                <a ng-click='cellvalue="Max()"' class='select-method'>Max ( )</a>
-                <a ng-click='cellvalue="Min()"' class='select-method'>Min ( )</a>
-                <a ng-click='cellvalue=3.14159265358979323846' class='select-method'>&pi; </a>
+                <p ng-click='cellvalue="Average()"' class='select-method'>Average ( )</p>
+                <p ng-click='cellvalue="Sum()"' class='select-method'>Sum ( )</p>
+                <p ng-click='cellvalue="Product()"' class='select-method'>Product ( )</p>
+                <p ng-click='cellvalue="Max()"' class='select-method'>Max ( )</p>
+                <p ng-click='cellvalue="Min()"' class='select-method'>Min ( )</p>
+                <p ng-click='cellvalue=3.14159265358979323846' class='select-method'>&pi; </p>
             </div>
         </form>
     </section>
 
-  <div id='test1' ></div>
+  <div id="chart1" ng-style='hideChart'>
+    <a ng-click='hiddenChart("hide")' class='min-btn ion-minus-round'></a>
+      <div>
+          <p class='chart-title' > {{ chart_name }}</p>
+            <div>
+              <canvas id="canvas"></canvas>
+            </div>
+          <button ng-click='addedChart()' class='Edit-btn'>Edit</button>
+      </div>
+  </div>
 
 </section>
-</div>
 
-<script type="text/javascript">
-</script>
+  <div class='bottom-toolbar'>
+    <div>
+    <button class='bottom-toolbar-btn'><span class='ion-plus-round'></span></button>
+    <button class='bottom-toolbar-btn'><span class='ion-navicon'></span></button>
+    <button class='bottom-toolbar-btn'>Sheet 1</button>
+    </div>
+    <div>
+    <button ng-show='graphBtn' ng-click='hiddenChart("show")' class='bottom-toolbar-btn'>Graph 1</button>
+    </div>
+  </div>
+
+</div>
