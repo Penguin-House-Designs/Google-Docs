@@ -17,6 +17,9 @@
   align-items: flex-end;
   align-items: center;
 }
+.slides-template-img:hover {
+  border: 2px solid #f4b400;
+}
 
 .slide-icons {
   color: white;
