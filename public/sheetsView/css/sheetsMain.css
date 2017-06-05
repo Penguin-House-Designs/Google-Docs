@@ -9,13 +9,14 @@
   height: 38px;
   border-top: 1px solid #bfbfbf;
   padding-left: 80px;
+  padding-bottom: 3px;
   justify-content: space-between;
 }
 
 .toolbar a {
   color: black;
   font-size: 14px;
-  margin: 7px;
+  padding: 7px;
 }
 
 .toolbar span {
@@ -30,16 +31,22 @@
 .column {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .textColor {
   height: 3px;
   width: 20px;
   background: green;
+  margin-bottom: 3px;
 }
 
 .start {
   display: inline-flex;
+}
+.start :hover{
+  background: rgba(204, 204, 204,0.6);
 }
 
 .endArrow {
@@ -212,7 +219,8 @@
   width: 100px;
 }
 
-.select-method {
+.cell-methods p{
+  margin: 0;
   border-bottom: 1px solid grey;
   padding: 5px;
   color: black;
@@ -221,14 +229,18 @@
 .select-method:hover {
   background: #e6e6ff;
 }
+
+#taco{
+  display: none;
+}
 #chart1{
   position:absolute;
   z-index: 0;
   background: white;
-  top: 100px;
-  left: 200px;
-  height: 300px;
-  width: 500px;
+  top: 20px;
+  left: 600px;
+  height: 400px;
+  width: 600px;
   border: 2px solid grey;
   border-radius: 5px;
   padding: 20px;
@@ -279,4 +291,64 @@
   font-size: 16px;
   border-radius: 3px;
   border: 1px solid #e6e6e6;
+}
+.Edit-btn{
+  padding: 5px;
+  margin-top: 5px;
+  width: 70px;
+  color: white;
+  background: #0073e6;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+}
+.min-btn{
+  position: absolute;
+  left: 585px;
+  top: -10px;
+  text-align: center;
+  background: #ffb366;
+  height: 16px;
+  width: 16px;
+  color: grey;
+  border-radius: 40px;
+}
+.valschart{
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.valschart-btn{
+  margin-left: 5px;
+  line-height: normal;
+  height: 25px;
+  width: 50px;
+  background: #0073e6;
+  color: white;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+}
+.bottom-toolbar{
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 23px;
+  background: #e6e6e6;
+}
+.bottom-toolbar-btn{
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 20;
+  width: auto;
+  font-size: 12px;
+  border-radius: 3px;
+  background: #e6e6e6;
+  border: 1px solid grey;
+}
+.bottom-toolbar button:focus{
+  background: rgba(51, 133, 255,0.5);
 }
