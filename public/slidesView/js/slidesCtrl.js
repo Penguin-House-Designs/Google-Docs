@@ -2,10 +2,10 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
   $scope.templatePics = slidesSrvc.slidesTemplates;
 
 
-	console.log('hi');
+	// console.log('hi');
 
 		$scope.slideDocus = slidesSrvc.slidesDocuments;
-		console.log($scope.slideDocus);
+		// console.log($scope.slideDocus);
 
 // SLIDES HOME STUFF//////
 	//Fxns for Sorting
@@ -25,8 +25,18 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
    alert('hi')
    console.log('Im working');
     }
-      // slidesSrvc.srvcTest = "I'm still on the service"
-    $scope.log = (x)=> console.log('enter', x);
+    $scope.click = ()=> {
+      $('#div3').html(`<svg>
+        <rect width="150" height="150" x="0" fill="#008d46" />
+      </svg>`)
+      $('svg').draggable().resizable()
+    }
+    $scope.log = (x)=> {
+      $('#div3').html(`<svg>
+        <rect width="150" height="150" x="0" fill="#000000" />
+      </svg>`)
+      $('svg').draggable().resizable()
+    }
 
 
     $scope.slides = [0];
@@ -106,30 +116,25 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
 
 
     $scope.createShape = (shape)=> {
-      switch(shape) {
-          case "cir":
-              shapeHtml =
-              ` <div id="drag${String($scope.slideContent.length + 1)}" class="ui-widget-content new-image-div" grab-css>
-              <img src="./slidesView/pics/cir.png" id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
-              break;
-          case "rect":
-              shapeHtml =
-              `<div id="drag${String($scope.slideContent.length + 1)}" class="ui-widget-content new-image-div" grab-css>
-                <img src="./slidesView/pics/rect.png" id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
-              break;
-          case "star":
-              shapeHtml =
-              `<div id="drag${String($scope.slideContent.length + 1)}" class="ui-widget-content new-image-div" grab-css>
-                <img src="./slidesView/pics/star.png" id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
-              break;
-      }
+      shapeHtml =
+      ` <div id="drag${String($scope.slideContent.length + 1)}" class="ui-widget-content new-image-div" grab-css>
+      <img src=${"./slidesView/pics/"+shape+".png"} id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
       $scope.slideContent
         .push({
           slideId: $scope.currentSlide,
           divId: 'drag' + String($scope.slideContent.length +1),
           divHtml: shapeHtml,
-          innerId: 'shape' + String($scope.slideContent.length +1)
+          innerId: shape + String($scope.slideContent.length +1)
         });
+      $scope.currentShape = shape
+      $("#div" + String($scope.slideContent.length)).html($scope.slideContent[$scope.slideContent.length -1].divHtml);
+      $("#drag" + String($scope.slideContent.length)).draggable().resizable();
+    }
+
+    $scope.changeShapeColor = function(col) {
+      $scope.slideContent[$scope.slideContent.length -1].divHtml =
+      ` <div id="drag${String($scope.slideContent.length)}" class="ui-widget-content new-image-div" grab-css>
+      <img src=${"./slidesView/pics/" + $scope.currentShape + "-" + col + ".png"} id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
       $("#div" + String($scope.slideContent.length)).html($scope.slideContent[$scope.slideContent.length -1].divHtml);
       $("#drag" + String($scope.slideContent.length)).draggable().resizable();
     }
