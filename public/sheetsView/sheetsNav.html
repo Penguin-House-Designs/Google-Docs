@@ -76,17 +76,23 @@
 						</ul>
 					</div>
 
-					<section ng-show='addChart' class='addChart'>
-						<span class='chart-title'>Title :</span>
-						<input ng-model='chart-name' id="chart-input">
-						<span class='chart-title'>X-axis :</span>
-						<input ng-model='chart-xval' id="chart-input">
-						<span class='chart-title'>Y-axis :</span>
-						<input ng-model='chart-yval' id="chart-input">
-						<div>
-							<button make-box ng-click='chart()' class='graph-btn'>Graph</button>
-						</div>
-					</section>
+          <section ng-show='addChart' class='addChart'>
+            <span  class='chart-title'>Title :</span>
+              <input ng-model='chart_name' id="chart-input">
+              <span class='chart-title'>X-axis :</span>
+            <div class='valschart'>
+              <input ng-model='xval' id="chart-input">
+              <button ng-click='grabXY("x")' class='valschart-btn'>+</button>
+            </div>
+              <span class='chart-title'>Y-axis :</span>
+            <div class='valschart'>
+              <input ng-model='yval' id="chart-input">
+              <button ng-click='grabXY("y")' class='valschart-btn'>+</button>
+            </div>
+                <div>
+                  <button ng-click='chart()' class='graph-btn'>Graph</button>
+                </div>
+          </section>
 
 					<div class="dropdown">
 						<a class="button" style="cursor:pointer; color: black; padding-right:6px">Format</a>

@@ -2,7 +2,6 @@
   position: fixed;
   z-index: 1;
 }
-
 .nav-wrapper-work {
   background: white;
   display: flex;
@@ -111,15 +110,16 @@
   align-items: center;
 }
 
-.right-share :focus {
-  background: grey;
-}
-
 .right-share button {
   height: 30px;
   width: 80px;
   line-height: normal;
   margin-bottom: 8px;
+}
+.right-share button:focus{
+ background: #0073e6;
+ opacity: 0.4;
+ color: white;
 }
 
 .comment-btn {

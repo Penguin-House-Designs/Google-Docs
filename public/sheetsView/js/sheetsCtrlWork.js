@@ -1,9 +1,6 @@
 GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
-  $scope.broken = "sheets Home view"
-  $scope.alsoBroken = "You are now working in a new SHEET"
   $scope.templatePics = sheetsSrvc.sheetsTemplates;
-  $scope.test = 'test';
-  // $scope.cellvalue ='1';
+  $scope.graphBtn = false;
 
   $scope.inputcells = function(){
 		var array = new Array(651);
@@ -46,33 +43,26 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
     return $scope.ready
   }
 
-  $scope.calc = function( para ){
+
+  $scope.calc = function(para) {
     // declare initial values
     var ready = [];
     var ans = 0;
 
     // declare method and calculate
-    if( para == 'Sum()' ){
-      ready = sheetsSrvc.storage;
-      for (var i = 0; i < ready.length; i++) {
-        ans = ans + Number(ready[i].val)
-      }
-      $scope.cellvalue = ans;
-    }
-    return $scope.cells,
-    $scope.cellsHOR,
-    $scope.abc
-  }
-  $scope.inputcells();
-
-  $scope.calc = function(para) {
-    if (para === 'pi') {}
-
-    else if( para == 'Product()' ){
+    if( para == 'Product()' ){
       ready = sheetsSrvc.storage;
       ans = Number(ready[0].val)
       for (var i = 1; i < ready.length; i++) {
         ans = ans * Number(ready[i].val)
+      }
+      $scope.cellvalue = ans;
+    }
+
+    else if( para == 'Sum()' ){
+      ready = sheetsSrvc.storage;
+      for (var i = 0; i < ready.length; i++) {
+        ans = ans + Number(ready[i].val)
       }
       $scope.cellvalue = ans;
     }
@@ -91,7 +81,6 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
       for (var i = 0; i < ready.length; i++) {
         max.push(Number(ready[i].val))
       }
-      console.log(max);
       $scope.cellvalue = Math.max.apply(null, max);
     }
 
@@ -108,72 +97,75 @@ GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
   }
 
 
+$scope.chart_name = 'Untitled Chart';
+$scope.chart_xval = [];
+$scope.chart_yval = [];
+
+$scope.grabXY = function(para){
+  if(para == 'x'){
+    $scope.xval = 'X values ADDed';
+    var tempx = sheetsSrvc.storage;
+    console.log(tempx);
+    for (var i = 0; i < tempx.length; i++) {
+      $scope.chart_xval.push(tempx[i].val)
+    }
+    return $scope.chart_xval
+  }
+  else{
+    $scope.yval = 'Y values ADDed';
+    var tempy = sheetsSrvc.storage;
+    for (var i = 0; i < tempy.length; i++) {
+      $scope.chart_yval.push(tempy[i].val)
+    }
+    return $scope.chart_yval
+  }
+}
+
   $scope.chart = function() {
-    $scope.addChart = false
-    var arrX = sheetsSrvc.storage;
-    var arrY = sheetsSrvc.storage;
-    sheetsSrvc.chart(arrX,arrY);
+    $scope.graphBtn = true;
+    var name = $scope.chart_name;
+    var arrX = $scope.chart_xval;
+    var arrY = $scope.chart_yval;
+    sheetsSrvc.chart(name,arrX,arrY);
+    $scope.addChart = false;
+    $scope.hideChart = {
+      "z-index": "0"
+    }
   }
 
   $scope.addChart = false;
-
   $scope.addedChart = function(){
     if($scope.addChart===false){return $scope.addChart = true;}
     else{return $scope.addChart = false;}
-    console.log($scope.addChart);
+  }
+
+  $scope.togChart = function() {
+    if($scope.taco == false){
+      $scope.taco = true;
+    }
+    else{
+      $scope.taco = false;
+    }
+    return $scope.taco
+  }
+
+  $scope.hideChart = {
+    "z-index": "-1"
+  }
+  $scope.hiddenChart = function(para){
+    if(para === 'hide') {
+      $scope.hideChart = {
+        "z-index": "-1"
+      }
+    }
+    else {
+      $scope.hideChart = {
+        "z-index": "0"
+      }
+    }
+    console.log($scope.hideChart);
+    return $scope.hideChart
   }
 
 
 })
-.directive('makeBox', function() {
-  return {
-    controller: 'sheetsCtrl',
-    link: function(scope, element, attr){
-      scope.graph == true;
-      var togChart = function() {
-        if(scope.graph == true){
-          $(".notshow").css('display:content;')
-          $(".show").css('display:none;')
-          return scope.graph == false;
-        }
-        else{
-          $(".show").css('display:content;')
-          $(".notshow").css('display:none;')
-          return scope.graph == true;
-        }
-        console.log(scope.graph);
-      }
-
-      element.on('click', function() {
-          $("#test1").html(`<div id="chart1">
-            <div class='notshow'>
-                <p class='chart-title' >Chart</p>
-                  <div>
-                    <canvas id="canvas"></canvas>
-                  </div>
-                  <button make-box onclick='togChart()' class='share-btn'>Edit</button>
-            </div>
-        </div>`)
-          $("#chart1").draggable().resizable();
-        })
-      }
-    }
-  })
-
-  var graph = true;
-
-  var togChart = function() {
-    console.log('shit');
-    console.log(graph);
-    if(graph === true){
-      $(".show").css('display','none')
-      $(".notshow").css('display','block')
-      return graph = false;
-    }
-    else{
-      $(".notshow").css('display','none')
-      $(".show").css('display','block')
-      return graph = true;
-    }
-    console.log(graph);
-  }
