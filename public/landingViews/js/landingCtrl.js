@@ -1,4 +1,9 @@
-GoogleApps.controller('landingCtrl', function($scope) {
+GoogleApps.controller('landingCtrl', function($location, $anchorScroll, $scope, $stateParams) {
+
+  $scope.$watchCollection('$stateParams', function() {
+    $location.hash('top');
+    $anchorScroll();
+  });
 
   $('.type-it-docs').typeIt({
     strings: [

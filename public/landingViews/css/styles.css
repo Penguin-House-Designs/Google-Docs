@@ -119,16 +119,22 @@
 }
 
 .laptop-fix {
-  position: absolute;
+  position: relative;
   left: -10%;
+  bottom: 24%;
+  width: 825px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .video-position {
   width: 560px;
   height: auto;
   position: absolute;
-  bottom: 23%;
-  left: 5px;
+  bottom: 25%;
+  left: 17%;
 }
 
 .info-text {
