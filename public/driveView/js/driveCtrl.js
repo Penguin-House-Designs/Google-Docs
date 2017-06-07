@@ -1,5 +1,7 @@
-GoogleApps.controller('driveCtrl', function($scope) {
-  $(document).ready(function() {
-    $('.parallax').parallax();
-  });
-});
+GoogleApps.directive('paral', function(){
+	return {
+		link: function(sco, ele, attr){
+				ele.parallax();
+		}
+	}
+})
