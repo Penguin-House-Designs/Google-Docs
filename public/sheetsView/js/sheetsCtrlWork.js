@@ -1,6 +1,9 @@
 GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
   $scope.templatePics = sheetsSrvc.sheetsTemplates;
   $scope.graphBtn = false;
+  $scope.k = false;
+  $scope.j = false;
+  $scope.d = false;
 
   $scope.inputcells = function(){
 		var array = new Array(651);
@@ -163,8 +166,24 @@ $scope.grabXY = function(para){
         "z-index": "0"
       }
     }
-    console.log($scope.hideChart);
     return $scope.hideChart
+  }
+
+  $scope.textcolor = {'color':'black'}
+
+  $scope.ccText = function(para){
+    if(para == 'red'){
+      console.log('red');
+      $scope.textcolor = {'color':'red','background':'red'}
+    }
+    else if(para == 'blue'){
+      console.log('blue');
+      $scope.textcolor = {'color':'blue','background':'blue'}
+    }
+
+
+    console.log($scope.textcolor);
+    return $scope.textcolor
   }
 
 
