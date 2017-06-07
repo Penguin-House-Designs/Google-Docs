@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto');
+
+/* Nav Bar*/
+.drive-title{
+	font-family: 'Roboto';
+	font-weight: 400;
+	margin-left: 20px;
+}
+
+.drive-nav-wrapper {
+	background: transparent;
+	box-shadow: none;
+}
+
+/*Intro*/
+.parallax-container {
+	height: 100vh;
+}
+
+
+.drive-intro-logo {
+	width:90px;
+}
+
+.drive-intro-content {
+	height: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.drive-intro-text {
+	color:white;
+	font-weight: 100;
+	font-family: 'Roboto';
+}
+
+.go-to-drive-btn {
+	width: 200px;
+	height: 55px;
+	background:#4386fc;
+	border:2px solid #4386fc;
+	font-family: 'Roboto';
+	color: white;
+	font-weight: 400;
+	font-size: 17px;
+}
+
+.store-any-cont{
+	margin-top: 14%;
+}
+.graphic-cont{
+	margin-top: 18%;
+}
+
+.store-any{
+	color: #5F5F5F;
+	font-size: 38pt;
+	font-family: 'Roboto';
+	font-weight: 300;
+}
+.store-any-info{
+	color: #6A6A6A;
+	font-size: 16pt;
+	font-weight: 200;
+	font-family: 'Roboto';
+}
