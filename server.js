@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
-// const config = require('./config.js');
+const config = require('./config.js');
+
 
 const app = module.exports = express();
 app.use(bodyParser.json());
@@ -16,14 +17,11 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 app.use(express.static(__dirname + '/public'));
-
 app.use(cors());
 
 const conn = massive.connectSync({
-  connectionString : "postgres://nvcarkwn:81B8nbml2xaONxQLgULO8ozP9uM3vh6r@stampy.db.elephantsql.com:5432/nvcarkwn"
+  connectionString : config.connectstring
 });
 
 app.set('db', conn);
