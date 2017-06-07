@@ -22,6 +22,21 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(cors());
 
+const conn = massive.connectSync({
+  connectionString : "postgres://nvcarkwn:81B8nbml2xaONxQLgULO8ozP9uM3vh6r@stampy.db.elephantsql.com:5432/nvcarkwn"
+});
+
+app.set('db', conn);
+const db = app.get('db');
+
+// db.user_create_seed(()=> console.log('user table created'))
+
+app.get('/api/users', (req, res) =>{
+  db.get_all_users( (err, books) =>{
+    err ? res.status(500) : res.send(books)
+  })
+})
+
 
 app.listen('3000', ()=>{
   console.log("Successfully listening on : 3000")
