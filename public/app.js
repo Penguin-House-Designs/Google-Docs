@@ -62,6 +62,12 @@ GoogleApps.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: './slidesView/slidesWork.html',
     controller: 'slidesCtrl'
   })
+//DRIVE VIEWS//
+  .state('driveLanding', {
+    url: '/driveLanding',
+    templateUrl: './driveView/driveLanding.html',
+    controller: 'driveCtrl'
+  })
 
 	$urlRouterProvider.otherwise('/docslanding')
 
