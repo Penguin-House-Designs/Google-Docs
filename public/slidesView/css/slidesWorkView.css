@@ -189,6 +189,8 @@
   bottom: 0;
   font-size: 36px;
   text-align: center;
+  background-color: transparent;
+  z-index:1
 }
 
 .slide-title {
@@ -199,6 +201,11 @@
   left:5%;
   cursor: move;
   border: 1px solid #bfbfbf;
+  background-color: transparent;
+  z-index:1
+}
+.slide-title:fullscreen {
+  border: none;
 }
 
 .slide-author {
@@ -209,7 +216,10 @@
   left:5%;
   cursor: move;
   border: 1px solid #bfbfbf;
+  background-color: transparent;
+  z-index:1
 }
+
 
 .slide-author-input {
   position: absolute;
@@ -219,6 +229,8 @@
   font-size: 24px;
   text-align: center;
   width: 80% !important;
+  background-color: transparent;
+  z-index:1
 }
 
 .new-text-box {
@@ -227,11 +239,14 @@
   height: 15%;
   border: 1px solid #bfbfbf;
   cursor: move;
+  background-color: transparent;
+  z-index:1
 }
 
 .new-input {
   font-size: 14px;
   width: 90% !important;
+  z-index:1
 }
 
 .new-image-div {
@@ -239,11 +254,13 @@
   height:200px;
   width: 200px;
   background-color: transparent;
+  z-index:0
 }
 
 .new-image {
   height: 100%;
-  width: 100%
+  width: 100%;
+  z-index:0
 }
 
 /*Make Slide Full Screen*/

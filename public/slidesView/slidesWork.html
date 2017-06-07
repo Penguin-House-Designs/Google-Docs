@@ -89,6 +89,18 @@
     </div>
   <div class='slides-right-border'></div>
 
+
+  <div class="dropdown">
+        <a href=""><i class="material-icons">format_color_fill</i></a>
+        <ul>
+            <li><a ng-model="anyone" ng-click="changeShapeColor('red')" style="background:red; width: 94.3%; color:red">Pick a color</a></li>
+            <li><a ng-model="anyone" ng-click="changeShapeColor('blue')" style="background:blue; width: 94.3%; color:blue"></a></li>
+            <li><a ng-model="anyone" ng-click="changeShapeColor('black')" style="background:black; width: 94.3%; color:black"></a></li>
+            <li><a ng-model="anyone" ng-click="changeShapeColor('yellow')" style="background:yellow; width: 94.3%; color:yellow"></a></li>
+            <li><a ng-model="anyone" ng-click="changeShapeColor('white')" style="background:white; width: 94.3%; color:white"></a></li>
+            <li><a ng-model="anyone" ng-click="changeShapeColor('green')" style="background:green; width: 94.3%; color:green"></a></li>
+        </ul>
+    </div>
   <a href=""><i class="material-icons">comment</i></a>
   <div class='slides-right-border'></div>
 
@@ -165,7 +177,7 @@
       <input type="text" placeholder="Click to add speaker notes">
       <input type="file" onchange="angular.element(this).scope().createImg(this.files[0])">
       <button create-shape  type="submit" name="button">Click to add new stuff</button>
-      <button type="button" ng-click='click()' name="button">Do the shits</button>
+      <button type="button" ng-click='changeShapeColor("red")' name="button">Do the shits</button>
       <button type="button" ng-click='log()' name="button">Log the shits</button>
     </div>
   </div>

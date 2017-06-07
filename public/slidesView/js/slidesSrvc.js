@@ -22,4 +22,5 @@ GoogleApps.service('slidesSrvc',['$http', function($http){
 	]
 
 
+
 }])
