@@ -103,8 +103,17 @@
     </div>
   <a href=""><i class="material-icons">comment</i></a>
   <div class='slides-right-border'></div>
-
-  <a href=""><b>Background...</b></a>
+	<div class="dropdown">
+				<a href=""><b>Background...</b></a>
+				<ul>
+						<li><a ng-model="anyone" ng-click="bgColor= 'red'" style="background:red; width: 94.3%; color:red">Pick a color</a></li>
+						<li><a ng-model="anyone" ng-click="bgColor= 'blue'" style="background:blue; width: 94.3%; color:blue"></a></li>
+						<li><a ng-model="anyone" ng-click="bgColor= 'black'" style="background:black; width: 94.3%; color:black"></a></li>
+						<li><a ng-model="anyone" ng-click="bgColor= 'yellow'" style="background:yellow; width: 94.3%; color:yellow"></a></li>
+						<li><a ng-model="anyone" ng-click="bgColor= 'white'" style="background:white; width: 94.3%; color:white"></a></li>
+						<li><a ng-model="anyone" ng-click="bgColor= 'green'" style="background:green; width: 94.3%; color:green"></a></li>
+				</ul>
+		</div>
   <div class='slides-right-border'></div>
 
   <a href=""><b>Layout...</b></a>
@@ -128,7 +137,7 @@
       <div  style="margin-top: 5px;">
         {{slides.indexOf(slide) + 1}}
       </div>
-      <div class="slide-nav-slide" active-slide ng-click="changeSlides(slides.indexOf(slide) + 1)"></div>
+      <div class="slide-nav-slide" active-slide ng-click="changeSlides(slides.indexOf(slide) + 1)" style="background-color: {{bgColor}}"></div>
     </div>
   </div>
   <div style="width: 77%">
@@ -136,7 +145,7 @@
 
 <!-- SLIDE CONTENTS -->
 
-      <div class="current-slide" id="oneSlide">
+      <div style="background: {{bgColor}}" class="current-slide" id="oneSlide">
           <div id="div1" grab-css></div>
           <div id="div2" grab-css></div>
           <div id="div3" grab-css></div>

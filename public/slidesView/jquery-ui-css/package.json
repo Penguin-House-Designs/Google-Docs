@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "jquery-ui-css",
+        "scope": null,
+        "escapedName": "jquery-ui-css",
+        "name": "jquery-ui-css",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/andrewnguyen/Desktop/Google-Docs"
+    ]
+  ],
+  "_from": "jquery-ui-css@latest",
+  "_id": "jquery-ui-css@1.11.4",
+  "_inCache": true,
+  "_location": "/jquery-ui-css",
+  "_nodeVersion": "6.9.4",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/jquery-ui-css-1.11.4.tgz_1486458847437_0.7296521887183189"
+  },
+  "_npmUser": {
+    "name": "jeonghwankim",
+    "email": "ej88ej@gmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "jquery-ui-css",
+    "scope": null,
+    "escapedName": "jquery-ui-css",
+    "name": "jquery-ui-css",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/jquery-ui-css/-/jquery-ui-css-1.11.4.tgz",
+  "_shasum": "e41966f99f11749689e925bf93ff91675422f80a",
+  "_shrinkwrap": null,
+  "_spec": "jquery-ui-css",
+  "_where": "/Users/andrewnguyen/Desktop/Google-Docs",
+  "author": {
+    "name": "jeonghwan-kim",
+    "email": "ej88ej@gmail.com",
+    "url": "http://blog.jeonghwan.net"
+  },
+  "dependencies": {},
+  "description": "",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "e41966f99f11749689e925bf93ff91675422f80a",
+    "tarball": "https://registry.npmjs.org/jquery-ui-css/-/jquery-ui-css-1.11.4.tgz"
+  },
+  "gitHead": "50832c810ab0a92da18f44eb81e02d1160bada71",
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "jeonghwankim",
+      "email": "ej88ej@gmail.com"
+    }
+  ],
+  "name": "jquery-ui-css",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.11.4"
+}

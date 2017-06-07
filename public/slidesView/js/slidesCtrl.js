@@ -38,6 +38,7 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
       $('svg').draggable().resizable()
     }
 
+		$scope.bgColor='white'
 
     $scope.slides = [0];
     $scope.createSlide = ()=> $scope.slides.push($scope.slides.length)
