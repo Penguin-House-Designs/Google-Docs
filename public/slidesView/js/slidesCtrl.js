@@ -26,16 +26,10 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
    console.log('Im working');
     }
     $scope.click = ()=> {
-      $('#div3').html(`<svg>
-        <rect width="150" height="150" x="0" fill="#008d46" />
-      </svg>`)
-      $('svg').draggable().resizable()
+
     }
     $scope.log = (x)=> {
-      $('#div3').html(`<svg>
-        <rect width="150" height="150" x="0" fill="#000000" />
-      </svg>`)
-      $('svg').draggable().resizable()
+
     }
 
 		$scope.bgColor='white'
