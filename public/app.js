@@ -69,6 +69,12 @@ GoogleApps.config(function($stateProvider, $urlRouterProvider) {
     controller: 'driveCtrl'
   })
 
+  .state('driveHome', {
+    url: '/driveHome',
+    templateUrl: './driveView/driveHome.html',
+    controller: 'driveCtrl'
+  })
+
 	$urlRouterProvider.otherwise('/docslanding')
 
 });

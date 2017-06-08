@@ -1,0 +1,61 @@
+<div class="home-docs-nav z-depth-2" style="background-color: white; height: 120px; position: relative; z-index: 100;">
+
+  <!-- Google Docs Logo -->
+  <a ui-sref="driveLanding">
+    <div style="margin-top: -6%;">
+      <div class="home-docs-logo-nav" style="display: flex;">
+        <img class="slideout-logo" src="/docsView/pics/slideoutLogo.svg" style="margin-left: 20%; margin-top: 7%;" alt="">
+        <h5 style="color: #767676; margin-left: 8%; margin-top: 14%;"><span style="font-size:22px; font-weight: 300;">Drive</span></h5>
+      </div>
+      <div class="">
+        <button ui-sref="driveHome" class="go-to-drive-btn" style="width: 90px; height: 30px; margin-left: 25%; margin-top: 20%; font-size: 11pt; font-weight: 300;">New</button>
+      </div>
+    </div>
+  </a>
+
+
+  <!-- Search Form  -->
+  <div class="home-docs-search" style="margin-left: 5%; margin-top: -4%; width: 50%;">
+    <nav style="box-shadow: none">
+      <div class="nav-wrapper">
+        <form>
+          <div class="input-field" style="background:white">
+            <input id="search" type="search" placeholder="Search Drive" required class="docs-search" style="background-color: #F5F5F5;" ng-model="search">
+            <label class="label-icon" for="search"><i style="margin-top:30px; color: #7A7A7A" class="material-icons">search </i></label>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Icons On Right Of Navbar -->
+  <div style="position: absolute; width: contain; height: inherit; margin-top: 1.5%; margin-left: 81%; padding-left: 10%">
+    <div style="display: flex; width: contain; margin-bottom: 5%;">
+      <a href=""><i class="material-icons" style="color: #767676; padding-right: 20px;">apps</i></a>
+      <a href=""><i class="material-icons" style="color: #767676; padding-right: 20px;">add</i></a>
+      <a href=""><i style="color: #767676" class="material-icons">account_circle</i></a>
+    </div>
+    <div style="display: flex; width: contain; padding-top: 20%;">
+      <a href=""><i class="material-icons" style="color: #767676; padding-right: 20px;">list</i></a>
+      <a href=""><i class="material-icons" style="color: #767676; padding-right: 20px;">info</i></a>
+      <a href=""><i style="color: #767676" class="material-icons">settings</i></a>
+    </div>
+  </div>
+
+</div>
+
+<div class="w3-sidebar w3-bar-block" style="width:18%; background-color: #F2F2F2">
+  <div class="drive-side">
+    <a class="w3-bar-item w3-button" href="#!"><i class="material-icons drive-side-button">save</i>My Drive</a>
+    <a class="w3-bar-item w3-button" href="#!"><i class="material-icons drive-side-button">supervisor_account</i>Shared with me</a>
+    <a class="w3-bar-item w3-button" href="#!"><i class="material-icons drive-side-button">history</i>Recent</a>
+    <a class="w3-bar-item w3-button" href="#!"><i class="material-icons drive-side-button">insert_photo</i>Google Photos</a>
+    <a class="w3-bar-item w3-button" href="#!"><i class="material-icons drive-side-button">star</i>Starred</a>
+    <a class="w3-bar-item w3-button" style="border-bottom: 1px solid #DFDFDF;" href="#!"><i class="material-icons drive-side-button">delete</i>Trash</a>
+    <a class="w3-bar-item w3-button" style="border-bottom: 1px solid #DFDFDF;" href="#!"><i class="material-icons drive-side-button">backup</i>Backups</a>
+  </div>
+</div>
+
+<div class="drive-body">
+  ... page content ...
+</div>

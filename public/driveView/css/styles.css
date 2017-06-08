@@ -1,68 +1,165 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto');
 
 /* Nav Bar*/
-.drive-title{
-	font-family: 'Roboto';
-	font-weight: 400;
-	margin-left: 20px;
+
+.drive-title {
+  font-family: 'Roboto';
+  font-weight: 400;
+  margin-left: 20px;
 }
 
 .drive-nav-wrapper {
-	background: transparent;
-	box-shadow: none;
+  background: transparent;
+  box-shadow: none;
 }
+
 
 /*Intro*/
+
 .parallax-container {
-	height: 100vh;
+  height: 100vh;
 }
 
-
 .drive-intro-logo {
-	width:90px;
+  width: 90px;
 }
 
 .drive-intro-content {
-	height: 80%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .drive-intro-text {
-	color:white;
-	font-weight: 100;
-	font-family: 'Roboto';
+  color: white;
+  font-weight: 100;
+  font-family: 'Roboto';
 }
 
 .go-to-drive-btn {
-	width: 200px;
-	height: 55px;
-	background:#4386fc;
-	border:2px solid #4386fc;
-	font-family: 'Roboto';
-	color: white;
-	font-weight: 400;
-	font-size: 17px;
+  width: 200px;
+  height: 55px;
+  background: #4386fc;
+  border: 2px solid #4386fc;
+  font-family: 'Roboto';
+  color: white;
+  font-weight: 400;
+  font-size: 17px;
 }
 
-.store-any-cont{
-	margin-top: 14%;
-}
-.graphic-cont{
-	margin-top: 18%;
+.store-any-cont {
+  margin-top: 14%;
 }
 
-.store-any{
-	color: #5F5F5F;
-	font-size: 38pt;
-	font-family: 'Roboto';
-	font-weight: 300;
+.graphic-cont {
+  margin-top: 18%;
 }
-.store-any-info{
-	color: #6A6A6A;
-	font-size: 16pt;
-	font-weight: 200;
-	font-family: 'Roboto';
+
+.store-any {
+  color: #5F5F5F;
+  font-size: 38pt;
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+.store-any-info {
+  color: #6A6A6A;
+  font-size: 16pt;
+  font-weight: 200;
+  font-family: 'Roboto';
+}
+
+.drive-side {
+  margin-top: 8%;
+  font-weight: 500;
+  font-size: 10pt;
+  color: #6E6E6E;
+}
+
+.drive-body {
+  width: 82%;
+  height: 100%;
+  background-color: #F2F2F2;
+  margin-left: 18%;
+	padding-top: 1%;
+}
+
+.drive-side-button {
+  vertical-align: middle;
+  padding-right: 15%;
+}
+
+.w3-bar-block .w3-dropdown-hover .w3-button, .w3-bar-block .w3-dropdown-click .w3-button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px
+}
+
+.w3-bar-block .w3-bar-item {
+  width: 100%;
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  outline: none;
+  white-space: normal;
+  float: none
+}
+
+.w3-bar-block .w3-center .w3-bar-item {
+  text-align: center
+}
+
+.w3-sidebar {
+  height: 100%;
+  width: 200px;
+  background-color: #fff;
+  position: fixed!important;
+  z-index: 1;
+  overflow: auto
+}
+
+.w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  outline: none;
+  display: block
+}
+
+.w3-button {
+  border: none;
+  display: inline-block;
+  outline: 0;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap
+}
+
+.w3-button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.w3-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3
+}
+
+.w3-button:hover {
+  color: #000!important;
+  background-color: #ccc!important
 }
