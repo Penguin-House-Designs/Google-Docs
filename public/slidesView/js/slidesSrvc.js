@@ -10,16 +10,16 @@ GoogleApps.service('slidesSrvc',['$http', function($http){
 	];
 
 
-	this.slidesDocuments = [
-		{name:'Dominic Deci',title:'Who Are The Penguins',date:'3/12/17'},
-		{name:'Andrew Chen', title:'The Penguin Crisis is Real',date:'3/15/17'},
-		{name:'Andy Nguyen', title:'The State Of Penguins', date:'3/29/17'},
-		{name:'Harriet NuVu',title:'What We Can Do For Penguins',date:'3/23/17'},
-		{name:'Dominic Deci',title:'The Egyptians',date:'3/12/17'},
-		{name:'Andrew Chen', title:'How We Can Make Egypt Better',date:'3/15/17'},
-		{name:'Andy Nguyen', title:'The Batteries', date:'3/29/17'},
-		{name:'Harriet NuVu',title:'Where The Egyptians Go?',date:'3/23/17'}
-	];
+	// this.slidesDocuments = [
+	// 	{name:'Dominic Deci',title:'Who Are The Penguins',date:'3/12/17'},
+	// 	{name:'Andrew Chen', title:'The Penguin Crisis is Real',date:'3/15/17'},
+	// 	{name:'Andy Nguyen', title:'The State Of Penguins', date:'3/29/17'},
+	// 	{name:'Harriet NuVu',title:'What We Can Do For Penguins',date:'3/23/17'},
+	// 	{name:'Dominic Deci',title:'The Egyptians',date:'3/12/17'},
+	// 	{name:'Andrew Chen', title:'How We Can Make Egypt Better',date:'3/15/17'},
+	// 	{name:'Andy Nguyen', title:'The Batteries', date:'3/29/17'},
+	// 	{name:'Harriet NuVu',title:'Where The Egyptians Go?',date:'3/23/17'}
+	// ];
 
 
 
@@ -47,9 +47,10 @@ GoogleApps.service('slidesSrvc',['$http', function($http){
 				bgColor: 'white',
 				slides: [0]
 			};
+			this.slideTitle  = ""
 
 
-			this.save = function(x){
+			this.save = function(id, title, info){
 				console.log('at srvc');
 				// console.log(x);
 				// console.log(JSON.stringify(this.slideContent));
@@ -57,24 +58,54 @@ GoogleApps.service('slidesSrvc',['$http', function($http){
 					'method': 'POST',
 					'url': '/api/saves_slide',
 					'data': {
-						'user_id': 1,
-						'g_info': x,
-						'slide_content': JSON.stringify(this.slideContent)
+						'user_id': id,
+						'slide_title': title,
+						'g_info': JSON.stringify(info),
+						'slide_content': JSON.stringify(this.slideContent),
+						'slide_date': new Date().toLocaleDateString()
 					}
 				}).then( () => console.log("success"))
 			}
 
-			this.loadSlide = function() {
-				console.log('loaded in srvc');
+			this.resave = function(id, title, info){
+				console.log('at srvc');
+				// console.log(x);
+				// console.log(JSON.stringify(this.slideContent));
 				return $http({
-					method: "GET",
-					url: "/api/load_by_id",
+					'method': 'PUT',
+					'url': '/api/saves_slide',
+					'data': {
+						slide_id: this.slideId,
+						'user_id': id,
+						'slide_title': title,
+						'g_info': JSON.stringify(info),
+						'slide_content': JSON.stringify(this.slideContent),
+						'slide_date': new Date().toLocaleDateString()
+					}
+				}).then( () => console.log("success"))
+			}
+
+			this.loadUserSlides = function(id) {
+				console.log('in srvc');
+				return $http({
+					method:"POST",
+					url: "/api/loadUserSlides",
+					data: {user_id : id}
 				}).then((res)=>{
-					this.slideContent = JSON.parse(res.data[0].slide_content);
-					this.gInfo = JSON.parse(res.data[0].g_info)
-					console.log('SLIDE CONTENT', this.slideContent)
-					console.log('GINFO', this.gInfo)
+					this.slidesDocuments = res.data;
+					return res.data;
 				})
+			}
+
+			this.loadSlide = function() {
+					return $http({
+						method: "POST",
+						url: "/api/loadSlide",
+						data:{s_id: this.slideId}
+					}).then((res)=>{
+						this.slideContent = JSON.parse(res.data[0].slide_content);
+						this.gInfo = JSON.parse(res.data[0].g_info)
+					})
 			}
 
 
