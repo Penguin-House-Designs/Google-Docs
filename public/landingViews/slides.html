@@ -19,11 +19,35 @@
         <div class="nav-font-fix">
           <li><a href="#" style="font-size: 12pt;">For Work</a></li>
           <li><a href="#" style="font-size: 12pt;">Help</a></li>
+          <li>
+            <a ng-click='d=!d'><img src="{{pic2}}" class='small-profile-pic'></a>
+          </li>
         </div>
       </ul>
     </div>
   </nav>
 </div>
+
+
+<div ng-show='d' class='myprofile-main'>
+    <div class='profile-top-bar'>
+    <img class='profile-main-pic' src="{{pic2}}">
+    <div class='myprofile-names'>
+      <p style='font-weight:bold;margin: 5px;'>{{name}}</p>
+      <p style='color:grey;margin: 5px;'>{{username}}</p>
+      <button class='profile-btn'>My Profile</button>
+    </div>
+  </div>
+    <div class='bottom-bar'>
+    <a href="/auth">
+      <button class='log-btn'>Login</button>
+    </a>
+    <a href="/auth/logout">
+      <button class='log-btn'>Logout</button>
+    </a>
+    </div>
+</div>
+
 
 <div class="main-background" style="background-image: url(/landingViews/landingPics/slidesMain.jpg">
   <div class="fadeout-cont">
