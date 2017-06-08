@@ -1,6 +1,6 @@
 .toolbar {
   position: fixed;
-  z-index: 0;
+  z-index: 2;
   top: 64px;
   background: #e6e6e6;
   display: inline-flex;
@@ -45,6 +45,7 @@
 .start {
   display: inline-flex;
 }
+
 .start :hover{
   background: rgba(204, 204, 204,0.6);
 }
@@ -351,4 +352,27 @@
 }
 .bottom-toolbar button:focus{
   background: rgba(51, 133, 255,0.5);
+}
+
+.sheet-color-drop{
+  position: absolute;
+  z-index: 2;
+  top: 38px;
+  left: 570px;
+  background: rgba(204, 204, 204,0.6);
+  box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.75);
+  height: 50px;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.sheet-color-boxs{
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+}
+.start .sheet-color-drop :hover{
+  background: inherit;
+  border: 2px solid white;
 }

@@ -57,10 +57,28 @@
 		<a href=""><i class="material-icons">view_module</i></a>
 		<a href=""><i class="material-icons">add_alert</i></a>
 		<a href=""><i class="material-icons">add</i></a>
+		<a ng-click='d=!d'><img style='margin:0;' src="{{pic2}}" class='small-profile-pic'></a>
 	</div>
 </div>
 <!-- Search Form  -->
-
+<div ng-show='d' class='myprofile-main'>
+    <div class='profile-top-bar'>
+    <img class='profile-main-pic' src="{{pic2}}">
+    <div class='myprofile-names'>
+      <p style='font-weight:bold;margin: 5px;'>{{name}}</p>
+      <p style='color:grey;margin: 5px;'>{{username}}</p>
+      <button class='profile-btn'>My Profile</button>
+    </div>
+  </div>
+    <div class='bottom-bar'>
+    <a href="/auth">
+      <button class='log-btn'>Login</button>
+    </a>
+    <a href="/auth/logout">
+      <button class='log-btn'>Logout</button>
+    </a>
+    </div>
+</div>
 
 <!-- Icons On Right Of Navbar -->
 

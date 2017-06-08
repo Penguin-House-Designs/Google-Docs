@@ -1,4 +1,4 @@
-GoogleApps.controller('landingCtrl', function($location, $anchorScroll, $scope, $stateParams) {
+GoogleApps.controller('landingCtrl', function($location, $anchorScroll, $scope, $stateParams, sheetsSrvc) {
 
   $scope.$watchCollection('$stateParams', function() {
     $location.hash('top');
@@ -44,5 +44,28 @@ GoogleApps.controller('landingCtrl', function($location, $anchorScroll, $scope, 
   $(window).scroll(function() {
     $(".fadeout-cont").css("opacity", 1 - $(window).scrollTop() / 250);
   })
+
+  $scope.d=false;
+
+  function getUser() {
+    sheetsSrvc.getUser().then(function(user) {
+      console.log('beging',user);
+      if (user) {
+        $scope.userid = user.id;
+        $scope.name = user.name;
+        $scope.username = user.username;
+        $scope.email = user.email;
+        $scope.pic2 = user.pic;
+      }
+      else {
+        $scope.name = "Not Logged In?";
+        $scope.username = "Click to Login";
+        $scope.pic2 = './sheetsView/css/user-default.png';
+      }
+      return $scope.userid,$scope.pic2,$scope.name,$scope.username,$scope.email
+    }
+   )
+ }
+ getUser()
 
 })

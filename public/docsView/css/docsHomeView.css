@@ -45,7 +45,7 @@ body {
 
 .docs-home-nav-icons {
   /*border: 2px solid red;*/
-  margin-left: 16.8%;
+  margin-left: 8.8%;
 }
 
 .docs-home-nav-icons i {
@@ -59,7 +59,7 @@ body {
 }
 
 .docs-home-nav-icons {
-  width: 10%;
+  width: 13%;
   display: flex;
   justify-content: space-between;
 }
