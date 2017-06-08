@@ -27,7 +27,27 @@ const conn = massive.connectSync({
 app.set('db', conn);
 const db = app.get('db');
 
-// db.user_create_seed(()=> console.log('user table created'))
+
+app.post('/api/saves_slide', (req, res) => {
+	// console.log('fuuucckkk',req.body);
+	var data = [req.body.user_id, req.body.g_info, req.body.slide_content];
+  db.save_slide(data, (err, slide) => {
+		console.log(err);
+    err ? res.status(500) : res.send(slide);
+  })
+})
+
+app.get('/api/load_by_id', (req, res)=>{
+	console.log('at srvr');
+	db.load_slide_by_user_id((err, slides)=>{
+		console.log(slides);
+		err ? res.status(500) : res.send(slides)
+	})
+})
+
+
+// AUTH0 STUFF//
+/////////////////////////
 passport.use(new Auth0Strategy({
    domain:       config.auth0.domain,
    clientID:     config.auth0.clientID,
@@ -98,6 +118,7 @@ passport.deserializeUser(function(userB, done) {
 app.get('/auth', passport.authenticate('auth0'));
 
 
+
 //**************************//
 //To force specific provider://
 //**************************//
@@ -121,12 +142,8 @@ app.get('/auth/me', function(req, res) {
 app.get('/auth/logout', function(req, res) {
   req.logout();
   res.redirect('/');
+
 })
-
-
-
-
-
 
 
 app.listen(3000, ()=>{

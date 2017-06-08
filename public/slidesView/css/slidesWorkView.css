@@ -23,16 +23,10 @@
 .slides-title input {
   border: none;
   font-size: 18px;
-  font-style: italic;
-  color:gray;
+	color: black;
 }
 
-.slides-title input:not([type]):focus:not([readonly]) {
-  border: none;
-  box-shadow: none;
-  font-style: normal;
-  color: black;
-}
+
 .slides-user {
   font-size: 10px;
   margin-top: -15px;
