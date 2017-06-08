@@ -115,7 +115,7 @@
 			</div>
 		</div>
 		<ul class="collection">
-			<li class="collection-item home-view-table" ng-repeat="slides in slideDocus|filter:search|orderBy:order">
+			<li ui-sref="slidesWork" class="collection-item home-view-table" ng-repeat="slides in slideDocus|filter:search|orderBy:order" ng-click="loadSlide()">
 				<div class="title-docs-icons">
 					<i class="material-icons left slide-icons">subject</i>
 					<h6 style="font-weight:600">{{slides.title}}</h6>

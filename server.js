@@ -31,13 +31,24 @@ const db = app.get('db');
 
 // db.user_create_seed(()=> console.log('user table created'))
 
-app.get('/api/users', (req, res) =>{
-  db.get_all_users( (err, books) =>{
-    err ? res.status(500) : res.send(books)
+app.post('/api/saves_slide', (req, res) => {
+	// console.log('fuuucckkk',req.body);
+	var data = [req.body.user_id, req.body.g_info, req.body.slide_content];
+  db.save_slide(data, (err, slide) => {
+		console.log(err);
+    err ? res.status(500) : res.send(slide);
   })
 })
 
+app.get('/api/load_by_id', (req, res)=>{
+	console.log('at srvr');
+	db.load_slide_by_user_id((err, slides)=>{
+		console.log(slides);
+		err ? res.status(500) : res.send(slides)
+	})
+})
 
-app.listen('3000', ()=>{
+
+app.listen(3000, () =>{
   console.log("Successfully listening on : 3000")
 })
