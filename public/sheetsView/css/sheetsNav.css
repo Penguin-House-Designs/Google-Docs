@@ -25,6 +25,7 @@
 }
 .myprofile{
   display: flex;
+  flex-direction: column;
   background: white;
   height: auto;
   width: 300px;
@@ -33,7 +34,6 @@
   top: 30px;
   left: 940px;
   box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
-  padding: 20px;
   border-radius: 3px;
 }
 .myprofile img{
@@ -51,8 +51,20 @@
   margin: 14px;
 }
 .bottom-bar{
-  height: 30px;
+  border-top: 1px solid #a6a6a6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
   width: 100%;
+  background: #e6e6e6;
+  padding: 8px;
+}
+
+
+.profile-top-bar{
+  display: flex;
+  padding: 20px;
 }
 
 .nav-wrapper-work {
@@ -193,6 +205,19 @@
   background-color: #EEEEEE;
 }
 
+.log-btn{
+  height: 30px;
+  width: 100px;
+  background: #e6e6e6;
+  border: 1px solid #a6a6a6;
+  color: black;
+  border-radius: 2px;
+  line-height: normal;
+  font-size: 12px;
+}
+.bottom-bar button:focus{
+  background: white;
+}
 
 /*.dropdown-content{
   margin-top: 20px;

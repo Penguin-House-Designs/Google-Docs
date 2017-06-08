@@ -11,18 +11,7 @@
 					<a href="" class="ion-ios-folder"></a>
 				</div>
 				<div class='right-user'>
-					<p class='dropdown-button' ng-click='d=!d' >domd0101@gmail.com &nbsp; <span class='ion-arrow-down-b'></span></p>
-				</div>
-				<div ng-show='d' class='myprofile'>
-					<img src="./sheetsView/css/user-default.png">
-					<div class='myprofile-names'>
-						<p style='font-weight:bold;'>Domd0101</p>
-						<p>domd0101@gmail.com</p>
-						<button class='profile-btn'>My Profile</button>
-					</div>
-					<div class='bottom-bar'>
-				
-					</div>
+					<p class='dropdown-button' ng-click='d=!d; getUser()' >{{username}} &nbsp; <span class='ion-arrow-down-b'></span></p>
 				</div>
 
 			</div>

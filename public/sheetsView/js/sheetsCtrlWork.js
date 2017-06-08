@@ -1,9 +1,30 @@
 GoogleApps.controller('sheetsCtrlWork', function($scope, $state, sheetsSrvc) {
+
   $scope.templatePics = sheetsSrvc.sheetsTemplates;
   $scope.graphBtn = false;
   $scope.k = false;
   $scope.j = false;
   $scope.d = false;
+
+  $scope.getUser = function() {
+  sheetsSrvc.getUser().then(function(user) {
+    if (user) {
+      $scope.userid = user.id;
+      $scope.name = user.name;
+      $scope.username = user.username;
+      $scope.email = user.email;
+      $scope.pic2 = user.pic;
+    }
+    else {
+      $scope.name = "Not Logged In?";
+      $scope.username = "Click to Login";
+      $scope.pic2 = './sheetsView/css/user-default.png';
+    }
+    return $scope.userid,$scope.pic2,$scope.name,$scope.username,$scope.email
+  }
+ )
+}
+
 
   $scope.inputcells = function(){
 		var array = new Array(651);
@@ -185,6 +206,15 @@ $scope.grabXY = function(para){
     console.log($scope.textcolor);
     return $scope.textcolor
   }
+
+  $scope.name = "Not Logged In?";
+  $scope.username = "Dominic DeCicco";
+  $scope.pic2 = './sheetsView/css/user-default.png';
+
+
+
+
+
 
 
 })
