@@ -30,17 +30,34 @@ const db = app.get('db');
 
 app.post('/api/saves_slide', (req, res) => {
 	// console.log('fuuucckkk',req.body);
-	var data = [req.body.user_id, req.body.g_info, req.body.slide_content];
+	var data = [req.body.user_id, req.body.slide_title, req.body.g_info, req.body.slide_content, req.body.slide_date];
   db.save_slide(data, (err, slide) => {
 		console.log(err);
     err ? res.status(500) : res.send(slide);
   })
 })
 
-app.get('/api/load_by_id', (req, res)=>{
+app.put('/api/saves_slide', (req, res) => {
+	// console.log('fuuucckkk',req.body);
+	var data = [req.body.user_id, req.body.slide_title, req.body.g_info, req.body.slide_content, req.body.slide_date, req.body.slide_id];
+  db.resave_slide(data, (err, slide) => {
+		console.log(err);
+    err ? res.status(500) : res.send(slide);
+  })
+})
+
+app.post('/api/loadUserSlides', (req, res)=>{
 	console.log('at srvr');
-	db.load_slide_by_user_id((err, slides)=>{
-		console.log(slides);
+	db.load_user_slides([req.body.user_id],(err, slides)=>{
+		// console.log(slides);
+		err ? res.status(500) : res.send(slides)
+	})
+})
+
+app.post('/api/loadSlide', (req, res)=>{
+	console.log('at srvr', req.body);
+	db.load_slide([req.body.s_id],(err, slides)=>{
+		// console.log(slides);
 		err ? res.status(500) : res.send(slides)
 	})
 })
@@ -84,13 +101,13 @@ passport.use(new Auth0Strategy({
         }
         db.createUserByAuth(data, function(err, user) {
           if(err){
-            console.log(err);
+            // console.log(err);
           }
-          console.log('USER CREATED', user);
+          // console.log('USER CREATED', user);
           return done(err, user[0]); // GOES TO SERIALIZE USER
         })
       } else { //when we find the user, return it
-        console.log('FOUND USER', user);
+        // console.log('FOUND USER', user);
         return done(err, user);
       }
     })
@@ -135,7 +152,7 @@ app.get('/auth/callback',
 app.get('/auth/me', function(req, res) {
   if (!req.user) return res.sendStatus(404);
   //THIS IS WHATEVER VALUE WE GOT FROM userC variable above.
-  console.log(req.user);
+  // console.log(req.user);
   return res.status(200).send(req.user);
 })
 
