@@ -1,6 +1,5 @@
 GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc, sheetsSrvc) {
 
-
   function getUser() {
     sheetsSrvc.getUser().then(function(user) {
       console.log('beging',user);
@@ -21,41 +20,26 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc, sheets
    )
   }
   getUser()
+
 // SLIDES WORK STUFF//////
 
-    $scope.clickTheBox = function  (){
-   alert('hi')
-   console.log('Im working');
-    }
+  $scope.log = ()=> {
+   console.log('clicked', $scope.gInfo);
+  }
 
-    $scope.log = ()=> {
-     console.log(slidesSrvc.slideContent);
-    }
-
-		$scope.save = function() {
-      if (slidesSrvc.slideId === 0 || !slidesSrvc.slideId) {
-        slidesSrvc.save($scope.userid, $scope.slideTitle, $scope.gInfo)
-      } else {
-        slidesSrvc.resave($scope.userid, $scope.slideTitle, $scope.gInfo)
-      }
-		}
-
-
-		$scope.click = () => {
-		console.log(new Date().toLocaleDateString());
-	}
-
-
+  $scope.click = () => {
+    console.log(new Date().toLocaleDateString());
+  }
 
 	$scope.loadSlide = function() {
     if (slidesSrvc.slideId === 0 || !slidesSrvc.slideId) {
-      $scope.slideTitle = slidesSrvc.slideTitle
-      $scope.gInfo = slidesSrvc.gInfo
-      $scope.slideContent = slidesSrvc.slideContent
-      $(`#div1`).html(slidesSrvc.slideContent[0].divHtml);
-      $(`#drag1`).draggable().resizable();
-      $(`#div2`).html(slidesSrvc.slideContent[1].divHtml);
-      $(`#drag2`).draggable().resizable();
+        $scope.slideTitle = ""
+        $scope.gInfo = {bgColor: 'white', slides: [0], comments:''};
+        $scope.slideContent = slidesSrvc.slideContent
+        $(`#div1`).html(slidesSrvc.slideContent[0].divHtml);
+        $(`#drag1`).draggable().resizable();
+        $(`#div2`).html(slidesSrvc.slideContent[1].divHtml);
+        $(`#drag2`).draggable().resizable();
     } else {
   		slidesSrvc.loadSlide().then(()=>{
         $scope.slideTitle = slidesSrvc.slideTitle
@@ -64,6 +48,10 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc, sheets
   				for (var i = 0; i < slidesSrvc.slideContent.length; i++) {
   					$(`#div${i +1}`).html(slidesSrvc.slideContent[i].divHtml);
   					$(`#drag${i +1}`).draggable().resizable();
+            $('#presTitle').val($scope.slideTitle)
+            if (slidesSrvc.gInfo.comments) {
+              $("#comments").val(slidesSrvc.gInfo.comments)
+            }
   					if (slidesSrvc.slideContent[i].css) {
   						$(`#drag${i +1}`).css('height', slidesSrvc.slideContent[i].css.height)
   						$(`#drag${i +1}`).css('width', slidesSrvc.slideContent[i].css.width)
@@ -83,8 +71,16 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc, sheets
       }
 		}()
 
+    $scope.save = function() {
+      if (slidesSrvc.slideId === 0 || !slidesSrvc.slideId) {
+        slidesSrvc.save($scope.userid, $scope.slideTitle, $scope.gInfo)
+      } else {
+        slidesSrvc.resave($scope.userid, $scope.slideTitle, $scope.gInfo)
+      }
+    }
 
-    $scope.createSlide = ()=>$scope.gInfo.slides.push($scope.gInfo.slides.length)
+
+    $scope.createSlide = ()=>slidesSrvc.gInfo.slides.push(slidesSrvc.gInfo.slides.length)
 
     $scope.currentSlide = 1;
     $scope.changeSlides = (x) => {
@@ -162,9 +158,6 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc, sheets
       $("#div" + String(slidesSrvc.slideContent.length)).html(slidesSrvc.slideContent[slidesSrvc.slideContent.length -1].divHtml);
       $("#drag" + String(slidesSrvc.slideContent.length)).draggable().resizable();
     }
-
-
-
 
 
 		//Presentation Slides

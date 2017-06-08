@@ -8,6 +8,11 @@ function loadUserSlides() {
 	})
 }
 
+$scope.setSlideId = (id) => {
+	slidesSrvc.slideId = id
+	console.log(slidesSrvc.slideId);
+}
+
 function getUser() {
 	sheetsSrvc.getUser().then(function(user) {
 		console.log('beging',user);
@@ -35,14 +40,11 @@ getUser()
 
 // SLIDES HOME STUFF//////
 //Fxns for Sorting
-	$scope.owned = "Owned by me";
+	$scope.owned = "Owned by";
 	$scope.dropDownMessage = () => $scope.owned = "Owned by anyone";
 	$scope.dropDownMessage2 = () => $scope.owned = "Owned by me";
 	$scope.dropDownMessage3 = () =>$scope.owned = "Not owned by me";
 
-	$scope.setSlideId = (id) => {
-		slidesSrvc.slideId = id
-		console.log(slidesSrvc.slideId);
-	}
+
 
 })
