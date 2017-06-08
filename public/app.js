@@ -54,7 +54,7 @@ GoogleApps.config(function($stateProvider, $urlRouterProvider) {
   .state('slidesHome', {
     url:'/slidesHome',
     templateUrl: './slidesView/slidesHome.html',
-    controller: 'slidesCtrl'
+    controller: 'slidesHomeCtrl'
   })
 
   .state('slidesWork', {

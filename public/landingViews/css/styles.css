@@ -2,6 +2,31 @@
 * {
   font-family: "Roboto";
 }
+.small-profile-pic{
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  margin-top: 16px;
+}
+.myprofile-main{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: auto;
+  width: 300px;
+  position: absolute;
+  z-index: 4;
+  top: 68px;
+  left: 940px;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+  border-radius: 3px;
+}
+.profile-main-pic{
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
 
 .landing-logo {
   vertical-align: middle;

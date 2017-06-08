@@ -62,4 +62,89 @@ GoogleApps.service('sheetsSrvc',['$http', function($http){
 		{name:'Andy Nguyen', title:'Foundation of Aliens', date:'3/29/17'},
 		{name:'Harriet NuVu',title:'Egypts Eatting Habits 2014-2017',date:'3/23/17'}
 	]
+
+this.loginLocal = function(credentials) {
+	return $http({
+		method: "POST",
+		url: '/auth/local',
+		data: credentials
+	})
+	.then(function(res) {
+		return res.data;
+	})
+	.catch(function(err) {
+		console.log('ERROR LOGGING IN!', err);
+	})
+}
+
+this.getUser = function() {
+	return $http({
+		method: 'GET',
+		url: '/auth/me'
+	})
+	.then(function(res) {
+		return res.data;
+	})
+	.catch(function(err) {
+		console.log(err);
+		return
+	})
+}
+
+
+this.logout = function() {
+	return $http({
+		method: 'GET',
+		url: '/auth/logout'
+	})
+	.then(function(res) {
+		return res.data;
+	})
+	.catch(function(err) {
+		console.log(err);
+	})
+}
+
+this.postPen = function(penValues){
+	return $http({
+		method: 'POST',
+		url: '/postPen',
+		data: penValues
+	})
+}
+
+this.postPost = function(postValues){
+	return $http({
+		method: 'POST',
+		url: '/postPost',
+		data: postValues
+	})
+}
+
+this.getPens = function(id){
+	return $http({
+		method: 'POST',
+		url: '/getPens',
+		data: { id }
+	})
+	.then(function(res) {
+		return res.data;
+	})
+}
+this.getPosts = function(id){
+	return $http({
+		method: 'POST',
+		url: '/getPosts',
+		data: { id }
+	})
+	.then(function(res) {
+		return res.data;
+	})
+}
+
+
+
+
+
+
 }])

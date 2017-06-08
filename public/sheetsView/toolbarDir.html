@@ -24,16 +24,39 @@
   <a href="" style='text-decoration:underline'>U</a>
   <a href="" class='ion-android-remove'></a>
   <div class='column'>
-    <a href="" style='padding:3px 7px 0 6px;font-size:18px;text-align:center'>A</a>
-    <div class='textColor'></div>
+    <a ng-click='k=!k' style="cursor:pointer;padding:3px 7px 0 6px;font-size:18px;text-align:center" >A</a>
+    <div ng-style='textcolor' class='textColor'></div>
   </div>
+    <div ng-show='k' class='sheet-color-drop'>
+      <div style='background: black;' class='sheet-color-boxs'></div>
+      <div ng-click='ccText("red")' style='background: red;' class='sheet-color-boxs'></div>
+      <div style='background: orange;' class='sheet-color-boxs'></div>
+      <div style='background: yellow;' class='sheet-color-boxs'></div>
+      <div style='background: green;' class='sheet-color-boxs'></div>
+      <div ng-click='ccText("blue")' style='background: blue;' class='sheet-color-boxs'></div>
+      <div style='background: purple;' class='sheet-color-boxs'></div>
+      <div style='background: pink;' class='sheet-color-boxs'></div>
+      <div style='background: white;border-color:black;' class='sheet-color-boxs'></div>
+    </div>
 
   <div class='right-border'>
   </div>
   <div style='margin-left:7px;' class='column'>
-    <a href="" class='ion-paintbucket' style='padding-bottom:0;font-size:16px;'></a>
+    <a ng-click='j=!j' href="" class='ion-paintbucket' style='padding-bottom:0;font-size:16px;'></a>
     <div style='background:white;' class='textColor'></div>
   </div>
+  <div ng-show='j' style='left:600px' class='sheet-color-drop'>
+    <div style='background: black;' class='sheet-color-boxs'></div>
+    <div ng-click='ccText("red")' style='background: red;' class='sheet-color-boxs'></div>
+    <div style='background: orange;' class='sheet-color-boxs'></div>
+    <div style='background: yellow;' class='sheet-color-boxs'></div>
+    <div style='background: green;' class='sheet-color-boxs'></div>
+    <div style='background: blue;' class='sheet-color-boxs'></div>
+    <div style='background: purple;' class='sheet-color-boxs'></div>
+    <div style='background: pink;' class='sheet-color-boxs'></div>
+    <div style='background: white;border-color:black;' class='sheet-color-boxs'></div>
+  </div>
+
   <a href="" class='ion-ios-grid-view-outline'>&nbsp;<span class='ion-arrow-down-b'></span></a>
   <a href="" class='ion-arrow-shrink'>&nbsp;<span class='ion-arrow-down-b'></span></a>
   <div class='right-border'>
