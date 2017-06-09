@@ -79,6 +79,7 @@
   height: 100%;
   background: #0f9d58;
   text-align: center;
+	cursor: pointer;
 }
 
 .icon-work a {

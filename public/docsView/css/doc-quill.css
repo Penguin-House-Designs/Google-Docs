@@ -43,6 +43,7 @@
   text-align: left;
   white-space: pre-wrap;
   word-wrap: break-word;
+	margin-right: 110px;
 }
 .ql-editor p,
 .ql-editor ol,
