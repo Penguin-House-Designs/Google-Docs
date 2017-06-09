@@ -49,7 +49,6 @@ GoogleApps.controller('landingCtrl', function($location, $anchorScroll, $scope, 
 
   function getUser() {
     sheetsSrvc.getUser().then(function(user) {
-      console.log('beging',user);
       if (user) {
         $scope.userid = user.id;
         $scope.name = user.name;

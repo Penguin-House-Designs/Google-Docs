@@ -34,11 +34,19 @@ GoogleApps.controller('sheetsCtrl', function ($scope, $state, sheetsSrvc) {
 					$scope.username = "Click to Login";
 					$scope.pic2 = './sheetsView/css/user-default.png';
 				}
-				console.log($scope.userid,$scope.pic2,$scope.name,$scope.username,$scope.email);
 				return $scope.userid,$scope.pic2,$scope.name,$scope.username,$scope.email
 			}
 		 )
+		 return $scope.userid
 	 }
 	 getUser()
+	 console.log($scope.userid);
+
+	 $scope.getSheets = function(){
+		 console.log($scope.userid);
+		 sheetsSrvc.getSheets({id:$scope.userid})
+		 return
+	 }
+	 $scope.getSheets()
 
 })
