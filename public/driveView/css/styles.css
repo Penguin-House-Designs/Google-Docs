@@ -96,6 +96,8 @@
   background-color: #F2F2F2;
   margin-left: 18%;
   padding-top: 1%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .drive-side-button {
@@ -174,4 +176,34 @@
 .w3-button:hover {
   color: #000!important;
   background-color: #ccc!important
+}
+
+.drive-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+}
+
+.drive-card:hover {
+  background-color: #ccc;
+  cursor: pointer;
+
+}
+
+.drive-card img {
+  margin: 20px 45px 10px;
+  height: 125px;
+  width: 98px;
+}
+
+.drive-card-space {
+  margin: 5px 10px;
+}
+
+.drive-card-title {
+  width: 188px;
+  height:61px;
+  display: flex;
+  flex-wrap:wrap;
 }
