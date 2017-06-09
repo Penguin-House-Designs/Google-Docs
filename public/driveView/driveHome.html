@@ -1,4 +1,4 @@
-<div class="home-docs-nav z-depth-2" style="background-color: white; height: 120px; position: relative; z-index: 100;">
+<div class="home-docs-nav z-depth-2" style="background-color: white; height: 120px; position: fixed; z-index: 100;">
 
   <!-- Google Docs Logo -->
   <a ui-sref="driveLanding">
@@ -57,8 +57,10 @@
   </div>
 
 </div>
+<div style="display:flex;">
 
-<div class="w3-sidebar w3-bar-block" style="width:18%; background-color: #F2F2F2">
+
+<div class="w3-sidebar w3-bar-block" style="width:18%; background-color: #F2F2F2; margin-top:12%">
   <div class="drive-side">
     <a class="w3-bar-item w3-button" href="#!"><i class="material-icons drive-side-button">save</i>My Drive</a>
     <a class="w3-bar-item w3-button" href="#!"><i class="material-icons drive-side-button">supervisor_account</i>Shared with me</a>
@@ -70,6 +72,25 @@
   </div>
 </div>
 
-<div class="drive-body">
-  ... page content ...
+<div class="drive-body" style="margin-top:12%">
+        <div class="col s3 drive-card-space">
+          <div class="card drive-card" ui-sref="slidesWork" ng-click="setSlideId(16)">
+            <!-- <div class=""> -->
+              <img src="./driveView/img/slides-icon.png">
+            <!-- </div> -->
+            <div class="card-action drive-card-title" style="background-color:#F7F9F9;">
+              <p>Tech Stack</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s3 drive-card-space" ng-repeat="card in driveArray">
+          <div class="card drive-card">
+            <!-- <div class=""> -->
+              <img src="{{card.img}}">
+            <!-- </div> -->
+            <div class="card-action drive-card-title" style="background-color:#F7F9F9;">
+              <p>{{card.name}}</p>
+            </div>
+          </div>
+        </div>
 </div>
