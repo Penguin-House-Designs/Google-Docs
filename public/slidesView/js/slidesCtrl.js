@@ -1,7 +1,6 @@
 GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
   $scope.templatePics = slidesSrvc.slidesTemplates;
 
-
 	// console.log('hi');
 
 		$scope.slideDocus = slidesSrvc.slidesDocuments;

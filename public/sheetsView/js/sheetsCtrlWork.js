@@ -202,7 +202,6 @@ $scope.grabXY = function(para){
       $scope.textcolor = {'color':'blue','background':'blue'}
     }
 
-
     console.log($scope.textcolor);
     return $scope.textcolor
   }
@@ -211,10 +210,36 @@ $scope.grabXY = function(para){
   $scope.username = "Dominic DeCicco";
   $scope.pic2 = './sheetsView/css/user-default.png';
 
-
-
+  $scope.saveSheet = function(){
+    var array = $scope.cells
+    $scope.cellsSave = []
+    var y
+    for (var i = 1; i < array.length; i++) {
+      y = document.getElementsByName(JSON.stringify(i))[0].value
+			$scope.cellsSave.push([i,y])
+		}
+    sheetsSrvc.saveSheet({ userid: $scope.userid, val : $scope.cellsSave })
+    return
+  }
 
 
 
 
 })
+
+// .directive('grabcells', function() {
+//     return {
+//       restrict: 'A',
+//       controller: 'sheetCtrlWork',
+//       link: function (s,e,a){
+//         e.on('click', function() {
+//           var x = $('#1').val()
+//           console.log('bbbb',x);
+//           // console.log('css clicked', s.funstuff  );
+//         })
+//         $("#p").click(function(){
+//           alert("The paragraph was clicked.");
+//         })
+//       }
+//     }
+// })
