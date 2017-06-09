@@ -95,7 +95,7 @@
 	</div>
 	<div class="template-views-text">
 		<div ng-repeat="template in templatePics" class="docs-template">
-			<img class="cursor-mode" ui-sref="slidesWork" width="152px" height: "86px" src="{{template.img}}" alt="">
+			<img class="cursor-mode" ng-click="setSlideId(0)" ui-sref="slidesWork" width="152px" height: "86px" src="{{template.img}}" alt="">
 			<p style="color:white; padding:0; margin:0; font-weight:800">{{template.name}}</p>
 		</div>
 	</div>
@@ -133,14 +133,14 @@
 			</div>
 		</div>
 		<ul class="collection">
-			<li class="collection-item home-view-table" ng-repeat="slides in slideDocus|filter:search|orderBy:order">
+			<li ui-sref="slidesWork" class="collection-item home-view-table" ng-repeat="slides in slideDocus|filter:search|orderBy:order" ng-click="setSlideId(slides.s_id)">
 				<div class="title-docs-icons">
 					<i class="material-icons left slide-icons">subject</i>
-					<h6 style="font-weight:600">{{slides.title}}</h6>
+					<h6 style="font-weight:600">{{slides.slide_title}}</h6>
 				</div>
 				<div class="home-owned-date">
-					<h6 class="home-name-list">{{slides.name}}</h6>
-					<h6>{{slides.date}}</h6>
+					<h6 class="home-name-list">{{name}}</h6>
+					<h6>{{slides.slide_date}}</h6>
 				</div>
 			</li>
 		</ul>

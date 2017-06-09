@@ -1,54 +1,94 @@
-GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
-  $scope.templatePics = slidesSrvc.slidesTemplates;
+GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc, sheetsSrvc) {
 
-	// console.log('hi');
-
-		$scope.slideDocus = slidesSrvc.slidesDocuments;
-		// console.log($scope.slideDocus);
-
-// SLIDES HOME STUFF//////
-	//Fxns for Sorting
-		$scope.owned = "Owned by me";
-		$scope.dropDownMessage = () => $scope.owned = "Owned by anyone";
-		$scope.dropDownMessage2 = () => $scope.owned = "Owned by me";
-		$scope.dropDownMessage3 = () =>$scope.owned = "Not owned by me";
-
-		$scope.selectedPanel = () => {
-
-		}
-
+  function getUser() {
+    sheetsSrvc.getUser().then(function(user) {
+      console.log('beging',user);
+      if (user) {
+        $scope.userid = user.id;
+        $scope.name = user.name;
+        $scope.username = user.username;
+        $scope.email = user.email;
+        $scope.pic2 = user.pic;
+      }
+      else {
+        $scope.name = "Not Logged In?";
+        $scope.username = "Click to Login";
+        $scope.pic2 = './sheetsView/css/user-default.png';
+      }
+      return $scope.userid,$scope.pic2,$scope.name,$scope.username,$scope.email
+    }
+   )
+  }
+  getUser()
 
 // SLIDES WORK STUFF//////
 
-    $scope.clickTheBox = function  (){
-   alert('hi')
-   console.log('Im working');
-    }
-    $scope.click = ()=> {
-      $('#div3').html(`<svg>
-        <rect width="150" height="150" x="0" fill="#008d46" />
-      </svg>`)
-      $('svg').draggable().resizable()
-    }
-    $scope.log = (x)=> {
-      $('#div3').html(`<svg>
-        <rect width="150" height="150" x="0" fill="#000000" />
-      </svg>`)
-      $('svg').draggable().resizable()
+  $scope.log = ()=> {
+   console.log('clicked', $scope.gInfo);
+  }
+
+  $scope.click = () => {
+    console.log(new Date().toLocaleDateString());
+  }
+
+	$scope.loadSlide = function() {
+    if (slidesSrvc.slideId === 0 || !slidesSrvc.slideId) {
+        $scope.slideTitle = ""
+        $scope.gInfo = {bgColor: 'white', slides: [0], comments:''};
+        $scope.slideContent = slidesSrvc.slideContent
+        $(`#div1`).html(slidesSrvc.slideContent[0].divHtml);
+        $(`#drag1`).draggable().resizable();
+        $(`#div2`).html(slidesSrvc.slideContent[1].divHtml);
+        $(`#drag2`).draggable().resizable();
+    } else {
+  		slidesSrvc.loadSlide().then(()=>{
+        $scope.slideTitle = slidesSrvc.slideTitle
+  			$scope.gInfo = slidesSrvc.gInfo
+  			$scope.slideContent = slidesSrvc.slideContent
+  				for (var i = 0; i < slidesSrvc.slideContent.length; i++) {
+  					$(`#div${i +1}`).html(slidesSrvc.slideContent[i].divHtml);
+  					$(`#drag${i +1}`).draggable().resizable();
+            $('#presTitle').val($scope.slideTitle)
+            if (slidesSrvc.gInfo.comments) {
+              $("#comments").val(slidesSrvc.gInfo.comments)
+            }
+  					if (slidesSrvc.slideContent[i].css) {
+  						$(`#drag${i +1}`).css('height', slidesSrvc.slideContent[i].css.height)
+  						$(`#drag${i +1}`).css('width', slidesSrvc.slideContent[i].css.width)
+  						$(`#drag${i +1}`).css('top', slidesSrvc.slideContent[i].css.top)
+  						$(`#drag${i +1}`).css('left', slidesSrvc.slideContent[i].css.left)
+  					}
+  					if (slidesSrvc.slideContent[i].inputVal) {
+  						$(`#${slidesSrvc.slideContent[i].innerId}`).val(slidesSrvc.slideContent[i].inputVal)
+  					}
+  					if(slidesSrvc.slideContent[i].slideId === 1) {
+  	          $(`#${slidesSrvc.slideContent[i].divId}`).css('display', 'block')
+  	        } else {
+  	          $(`#${slidesSrvc.slideContent[i].divId}`).css('display', 'none')
+  	        }
+  				}
+  			})
+      }
+		}()
+
+    $scope.save = function() {
+      if (slidesSrvc.slideId === 0 || !slidesSrvc.slideId) {
+        slidesSrvc.save($scope.userid, $scope.slideTitle, $scope.gInfo)
+      } else {
+        slidesSrvc.resave($scope.userid, $scope.slideTitle, $scope.gInfo)
+      }
     }
 
-		$scope.bgColor='white'
 
-    $scope.slides = [0];
-    $scope.createSlide = ()=> $scope.slides.push($scope.slides.length)
+    $scope.createSlide = ()=>slidesSrvc.gInfo.slides.push(slidesSrvc.gInfo.slides.length)
 
     $scope.currentSlide = 1;
     $scope.changeSlides = (x) => {
-      for (var i = 0; i < $scope.slideContent.length; i++) {
-        if ($scope.slideContent[i].slideId !== x) {
-          $(`#${$scope.slideContent[i].divId}`).css('display', 'none')
+      for (var i = 0; i < slidesSrvc.slideContent.length; i++) {
+        if (slidesSrvc.slideContent[i].slideId !== x) {
+          $(`#${slidesSrvc.slideContent[i].divId}`).css('display', 'none')
         } else {
-          $(`#${$scope.slideContent[i].divId}`).css('display', 'block')
+          $(`#${slidesSrvc.slideContent[i].divId}`).css('display', 'block')
         }
       }
       $scope.currentSlide = x ;
@@ -56,60 +96,40 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
     }
 
 
-    $scope.slideContent = [
-        {
-            slideId: 1,
-            divId: "drag1",
-            divHtml: `<div id='drag1' class='slide-text-input ui-widget-content slide-title' grab-css>
-                <input id='input1' type='text' class='hello slide-text-input slide-title-input' value='Click to add title'>
-            </div>`,
-            innerId: "input1",
-            inputVal: "",
-            css: {}
-        },
-        {
-          slideId: 1,
-          divId: "drag2",
-          divHtml: `<div id="drag2" class="ui-widget-content slide-author" grab-css>
-            <input type="text" class="slide-author-input" placeholder="Click to add author">
-          </div>`,
-          innerId: 'input2',
-          inputVal:'',
-          css: {}
-        }
-    ]
-
-
+//Creates Divs
+//This Pushes into SlideContent
     $scope.createTextBox = ()=> {
-      $scope.slideContent
+      slidesSrvc.slideContent
         .push({
           slideId: $scope.currentSlide,
-          divId: 'drag' + String($scope.slideContent.length +1),
-          divHtml:   `<div id="drag${String($scope.slideContent.length + 1)}"
+          divId: 'drag' + String(slidesSrvc.slideContent.length +1),
+          divHtml:   `<div id="drag${String(slidesSrvc.slideContent.length + 1)}"
           class="ui-widget-content new-text-box" grab-css>
-          <input type="text" class="new-input" placeholder="Click to type" id="input${String($scope.slideContent.length + 1)}"><div/>`,
-          innerId: 'input' + String($scope.slideContent.length +1)
+          <input type="text" class="new-input" placeholder="Click to type" id="input${String(slidesSrvc.slideContent.length + 1)}"><div/>`,
+          innerId: 'input' + String(slidesSrvc.slideContent.length +1)
         })
-      $("#div" + String($scope.slideContent.length))
-        .html($scope.slideContent[$scope.slideContent.length -1].divHtml)
-      $("#drag" + String($scope.slideContent.length)).draggable().resizable();
+      $("#div" + String(slidesSrvc.slideContent.length))
+        .html(slidesSrvc.slideContent[slidesSrvc.slideContent.length -1].divHtml)
+      $("#drag" + String(slidesSrvc.slideContent.length)).draggable().resizable();
     };
 
+
+//Create images
     $scope.createImg = (x)=> {
       var reader = new FileReader();
       reader.onload = function(event) {
         imgUrl = event.target.result
-        $scope.slideContent
+        slidesSrvc.slideContent
           .push({
             slideId: $scope.currentSlide,
-            divId: 'drag' + String($scope.slideContent.length +1),
-            divHtml:`<div id="drag${String($scope.slideContent.length + 1)}"class="ui-widget-content new-image-div">
-            <img src="${imgUrl}" id="img${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`,
-            innerId: 'img' + String($scope.slideContent.length +1)
+            divId: 'drag' + String(slidesSrvc.slideContent.length +1),
+            divHtml:`<div id="drag${String(slidesSrvc.slideContent.length + 1)}"class="ui-widget-content new-image-div">
+            <img src="${imgUrl}" id="img${String(slidesSrvc.slideContent.length + 1)}" class="new-image"/><div/>`,
+            innerId: 'img' + String(slidesSrvc.slideContent.length +1)
           })
-        $("#div" + String($scope.slideContent.length)).html($scope.slideContent[$scope.slideContent.length -1].divHtml);
-        $("#drag" + String($scope.slideContent.length)).draggable().resizable();
-        console.log($scope.slideContent);
+        $("#div" + String(slidesSrvc.slideContent.length)).html(slidesSrvc.slideContent[slidesSrvc.slideContent.length -1].divHtml);
+        $("#drag" + String(slidesSrvc.slideContent.length)).draggable().resizable();
+        console.log(slidesSrvc.slideContent);
       }
       reader.readAsDataURL(x);
     };
@@ -117,32 +137,27 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
 
     $scope.createShape = (shape)=> {
       shapeHtml =
-      ` <div id="drag${String($scope.slideContent.length + 1)}" class="ui-widget-content new-image-div" grab-css>
-      <img src=${"./slidesView/pics/"+shape+".png"} id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
-      $scope.slideContent
+      ` <div id="drag${String(slidesSrvc.slideContent.length + 1)}" class="ui-widget-content new-image-div" grab-css>
+      <img src=${"./slidesView/pics/"+shape+".png"} id="shape${String(slidesSrvc.slideContent.length + 1)}" class="new-image"/><div/>`
+      slidesSrvc.slideContent
         .push({
           slideId: $scope.currentSlide,
-          divId: 'drag' + String($scope.slideContent.length +1),
+          divId: 'drag' + String(slidesSrvc.slideContent.length +1),
           divHtml: shapeHtml,
-          innerId: shape + String($scope.slideContent.length +1)
+          innerId: shape + String(slidesSrvc.slideContent.length +1)
         });
       $scope.currentShape = shape
-      $("#div" + String($scope.slideContent.length)).html($scope.slideContent[$scope.slideContent.length -1].divHtml);
-      $("#drag" + String($scope.slideContent.length)).draggable().resizable();
+      $("#div" + String(slidesSrvc.slideContent.length)).html(slidesSrvc.slideContent[slidesSrvc.slideContent.length -1].divHtml);
+      $("#drag" + String(slidesSrvc.slideContent.length)).draggable().resizable();
     }
 
     $scope.changeShapeColor = function(col) {
-      $scope.slideContent[$scope.slideContent.length -1].divHtml =
-      ` <div id="drag${String($scope.slideContent.length)}" class="ui-widget-content new-image-div" grab-css>
-      <img src=${"./slidesView/pics/" + $scope.currentShape + "-" + col + ".png"} id="shape${String($scope.slideContent.length + 1)}" class="new-image"/><div/>`
-      $("#div" + String($scope.slideContent.length)).html($scope.slideContent[$scope.slideContent.length -1].divHtml);
-      $("#drag" + String($scope.slideContent.length)).draggable().resizable();
+      slidesSrvc.slideContent[slidesSrvc.slideContent.length -1].divHtml =
+      ` <div id="drag${String(slidesSrvc.slideContent.length)}" class="ui-widget-content new-image-div" grab-css>
+      <img src=${"./slidesView/pics/" + $scope.currentShape + "-" + col + ".png"} id="shape${String(slidesSrvc.slideContent.length + 1)}" class="new-image"/><div/>`
+      $("#div" + String(slidesSrvc.slideContent.length)).html(slidesSrvc.slideContent[slidesSrvc.slideContent.length -1].divHtml);
+      $("#drag" + String(slidesSrvc.slideContent.length)).draggable().resizable();
     }
-
-    $("#div1").html($scope.slideContent[0].divHtml);
-    $("#div2").html($scope.slideContent[1].divHtml);
-    $("#drag1").draggable().resizable();
-    $("#drag2").draggable().resizable();
 
 
 		//Presentation Slides

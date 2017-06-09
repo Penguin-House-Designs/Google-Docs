@@ -54,7 +54,7 @@ GoogleApps.config(function($stateProvider, $urlRouterProvider) {
   .state('slidesHome', {
     url:'/slidesHome',
     templateUrl: './slidesView/slidesHome.html',
-    controller: 'slidesCtrl'
+    controller: 'slidesHomeCtrl'
   })
 
   .state('slidesWork', {
@@ -66,6 +66,12 @@ GoogleApps.config(function($stateProvider, $urlRouterProvider) {
   .state('driveLanding', {
     url: '/driveLanding',
     templateUrl: './driveView/driveLanding.html',
+    controller: 'driveCtrl'
+  })
+
+  .state('driveHome', {
+    url: '/driveHome',
+    templateUrl: './driveView/driveHome.html',
     controller: 'driveCtrl'
   })
 

@@ -10,7 +10,7 @@
     <div class='nav-row-work'>
       <div class='slides-title'>
         <div class='slides-title-input'>
-          <input value="Untitled Presentation">
+          <input placeholder="Untitled Presentation" id="presTitle" ng-model="slideTitle">
           <a href="" class="ion-ios-star-outline"></a>
           <a href="" class="ion-ios-folder"></a>
         </div>
@@ -20,22 +20,22 @@
       </div>
       <div class='slides-menu-bar'>
         <div>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>File</a>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>Edit</a>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>View</a>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>Insert</a>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>Slide</a>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>Format</a>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>Arrange</a>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>Tools</a>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>Table</a>
-          <a class='dropdown-button' href='#' data-activates='dropdown1'>Help</a>
-          <a href='#' style='color:grey;' class='edited'>Last Edit Yesterday</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>File</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>Edit</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>View</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>Insert</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>Slide</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>Format</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>Arrange</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>Tools</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>Table</a>
+          <a class='dropdown-button' href='' data-activates='dropdown1'>Help</a>
+          <a href='' style='color:grey;' class='edited'>Last Edit Yesterday</a>
         </div>
         <div class='right-share'>
           <button ng-click="fullView()" class='comment-btn ion-social-youtube'>&nbsp; Present</button>
           <button class='comment-btn'>Comments</button>
-          <button class='share-btn'><span class="ion-locked"> Share</span></button>
+          <button class='share-btn' ng-click="save()"><span class="ion-locked"> Save</span></button>
         </div>
 
         <!-- dropdown-content -->
@@ -52,6 +52,24 @@
     </div>
   </div>
 </nav>
+<div ng-show='d' class='myprofile-main'>
+		<div class='profile-top-bar'>
+		<img class='profile-main-pic' src="{{pic2}}">
+		<div class='myprofile-names'>
+			<p style='font-weight:bold;margin: 5px;'>{{name}}</p>
+			<p style='color:grey;margin: 5px;'>{{username}}</p>
+			<button class='profile-btn'>My Profile</button>
+		</div>
+	</div>
+		<div class='bottom-bar'>
+		<a href="/auth">
+			<button class='log-btn'>Login</button>
+		</a>
+		<a href="/auth/logout">
+			<button class='log-btn'>Logout</button>
+		</a>
+		</div>
+</div>
 
 <!-- SLIDES TOOLBAR -->
 <!-- <slides-tools><slides-tools/> -->
@@ -106,12 +124,12 @@
 	<div class="dropdown">
 				<a href=""><b>Background...</b></a>
 				<ul>
-						<li><a ng-model="anyone" ng-click="bgColor= 'red'" style="background:red; width: 94.3%; color:red">Pick a color</a></li>
-						<li><a ng-model="anyone" ng-click="bgColor= 'blue'" style="background:blue; width: 94.3%; color:blue"></a></li>
-						<li><a ng-model="anyone" ng-click="bgColor= 'black'" style="background:black; width: 94.3%; color:black"></a></li>
-						<li><a ng-model="anyone" ng-click="bgColor= 'yellow'" style="background:yellow; width: 94.3%; color:yellow"></a></li>
-						<li><a ng-model="anyone" ng-click="bgColor= 'white'" style="background:white; width: 94.3%; color:white"></a></li>
-						<li><a ng-model="anyone" ng-click="bgColor= 'green'" style="background:green; width: 94.3%; color:green"></a></li>
+						<li><a ng-click="gInfo.bgColor= 'red'" style="background:red; width: 94.3%; color:red">Pick a color</a></li>
+						<li><a ng-click="gInfo.bgColor= 'blue'" style="background:blue; width: 94.3%; color:blue"></a></li>
+						<li><a ng-click="gInfo.bgColor= 'black'" style="background:black; width: 94.3%; color:black"></a></li>
+						<li><a ng-click="gInfo.bgColor= 'yellow'" style="background:yellow; width: 94.3%; color:yellow"></a></li>
+						<li><a ng-click="gInfo.bgColor= 'white'" style="background:white; width: 94.3%; color:white"></a></li>
+						<li><a ng-click="gInfo.bgColor= 'green'" style="background:green; width: 94.3%; color:green"></a></li>
 				</ul>
 		</div>
   <div class='slides-right-border'></div>
@@ -133,11 +151,11 @@
 
 
   <div class="slide-nav">
-    <div class="slide-nav-panel" active-slide-panel ng-repeat="slide in slides">
+    <div class="slide-nav-panel" active-slide-panel ng-repeat="slide in gInfo.slides">
       <div  style="margin-top: 5px;">
-        {{slides.indexOf(slide) + 1}}
+        {{gInfo.slides.indexOf(slide) + 1}}
       </div>
-      <div class="slide-nav-slide" active-slide ng-click="changeSlides(slides.indexOf(slide) + 1)" style="background-color: {{bgColor}}"></div>
+      <div class="slide-nav-slide" active-slide ng-click="changeSlides(gInfo.slides.indexOf(slide) + 1)" style="background-color: {{gInfo.bgColor}}"></div>
     </div>
   </div>
   <div style="width: 77%">
@@ -145,7 +163,7 @@
 
 <!-- SLIDE CONTENTS -->
 
-      <div style="background: {{bgColor}}" class="current-slide" id="oneSlide">
+      <div style="background: {{gInfo.bgColor}}" class="current-slide" id="oneSlide">
           <div id="div1" grab-css></div>
           <div id="div2" grab-css></div>
           <div id="div3" grab-css></div>
@@ -183,11 +201,7 @@
 
     </div>
     <div class="comments">
-      <input type="text" placeholder="Click to add speaker notes">
-      <input type="file" onchange="angular.element(this).scope().createImg(this.files[0])">
-      <button create-shape  type="submit" name="button">Click to add new stuff</button>
-      <button type="button" ng-click='changeShapeColor("red")' name="button">Do the shits</button>
-      <button type="button" ng-click='log()' name="button">Log the shits</button>
+      <input type="text" id="comments" ng-model="{{gInfo.comments}}" placeholder="Click to add speaker notes">
     </div>
   </div>
 </div>
