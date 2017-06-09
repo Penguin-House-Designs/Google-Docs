@@ -207,7 +207,7 @@ $scope.grabXY = function(para){
   }
 
   $scope.name = "Not Logged In?";
-  $scope.username = "Dominic DeCicco";
+  $scope.username = "demo@demo.com";
   $scope.pic2 = './sheetsView/css/user-default.png';
 
   $scope.saveSheet = function(){
