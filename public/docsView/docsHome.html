@@ -61,7 +61,7 @@
 			<a ng-click='d=!d'><img style='margin:0;' src="{{pic2}}" class='small-profile-pic'></a>
 		</div>
 	</div>
-	
+
 	<div ng-show='d' class='myprofile-main'>
 	    <div class='profile-top-bar'>
 	    <img class='profile-main-pic' src="{{pic2}}">
@@ -144,7 +144,7 @@
 
 			<!-- The Collection of Penguin Documents -->
 			<ul class="collection">
-				<li class="collection-item home-view-table" ng-repeat="docs in theDocus|filter:search|orderBy:order">
+				<li class="collection-item home-view-table" ng-repeat="docs in theDocus|filter:search|orderBy:order" ui-sref="docsWork"  ng-click="getText()">
 					<div class="title-docs-icons">
 						<i style="color:white; background:#4285f4" class="material-icons left">subject</i>
 						<h6 style="font-weight:600">{{docs.title}}</h6>
