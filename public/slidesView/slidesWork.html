@@ -10,12 +10,12 @@
     <div class='nav-row-work'>
       <div class='slides-title'>
         <div class='slides-title-input'>
-          <input placeholder="Untitled Presentation" ng-model="gInfo.introTitle">
+          <input placeholder="Untitled Presentation" id="presTitle" ng-model="slideTitle">
           <a href="" class="ion-ios-star-outline"></a>
           <a href="" class="ion-ios-folder"></a>
         </div>
         <div class='slides-user'>
-          <p class='dropdown-button' href='' data-activates='dropdown1'>domd0101@gmail.com &nbsp; <span class='ion-arrow-down-b'></span></p>
+          <p class='dropdown-button' ng-click='d=!d' >{{username}} &nbsp; <span class='ion-arrow-down-b'></span></p>
         </div>
       </div>
       <div class='slides-menu-bar'>
@@ -52,6 +52,24 @@
     </div>
   </div>
 </nav>
+<div ng-show='d' class='myprofile-main'>
+		<div class='profile-top-bar'>
+		<img class='profile-main-pic' src="{{pic2}}">
+		<div class='myprofile-names'>
+			<p style='font-weight:bold;margin: 5px;'>{{name}}</p>
+			<p style='color:grey;margin: 5px;'>{{username}}</p>
+			<button class='profile-btn'>My Profile</button>
+		</div>
+	</div>
+		<div class='bottom-bar'>
+		<a href="/auth">
+			<button class='log-btn'>Login</button>
+		</a>
+		<a href="/auth/logout">
+			<button class='log-btn'>Logout</button>
+		</a>
+		</div>
+</div>
 
 <!-- SLIDES TOOLBAR -->
 <!-- <slides-tools><slides-tools/> -->
@@ -183,11 +201,7 @@
 
     </div>
     <div class="comments">
-      <input type="text" placeholder="Click to add speaker notes">
-      <input type="file" onchange="angular.element(this).scope().createImg(this.files[0])">
-      <button create-shape  type="submit" name="button">Click to add new stuff</button>
-      <button type="button" ng-click='click()' name="button">Do the shits</button>
-      <button type="button" ng-click='log()' name="button">Log the shits</button>
+      <input type="text" id="comments" ng-model="{{gInfo.comments}}" placeholder="Click to add speaker notes">
     </div>
   </div>
 </div>

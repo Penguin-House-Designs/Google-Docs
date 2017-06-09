@@ -1,56 +1,86 @@
-GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
+GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc, sheetsSrvc) {
+
+  function getUser() {
+    sheetsSrvc.getUser().then(function(user) {
+      console.log('beging',user);
+      if (user) {
+        $scope.userid = user.id;
+        $scope.name = user.name;
+        $scope.username = user.username;
+        $scope.email = user.email;
+        $scope.pic2 = user.pic;
+      }
+      else {
+        $scope.name = "Not Logged In?";
+        $scope.username = "Click to Login";
+        $scope.pic2 = './sheetsView/css/user-default.png';
+      }
+      return $scope.userid,$scope.pic2,$scope.name,$scope.username,$scope.email
+    }
+   )
+  }
+  getUser()
 
 // SLIDES WORK STUFF//////
 
-    $scope.clickTheBox = function  (){
-   alert('hi')
-   console.log('Im working');
-    }
+  $scope.log = ()=> {
+   console.log('clicked', $scope.gInfo);
+  }
 
-    $scope.log = ()=> {
-     console.log(slidesSrvc.slideContent);
-    }
-
-		$scope.save = function() {
-			slidesSrvc.save(JSON.stringify($scope.gInfo))
-		}
-
-
-		$scope.click = () => {
-			$scope.test = JSON.stringify($scope.gInfo)
-		console.log($scope.test);
-	}
-
-
+  $scope.click = () => {
+    console.log(new Date().toLocaleDateString());
+  }
 
 	$scope.loadSlide = function() {
-		console.log('clicked');
-		slidesSrvc.loadSlide().then(()=>{
-			$scope.gInfo = slidesSrvc.gInfo
-			$scope.slideContent = slidesSrvc.slideContent
-				for (var i = 0; i < slidesSrvc.slideContent.length; i++) {
-					$(`#div${i +1}`).html(slidesSrvc.slideContent[i].divHtml);
-					$(`#drag${i +1}`).draggable().resizable();
-					if (slidesSrvc.slideContent[i].css) {
-						$(`#drag${i +1}`).css('height', slidesSrvc.slideContent[i].css.height)
-						$(`#drag${i +1}`).css('width', slidesSrvc.slideContent[i].css.width)
-						$(`#drag${i +1}`).css('top', slidesSrvc.slideContent[i].css.top)
-						$(`#drag${i +1}`).css('left', slidesSrvc.slideContent[i].css.left)
-					}
-					if (slidesSrvc.slideContent[i].inputVal) {
-						$(`#${slidesSrvc.slideContent[i].innerId}`).val(slidesSrvc.slideContent[i].inputVal)
-					}
-					if(slidesSrvc.slideContent[i].slideId === 2) {
-	          $(`#${slidesSrvc.slideContent[i].divId}`).css('display', 'none')
-	        } else {
-	          $(`#${slidesSrvc.slideContent[i].divId}`).css('display', 'block')
-	        }
-				}
-			})
+    if (slidesSrvc.slideId === 0 || !slidesSrvc.slideId) {
+        $scope.slideTitle = ""
+        $scope.gInfo = {bgColor: 'white', slides: [0], comments:''};
+        $scope.slideContent = slidesSrvc.slideContent
+        $(`#div1`).html(slidesSrvc.slideContent[0].divHtml);
+        $(`#drag1`).draggable().resizable();
+        $(`#div2`).html(slidesSrvc.slideContent[1].divHtml);
+        $(`#drag2`).draggable().resizable();
+    } else {
+  		slidesSrvc.loadSlide().then(()=>{
+        $scope.slideTitle = slidesSrvc.slideTitle
+  			$scope.gInfo = slidesSrvc.gInfo
+  			$scope.slideContent = slidesSrvc.slideContent
+  				for (var i = 0; i < slidesSrvc.slideContent.length; i++) {
+  					$(`#div${i +1}`).html(slidesSrvc.slideContent[i].divHtml);
+  					$(`#drag${i +1}`).draggable().resizable();
+            $('#presTitle').val($scope.slideTitle)
+            if (slidesSrvc.gInfo.comments) {
+              $("#comments").val(slidesSrvc.gInfo.comments)
+            }
+  					if (slidesSrvc.slideContent[i].css) {
+  						$(`#drag${i +1}`).css('height', slidesSrvc.slideContent[i].css.height)
+  						$(`#drag${i +1}`).css('width', slidesSrvc.slideContent[i].css.width)
+  						$(`#drag${i +1}`).css('top', slidesSrvc.slideContent[i].css.top)
+  						$(`#drag${i +1}`).css('left', slidesSrvc.slideContent[i].css.left)
+  					}
+  					if (slidesSrvc.slideContent[i].inputVal) {
+  						$(`#${slidesSrvc.slideContent[i].innerId}`).val(slidesSrvc.slideContent[i].inputVal)
+  					}
+  					if(slidesSrvc.slideContent[i].slideId === 1) {
+  	          $(`#${slidesSrvc.slideContent[i].divId}`).css('display', 'block')
+  	        } else {
+  	          $(`#${slidesSrvc.slideContent[i].divId}`).css('display', 'none')
+  	        }
+  				}
+  			})
+      }
 		}()
 
+    $scope.save = function() {
+      if (slidesSrvc.slideId === 0 || !slidesSrvc.slideId) {
+        slidesSrvc.save($scope.userid, $scope.slideTitle, $scope.gInfo)
+      } else {
+        slidesSrvc.resave($scope.userid, $scope.slideTitle, $scope.gInfo)
+      }
+    }
 
-    $scope.createSlide = ()=>$scope.gInfo.slides.push($scope.gInfo.slides.length)
+
+    $scope.createSlide = ()=>slidesSrvc.gInfo.slides.push(slidesSrvc.gInfo.slides.length)
 
     $scope.currentSlide = 1;
     $scope.changeSlides = (x) => {
@@ -128,9 +158,6 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc) {
       $("#div" + String(slidesSrvc.slideContent.length)).html(slidesSrvc.slideContent[slidesSrvc.slideContent.length -1].divHtml);
       $("#drag" + String(slidesSrvc.slideContent.length)).draggable().resizable();
     }
-
-
-
 
 
 		//Presentation Slides

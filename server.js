@@ -47,18 +47,29 @@ app.post('/api/save_g_docs', (req, res) => {
 
 
 app.post('/api/saves_slide', (req, res) => {
-	// console.log('fuuucckkk',req.body);
-	var data = [req.body.user_id, req.body.g_info, req.body.slide_content];
+	var data = [req.body.user_id, req.body.slide_title, req.body.g_info, req.body.slide_content, req.body.slide_date];
   db.save_slide(data, (err, slide) => {
 		console.log(err);
     err ? res.status(500) : res.send(slide);
   })
 })
 
-app.get('/api/load_by_id', (req, res)=>{
-	console.log('at srvr');
-	db.load_slide_by_user_id((err, slides)=>{
-		console.log(slides);
+app.put('/api/saves_slide', (req, res) => {
+	var data = [req.body.user_id, req.body.slide_title, req.body.g_info, req.body.slide_content, req.body.slide_date, req.body.slide_id];
+  db.resave_slide(data, (err, slide) => {
+		console.log(err);
+    err ? res.status(500) : res.send(slide);
+  })
+})
+
+app.post('/api/loadUserSlides', (req, res)=>{
+	db.load_user_slides([req.body.user_id],(err, slides)=>{
+		err ? res.status(500) : res.send(slides)
+	})
+})
+
+app.post('/api/loadSlide', (req, res)=>{
+	db.load_slide([req.body.s_id],(err, slides)=>{
 		err ? res.status(500) : res.send(slides)
 	})
 })
@@ -102,48 +113,24 @@ passport.use(new Auth0Strategy({
         }
         db.createUserByAuth(data, function(err, user) {
           if(err){
-            console.log(err);
           }
-          console.log('USER CREATED', user);
-          return done(err, user[0]); // GOES TO SERIALIZE USER
+          return done(err, user[0]);
         })
-      } else { //when we find the user, return it
-        console.log('FOUND USER', user);
+      } else {
         return done(err, user);
       }
     })
   }
 ));
 
-//THIS IS INVOKED ONE TIME TO SET THINGS UP
 passport.serializeUser(function(userA, done) {
-  // var userB = userA;
-  //Things you might do here :
-   //Serialize just the id, get other information to add to session,
-  done(null, userA); //PUTS 'USER' ON THE SESSION
+  done(null, userA);
 });
-
-//USER COMES FROM SESSION - THIS IS INVOKED FOR EVERY ENDPOINT
 passport.deserializeUser(function(userB, done) {
-  // var userC = userC;
-  //Things you might do here :
-    // Query the database with the user id, get other information to put on req.user
-  done(null, userB); //PUTS 'USER' ON REQ.USER
+  done(null, userB);
 });
-
-
 
 app.get('/auth', passport.authenticate('auth0'));
-
-
-
-//**************************//
-//To force specific provider://
-//**************************//
-// app.get('/login/google',
-//   passport.authenticate('auth0', {connection: 'google-oauth2'}), function (req, res) {
-//   res.redirect("/");
-// });
 
 app.get('/auth/callback',
   passport.authenticate('auth0', {successRedirect: '/'}), function(req, res) {
@@ -152,17 +139,13 @@ app.get('/auth/callback',
 
 app.get('/auth/me', function(req, res) {
   if (!req.user) return res.sendStatus(404);
-  //THIS IS WHATEVER VALUE WE GOT FROM userC variable above.
-  console.log(req.user);
   return res.status(200).send(req.user);
 })
 
 app.get('/auth/logout', function(req, res) {
   req.logout();
   res.redirect('/');
-
 })
-
 
 app.listen(3000, ()=>{
   console.log("Successfully listening on : 3000")
