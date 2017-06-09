@@ -33,10 +33,20 @@ const db = app.get('db');
 
 
 //Google Docs
+app.post('/api/get_g_docs', (req, res) => {
+	console.log(req.body.value);
+	db.get_docs_text([req.body.user_id], (err, docs) => {
+		console.log(docs);
+		!err ? res.status(200).send(docs)  : res.status(404);
+	})
+});
+
+
+
 app.post('/api/save_g_docs', (req, res) => {
 	console.log(req.body.value);
-	db.post_g_documents([req.body.user_id, req.body.value],(err, docs) => {
-		!err ? res.status(200).send(docs) : res.status(404)
+	db.post_g_documents([req.body.user_id, req.body.title, req.body.value],(err, docs) => {
+		!err ? res.status(200).send(docs) : res.status(404);
 	})
 });
 

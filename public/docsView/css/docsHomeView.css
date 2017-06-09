@@ -109,6 +109,11 @@ body {
 
 .home-view-table {
   display: flex;
+	cursor: pointer;
+}
+
+.home-view-table:hover {
+	color: #ccc;
 }
 
 .title-docs-icons {

@@ -40,16 +40,27 @@ GoogleApps.controller('DocHomeController', ['$scope','GoogleService','sheetsSrvc
 	}
 
 	$scope.theDocus = GoogleService.docsDocuments;
+
 	$scope.getText = () => {
-		var text = quill.getText();
-		console.log(text);
-		console.log($scope.docsTitle);
-		GoogleService.postDocs({
-			user_id:integer,
-			value: text
+		console.log($scope.userid);
+		GoogleService.getDocs({
+			user_id:$scope.userid
+		}).then((response) => {
+			console.log(response);
+			$scope.docus = response
+			quill.setText($scope.docus[0].value);
+			console.log('Title',$scope.docus[0].title);
 		})
 	};
 
 
 
+	$scope.postText = () => {
+		var text = quill.getText();
+		GoogleService.postDocs({
+			user_id: $scope.userid,
+			title: $scope.docsTitle,
+			value: text
+		})
+	};
 }]);
