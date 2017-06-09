@@ -6,7 +6,7 @@
 		<div class='nav-row-work'>
 			<div class='file1'>
 				<div class='left-user'>
-					<input style='height:27px' class='sheet-name' value="Untitled Spreadsheet">
+					<input name='myNumber' style='height:27px' class='sheet-name' value="Untitled Spreadsheet">
 					<a href="" class="ion-ios-star-outline"></a>
 					<a href="" class="ion-ios-folder"></a>
 				</div>
@@ -21,7 +21,9 @@
 						<a class="button" style="cursor:pointer; color: black; padding-right:6px">File</a>
 						<ul style="top: 47px;">
 							<li><a>Share...</a></li>
-							<li><a>New</a></li>
+							<!-- <li><a id='p' grabcells >Save</a></li> -->
+							<li><a ng-click='saveSheet()' >Save</a></li>
+							<!-- ng-click='saveSheet()' -->
 							<li><a>Open...</a></li>
 							<li><a>Rename...</a></li>
 							<li><a>Make a copy...</a></li>
