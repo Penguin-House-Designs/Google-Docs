@@ -86,7 +86,6 @@ this.getUser = function() {
 		return res.data;
 	})
 	.catch(function(err) {
-		console.log(err);
 		return
 	})
 }
@@ -105,44 +104,27 @@ this.logout = function() {
 	})
 }
 
-this.postPen = function(penValues){
+this.saveSheet = function(array){
+	console.log(array);
 	return $http({
 		method: 'POST',
-		url: '/postPen',
-		data: penValues
+		url: '/saveSheet',
+		data: array
 	})
 }
 
-this.postPost = function(postValues){
+this.getSheets = function(id){
+	console.log(id);
 	return $http({
 		method: 'POST',
-		url: '/postPost',
-		data: postValues
-	})
-}
-
-this.getPens = function(id){
-	return $http({
-		method: 'POST',
-		url: '/getPens',
-		data: { id }
+		url: '/getSheets',
+		data: id
 	})
 	.then(function(res) {
+		console.log(res.data);
 		return res.data;
 	})
 }
-this.getPosts = function(id){
-	return $http({
-		method: 'POST',
-		url: '/getPosts',
-		data: { id }
-	})
-	.then(function(res) {
-		return res.data;
-	})
-}
-
-
 
 
 

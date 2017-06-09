@@ -50,8 +50,8 @@
 
     <!-- Populate Cells bar -->
     <section class='input-boxs'>
-        <form id={{x[0]}} celldir ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs'>
-            <input ng-style='textcolor' ng-model='cellvalue' type="text">
+        <form celldir id={{x[0]}} ng-submit='calc(cellvalue)' ng-repeat='x in cells' class='sheets-inputs'>
+            <input name={{x[0]}} ng-model='cellvalue' type="text">
             <div ng-show='cellvalue=="="' class='cell-methods'>
                 <p ng-click='cellvalue="Average()"' class='select-method'>Average ( )</p>
                 <p ng-click='cellvalue="Sum()"' class='select-method'>Sum ( )</p>

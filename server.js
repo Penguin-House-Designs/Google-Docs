@@ -129,6 +129,41 @@ app.get('/auth/logout', function(req, res) {
   res.redirect('/');
 })
 
+app.post('/saveSheet', function(req, res) {
+  let data = [
+    req.body.userid,
+    req.body.val
+  ];
+  console.log(data[0]);
+  db.postpost(data, (err, sqlResponse) => {
+    if (!err) {
+      console.log(sqlResponse);
+      res.status(200).send(sqlResponse);
+              }
+    else {
+      console.log(err);
+      res.send(err);
+         }
+  })
+})
+
+app.post('/getSheets',function(req, res){
+  console.log(req.body.id);
+    db.getSheets(req.body.id, function(err,pens){
+      if (!err) {
+        res.status(200).send(pens);
+      } else {
+        res.send(err);
+      }
+    })
+  })
+
+
+
+
+
+
+
 app.listen(3000, ()=>{
   console.log("Successfully listening on : 3000")
 })
