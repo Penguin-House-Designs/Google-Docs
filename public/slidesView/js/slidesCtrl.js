@@ -80,7 +80,7 @@ GoogleApps.controller('slidesCtrl', function ($scope, $state, slidesSrvc, sheets
     }
 
 
-    $scope.createSlide = ()=>slidesSrvc.gInfo.slides.push(slidesSrvc.gInfo.slides.length)
+    $scope.createSlide = ()=>$scope.gInfo.slides.push($scope.gInfo.slides.length)
 
     $scope.currentSlide = 1;
     $scope.changeSlides = (x) => {
