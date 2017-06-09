@@ -40,7 +40,15 @@ GoogleApps.controller('DocHomeController', ['$scope','GoogleService','sheetsSrvc
 	}
 
 	$scope.theDocus = GoogleService.docsDocuments;
-
+	$scope.getText = () => {
+		var text = quill.getText();
+		console.log(text);
+		console.log($scope.docsTitle);
+		GoogleService.postDocs({
+			user_id:integer,
+			value: text
+		})
+	};
 
 
 
